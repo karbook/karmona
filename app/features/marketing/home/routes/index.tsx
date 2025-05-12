@@ -10,7 +10,7 @@ import Hero from '../components/hero'
 
 export async function loader({ request }: Route.LoaderArgs) {
 	const t = await remixI18Next.getFixedT(request)
-	const title = t('TEDI Stack | React Router, Bun, Hono, and much more')
+	const title = t("Karmona Mx")
 	return { meta: { title } }
 }
 

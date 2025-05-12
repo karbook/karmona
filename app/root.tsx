@@ -39,10 +39,10 @@ export const links: Route.LinksFunction = () => {
 		{ rel: 'preload', href: iconsHref, as: 'image' },
 		{
 			rel: 'icon',
-			href: '/favicon.ico',
+			href: '/KarmonaIcon.png',
 			sizes: '48x48',
 		},
-		{ rel: 'icon', type: 'image/svg+xml', href: faviconAssetUrl },
+		{ rel: 'icon', type: 'image/png', href: '/favicons/KarmonaIcon.png' },
 		{ rel: 'apple-touch-icon', href: appleTouchIconAssetUrl },
 		{
 			rel: 'manifest',
