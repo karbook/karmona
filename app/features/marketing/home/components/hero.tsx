@@ -37,7 +37,7 @@ export default function Hero() {
 						<img
 							src="/images/logo/tedi-mascot.png"
 							alt="TEDI Stack"
-							className="w-40 xl:-mt-4 animate-slide-top xl:animate-slide-left [animation-delay:0.3s] [animation-fill-mode:backwards] xl:[animation-delay:0.8s] xl:[animation-fill-mode:backwards]"
+							className="w-40 xl:-mt-4 animate-slide-top xl:animate-slide-left [animation-delay:0.01s] [animation-fill-mode:backwards] xl:[animation-delay:0.055s] xl:[animation-fill-mode:backwards]"
 						/>
 						<h1
 							data-heading
@@ -63,13 +63,13 @@ export default function Hero() {
 										rowClasses[logo.row],
 										'animate-roll-reveal [animation-fill-mode:backwards]'
 									)}
-									style={{ animationDelay: `${i * 0.07}s` }}
+									style={{ animationDelay: `${i * 0.01}s` }}
 								>
 									<Tooltip>
 										<TooltipTrigger asChild>
 											<a
 												href={logo.href}
-												className="grid size-20 place-items-center rounded-2xl bg-violet-600/10 p-4 transition hover:-rotate-6 hover:bg-violet-600/15 sm:size-24 dark:bg-violet-200 dark:hover:bg-violet-100"
+												className="grid size-20 place-items-center rounded-2xl bg-red-400/10 p-4 transition hover:-rotate-360 hover:bg-transparent sm:size-24 dark:bg-violet-200 dark:hover:bg-violet-100"
 											>
 												<img src={logo.src} alt="" />
 											</a>
