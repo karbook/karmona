@@ -32,8 +32,8 @@ export default function Logo({ redirect, className, variant, alt, colorScheme }:
 			<img
 				loading="lazy"
 				className={cn(logoVariants({ variant }), className)}
-				alt={alt ? alt : 'Tedi Logo'}
-				src={`/images/logo/tedi-${variant}-${colorScheme === 'dark' ? 'dark' : preferredColorScheme === 'dark' ? 'dark' : 'light'}.png`}
+				alt={alt ? alt : 'Karmona | Logo'}
+				src={`/images/logo/karmona-long-white.svg`}
 			/>
 		</Link>
 	)
