@@ -19,7 +19,7 @@ type LogoProps = {
 export const logoVariants = cva('', {
 	variants: {
 		variant: {
-			long: 'w-40 h-auto',
+			long: 'w-85 h-auto',
 			icon: 'size-7',
 		},
 	},
