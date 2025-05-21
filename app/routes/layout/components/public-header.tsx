@@ -66,12 +66,15 @@ export function Header() {
 
 	return (
 		<nav
-			className={`w-full bg-[#0F172A] text-white flex items-center justify-between py-4 sm:py-5 px-4 sm:px-6 lg:px-8 shadow-xl`}
-		>
+					className={cn(
+                "w-full bg-[#0F172A] text-white flex items-center justify-between py-4 sm:py-5 px-4 sm:px-6 lg:px-8 shadow-xl",
+                "fixed top-0 left-0 right-0 z-50" // Clases para hacerlo fijo
+            )}
+				>
 			{/* Logo */}
 			<div className="flex-shrink-0">
 				<Link to="/" aria-label="Página de inicio">
-					<Logo className={`h-10 md:h-12 lg:h-[55px]`} variant="long" />
+					<Logo className={`h-10 ml-10 md:h-12 lg:h-[55px]`} variant="long" />
 				</Link>
 			</div>
 
