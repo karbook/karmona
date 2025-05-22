@@ -30,7 +30,7 @@ interface DropdownItem {
 const aboutUsItems: DropdownItem[] = [
 	{
 		title: 'Karmona',
-		href: '/',
+		href: '/#karmona',
 		description:
 			'A modal dialog that interrupts the user with important content and expects a response.',
 		icon: CustomIcon, //icono SVG personalizado
@@ -43,7 +43,7 @@ const aboutUsItems: DropdownItem[] = [
 	},
 	{
 		title: 'Promociones',
-		href: '/',
+		href: '/#promociones',
 		description: 'Descubre nuestras ofertas especiales.',
 		icon: Tag, // Icono de Lucide
 	},
