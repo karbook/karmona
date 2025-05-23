@@ -23,7 +23,7 @@ import {
 	ourWorksItems,
 	contactUsItems,
 	Laptop,
-} from '@/routes/layout/components/hero-maps-items';
+} from '@/routes/layout/components/hero-maps-items.tsx';
 
 import { Link } from 'react-router-dom';
 import Logo from './logo';

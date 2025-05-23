@@ -5,7 +5,7 @@ import {
 	aboutUsItems,
 	ourWorksItems,
 	contactUsItems,
-} from '@/routes/layout/components/public-header-items';
+} from '@/routes/layout/components/hero-maps-items.tsx';
 import {
 	Accordion,
 	AccordionContent,
