@@ -1,40 +1,20 @@
 import { useTranslation } from 'react-i18next';
 import React from 'react';
 import { Container } from '@/components/ui/container';
-import { Link } from 'react-router-dom';
-
+import { Link } from 'react-router-dom'; //
 import { cn } from '@/utils/misc';
-const promotionsData = [
-	{
-		id: 1,
-		frontImage: '/images/promotions/promo-mama-karmona.webp', // RUTA A LA IMAGEN FRONTAL
-		titleBack: 'Día de la Madre',
-		descriptionBack:
-			'¡Celebra a mamá! 20% de descuento en servicios seleccionados. Válido del 10 al 12 de Mayo. Aplican términos y condiciones.',
-		footerBack: '*No acumulable con otras promociones.',
-	},
-	{
-		id: 2,
-		frontImage: '/images/promotions/aniversario-30-juntos.webp', // RUTA A LA IMAGEN FRONTAL
-		titleBack: '30 Años Juntos',
-		descriptionBack:
-			'¡Gracias por tu confianza! 15% de descuento en mantenimiento de motor o frenos. Trae a consentir tu auto.',
-		footerBack: '*Válido todo el mes de Junio.',
-	},
-	{
-		id: 3,
-		frontImage: '/images/promotions/aniversario-30-juntos-2.webp', // RUTA A LA IMAGEN FRONTAL
-		titleBack: 'Mantenimiento Especial',
-		descriptionBack:
-			'10% de descuento en aceite Motul + Diagnóstico especializado GRATIS. ¡Tu auto en las mejores manos!',
-		footerBack: '*Aplican restricciones.',
-	},
-];
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
+// COMPONENTS
+import {
+	aboutSectionTabsData,
+	promotionsData,
+} from '@/routes/layout/components/hero-maps-items';
 
 export default function Hero() {
-	const { t } = useTranslation();
+	//const { t } = useTranslation();
 
-	const videoSrc = '/videos/karmona-minimalist-video.mp4';
+	const videoSrc = '/videos/karmona-minimalist-video.mov';
 	// const posterSrc = '/images/logo/karmona-square.svg';
 
 	return (
@@ -90,7 +70,7 @@ export default function Hero() {
 							Karmona Automotriz
 						</h2>
 						<div
-							className="w-full max-w-4xl lg:max-w-5xl xl:max-w-6xl
+							className="w-full max-w-6xl lg:max-w-7xl xl:max-w-8xl
                                        aspect-video
                                        border-2 border-white border-opacity-50
                                        rounded-2xl
@@ -100,7 +80,7 @@ export default function Hero() {
                                        bg-black bg-opacity-20"
 						>
 							<img
-								src="/images/logo/karmona-long-white.svg"
+								src="/images/team-karmona/kar-team.svg"
 								alt="Mecánicos de Karmona trabajando en un vehículo"
 								className="w-full h-full object-cover
                                            rounded-2xl "
@@ -183,11 +163,141 @@ export default function Hero() {
 
 			{/* Seccion 4 */}
 			<section
-				id="sobre-nosotros"
-				className="bg-[#0A101D] py-34 sm:py-38 lg:py-42 w-screen text-white"
+				id="about-us"
+				className="bg-[#0A101D] py-30 sm:py-34 lg:py-42 w-screen text-white"
 			>
+				<Container>
+					<div className="text-center mb-12 md:mb-20">
+						<h1 className="text-5xl sm:text-6xl font-bold tracking-tight">
+							Sobre Nosotros
+						</h1>
+						<p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
+							Nos complace compartir la esencia y los valores que nos definen
+							como organización. Nuestra historia, misión y valores
+							fundamentales nos guían en cada paso, y nos enorgullece
+							presentar un vistazo a quiénes somos y qué representamos.
+						</p>
+					</div>
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+						{/* Columna Izquierda: Video */}
+						<div className="w-full lg:sticky lg:top-28">
+							<div
+								className="aspect-video w-full
+                                           border-2 border-white border-opacity-30
+                                           rounded-2xl
+                                           shadow-xl
+                                           overflow-hidden
+                                           animate-float
+                                           bg-black bg-opacity-20"
+							>
+								<video
+									src="/videos/karmona-minimalist-video.mov"
+									autoPlay
+									loop
+									muted
+									playsInline
+									className="w-full h-full object-cover rounded-2xl"
+								>
+									Tu navegador no soporta la etiqueta de video.
+								</video>
+							</div>
+						</div>
 
+						{/* Columna Derecha: Tabs */}
+						<div className="w-full">
+							<Tabs
+								defaultValue={aboutSectionTabsData[0]?.id}
+								className="w-full"
+							>
+								<TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 gap-2 bg-transparent p-0 mb-10">
+									{aboutSectionTabsData.map((tab) => (
+										<TabsTrigger
+											key={tab.id}
+											value={tab.id}
+											className={cn(
+												// Estilos base para TODOS los triggers (no activos)
+												'font-medium rounded-md transition-all',
+												'text-slate-300',
+												'hover:text-slate-100',
+												'py-2.5 px-3',
+												'text-[var(--text-body-base)]',
+
+												// Estilos para el trigger ACTIVO
+												'data-[state=active]:bg-white',
+												'data-[state=active]:text-slate-900',
+												'data-[state=active]:shadow-md',
+												'data-[state=active]:font-semibold',
+
+												// TAMAÑO Y SOMBRA DE TEXTO PARA ESTADO ACTIVO
+												'data-[state=active]:text-[length:var(--text-h5)]',
+												'data-[state=active]:[text-shadow:0_1px_1px_rgba(0,0,0,0.4)]'
+											)}
+										>
+											{tab.triggerTitle}
+										</TabsTrigger>
+									))}
+								</TabsList>
+
+								{aboutSectionTabsData.map((tab) => (
+									<TabsContent
+										key={tab.id}
+										value={tab.id}
+										className="mt-0"
+									>
+										{tab.id === 'historia' ? (
+											//Pestaña Historia
+											<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+												{(
+													tab.content as Array<any>
+												).map((event, index) => (
+													<div
+														key={index}
+														className="content-card-hover-effect group bg-slate-800/30 backdrop-blur-sm p-6 rounded-3xl shadow-lg relative min-h-[200px] flex flex-col"
+													>
+														{event.icon && (
+															<event.icon className="absolute top-4 right-4 w-8 h-8 text-white opacity-20 group-hover:opacity-50 group-hover:rotate-[15deg] transition-all duration-300" />
+														)}
+														<p className="text-sm text-sky-400 mb-1">
+															{event.year}
+														</p>
+														<h4 className="text-xl font-semibold text-white mb-2">
+															{event.title}
+														</h4>
+														<p className="text-slate-300 text-sm flex-grow">
+															{event.text}
+														</p>
+													</div>
+												))}
+											</div>
+										) : (
+											//Pestañas Generales
+											<div className="content-card-hover-effect group bg-slate-800/30 backdrop-blur-sm p-6 sm:p-8 rounded-3xl shadow-lg relative min-h-[250px] flex flex-col">
+												{tab.icon && (
+													<tab.icon className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-12 text-white opacity-20 group-hover:opacity-50 group-hover:rotate-[15deg] transition-all duration-300" />
+												)}
+												<h3 className="text-2xl sm:text-3xl font-semibold text-white mb-3">
+													{(
+														tab.content as { title: string }
+													).title}
+												</h3>
+												<p className="text-slate-300 text-md sm:text-lg leading-relaxed">
+													{(
+														tab.content as { text: string }
+													).text}
+												</p>
+											</div>
+										)}
+									</TabsContent>
+								))}
+							</Tabs>
+						</div>
+					</div>
+				</Container>
 			</section>
+			<section
+				id=""
+				className="bg-[#0A101D] py-30 sm:py-34 lg:py-42 w-screen text-white"
+			></section>
 		</>
 	);
 }

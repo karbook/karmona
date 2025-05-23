@@ -17,12 +17,14 @@ import {
 	ListItem,
 	navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+
 import {
 	aboutUsItems,
 	ourWorksItems,
 	contactUsItems,
 	Laptop,
-} from '@/routes/layout/components/public-header-items';
+} from '@/routes/layout/components/hero-maps-items';
+
 import { Link } from 'react-router-dom';
 import Logo from './logo';
 import { cn } from '@/utils/misc';

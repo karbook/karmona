@@ -416,6 +416,7 @@
         }
     }
 }
+
  /* Nuevas clases de efectos */
 
 /* Estilos para la animación Flip Card */
@@ -493,6 +494,35 @@
   z-index: -1;
 }
 
+ //Estilos para la animacion del Circulo verde
+.content-card-hover-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.content-card-hover-effect::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background-image: radial-gradient(circle, rgba(74, 222, 128, 0.3) 0%, rgba(74, 222, 128, 0) 70%); /* Verde (#4ade80) translúcido a transparente */
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: width 0.4s ease-out, height 0.4s ease-out, transform 0.4s ease-out, opacity 0.4s ease-out;
+  opacity: 0;
+  z-index: 0;
+}
+
+.content-card-hover-effect:hover::before {
+  width: 400px;
+  height: 400px;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+//Aspectos predefinidos
 @layer utilities {
     .shadow-white-soft {
         box-shadow: 0px 0px 15px -3px rgba(255, 255, 255, 0.25);
