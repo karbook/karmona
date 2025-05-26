@@ -196,13 +196,13 @@ const initialServicesData: ServiceItem[] = [
 		id: 'reparaciones-mecanicas',
 		title: 'Reparaciones Mecánicas',
 		description: 'Las reparaciones mecánicas comprenden un conjunto diverso de servicios que se enfocan en solucionar problemas y mantener el funcionamiento óptimo de los componentes mecánicos de un vehículo.',
-		icon: Zap, // Usando Zap para reparaciones eléctricas, puedes cambiarlo
+		icon: Zap,
 	},
 	{
 		id: 'sistema-electrico',
 		title: 'Sistema Eléctrico',
 		description: 'La reparación del sistema eléctrico de un vehículo implica diagnosticar, identificar y solucionar problemas relacionados con los componentes eléctricos.',
-		icon: Zap, // O considera `CircuitBoard` o similar
+		icon: Zap,
 	},
 	{
 		id: 'sistema-climatizacion',
@@ -220,7 +220,7 @@ const initialServicesData: ServiceItem[] = [
 		id: 'cambio-partes',
 		title: 'Cambio de partes y accesorios',
 		description: 'El cambio de partes y accesorios abarca una amplia variedad de tareas que van desde la sustitución de componentes desgastados hasta la instalación de accesorios adicionales.',
-		icon: CarFront, // O `Settings2`
+		icon: CarFront,
 	},
 ];
 
@@ -241,7 +241,7 @@ const additionalServicesData: ServiceItem[] = [
 		id: 'servicios-especializados',
 		title: 'Servicios especializados',
 		description: 'Los servicios especializados abarcan una variedad de tareas más específicas y técnicas, dirigidas a aspectos particulares del vehículo.',
-		icon: UsersIcon, // Icono de ejemplo
+		icon: UsersIcon,
 	},
 ];
 
