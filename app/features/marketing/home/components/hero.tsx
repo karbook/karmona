@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'; //
 import { cn } from '@/utils/misc';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
+
 // COMPONENTS
 import {
 	aboutSectionTabsData,
@@ -17,7 +18,6 @@ export default function Hero() {
 	//const { t } = useTranslation();
 	const [showMoreServices, setShowMoreServices] = useState(false)
 	const videoSrc = '/videos/karmona-minimalist-video.mov';
-	// const posterSrc = '/images/logo/karmona-square.svg';
 
 	return (
 		<>
@@ -372,7 +372,7 @@ export default function Hero() {
 									</div>
 								)}
 							</Container>
-						</section>
+					</section>
 		</>
 	);
 }
