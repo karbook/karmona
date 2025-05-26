@@ -100,5 +100,5 @@
     "vite-tsconfig-paths": "^5.1.4"
   },
   "packageManager": "bun@1.2.13",
-  "trustedDependencies": ["@biomejs/biome", "@sentry/cli", "@tailwindcss/oxide", "core-js", "esbuild", "unrs-resolver"]
+  "trustedDependencies": ["@biomejs/biome", "@sentry/cli", "@tailwindcss/oxide", "bun", "core-js", "esbuild", "unrs-resolver"]
 }
