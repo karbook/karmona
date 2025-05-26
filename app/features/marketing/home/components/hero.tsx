@@ -1,19 +1,21 @@
 import { useTranslation } from 'react-i18next';
-import React from 'react';
+import React, {useState} from 'react';
 import { Container } from '@/components/ui/container';
 import { Link } from 'react-router-dom'; //
 import { cn } from '@/utils/misc';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-
+import { Button } from '@/components/ui/button';
 // COMPONENTS
 import {
 	aboutSectionTabsData,
 	promotionsData,
+	additionalServicesData,
+	initialServicesData
 } from '@/routes/layout/components/hero-maps-items';
-
+import { MinusCircle, PlusCircle } from 'lucide-react';
 export default function Hero() {
 	//const { t } = useTranslation();
-
+	const [showMoreServices, setShowMoreServices] = useState(false)
 	const videoSrc = '/videos/karmona-minimalist-video.mov';
 	// const posterSrc = '/images/logo/karmona-square.svg';
 
@@ -164,7 +166,7 @@ export default function Hero() {
 			{/* Seccion 4 */}
 			<section
 				id="about-us"
-				className="bg-[#0A101D] py-30 sm:py-34 lg:py-42 w-screen text-white"
+				className="bg-[#0A101D] py-28 sm:py-34 lg:py-36 w-screen text-white"
 			>
 				<Container>
 					<div className="text-center mb-12 md:mb-20">
@@ -203,7 +205,7 @@ export default function Hero() {
 							</div>
 						</div>
 
-						{/* Columna Derecha: Tabs */}
+						{/* Columna Derecha */}
 						<div className="w-full">
 							<Tabs
 								defaultValue={aboutSectionTabsData[0]?.id}
@@ -215,20 +217,17 @@ export default function Hero() {
 											key={tab.id}
 											value={tab.id}
 											className={cn(
-												// Estilos base para TODOS los triggers (no activos)
 												'font-medium rounded-md transition-all',
 												'text-slate-300',
 												'hover:text-slate-100',
 												'py-2.5 px-3',
 												'text-[var(--text-body-base)]',
 
-												// Estilos para el trigger ACTIVO
 												'data-[state=active]:bg-white',
 												'data-[state=active]:text-slate-900',
 												'data-[state=active]:shadow-md',
 												'data-[state=active]:font-semibold',
 
-												// TAMAÑO Y SOMBRA DE TEXTO PARA ESTADO ACTIVO
 												'data-[state=active]:text-[length:var(--text-h5)]',
 												'data-[state=active]:[text-shadow:0_1px_1px_rgba(0,0,0,0.4)]'
 											)}
@@ -270,7 +269,6 @@ export default function Hero() {
 												))}
 											</div>
 										) : (
-											//Pestañas Generales
 											<div className="content-card-hover-effect group bg-slate-800/30 backdrop-blur-sm p-6 sm:p-8 rounded-3xl shadow-lg relative min-h-[250px] flex flex-col">
 												{tab.icon && (
 													<tab.icon className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 sm:w-12 text-white opacity-20 group-hover:opacity-50 group-hover:rotate-[15deg] transition-all duration-300" />
@@ -298,6 +296,83 @@ export default function Hero() {
 				id=""
 				className="bg-[#0A101D] py-30 sm:py-34 lg:py-42 w-screen text-white"
 			></section>
+
+			<section
+							id="servicios"
+							className="bg-[#0A101D] py-20 sm:py-28 lg:py-30 text-white"
+						>
+							<Container>
+								<div className="text-center mb-12 md:mb-20">
+									<h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+										Servicios
+									</h2>
+									<p className="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto">
+										En nuestro taller automotriz, nos enorgullece ofrecer una amplia gama de servicios diseñados para mantener, reparar y mejorar el rendimiento de su vehículo.
+									</p>
+								</div>
+								{/* Contenedor de las Tarjetas de Servicio */}
+								<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+									{initialServicesData.map((service) => (
+										<div
+											key={service.id}
+											className="content-card-hover-effect group bg-slate-800/40 backdrop-blur-sm p-6 rounded-2xl shadow-lg relative flex flex-col aspect-[4/3] sm:aspect-[3/2.2] shadow-white-soft border border-black"
+										>
+											{service.icon && (
+												<service.icon className="absolute top-5 right-5 w-10 h-10 text-sky-400 opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+											)}
+											<h3 className="text-xl sm:text-2xl font-semibold text-white mt-8 mb-3"> {/* mt-8 para dejar espacio al icono */}
+												{service.title}
+											</h3>
+											<p className="text-slate-300 text-sm sm:text-base leading-relaxed flex-grow">
+												{service.description}
+											</p>
+										</div>
+									))}
+
+									{/* Servicios Adicionales */}
+									{showMoreServices && additionalServicesData.map((service) => (
+										<div
+											key={service.id}
+											className="content-card-hover-effect group bg-slate-800/40 backdrop-blur-sm p-6 rounded-2xl shadow-lg relative flex flex-col aspect-[4/3] sm:aspect-[3/2.2] shadow-white-soft border border-black"
+										>
+											{service.icon && (
+												<service.icon className="absolute top-5 right-5 w-10 h-10 text-sky-400 opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
+											)}
+											<h3 className="text-xl sm:text-2xl font-semibold text-white mt-8 mb-3">
+												{service.title}
+											</h3>
+											<p className="text-slate-300 text-sm sm:text-base leading-relaxed flex-grow">
+												{service.description}
+											</p>
+										</div>
+									))}
+								</div>
+
+								{/* Botón Ver Más / Ver Menos */}
+								{additionalServicesData.length > 0 && (
+									<div className="mt-12 md:mt-16 text-center">
+										<Button
+											variant="outline"
+											size="lg"
+											className="border-sky-400 text-sky-400 hover:bg-sky-400 hover:text-slate-900 px-8 py-3 text-lg font-semibold transition-colors group"
+											onClick={() => setShowMoreServices(!showMoreServices)}
+										>
+											{showMoreServices ? (
+												<>
+													Ver menos
+													<MinusCircle className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+												</>
+											) : (
+												<>
+													Ver más
+													<PlusCircle className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+												</>
+											)}
+										</Button>
+									</div>
+								)}
+							</Container>
+						</section>
 		</>
 	);
 }

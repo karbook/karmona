@@ -13,6 +13,14 @@ import {
 	Eye,
 	Milestone,
 	HelpCircle,
+	Wrench,
+	Zap,
+	Thermometer,
+	HardDrive,
+	CarFront,
+	Replace,
+	Wind,
+	Users as UsersIcon
 } from 'lucide-react';
 
 // --NavMenu Items--
@@ -169,6 +177,73 @@ const aboutSectionTabsData = [
 		],
 	},
 ];
+// -- seccion 4 --
+interface ServiceItem {
+	id: string;
+	title: string;
+	description: string;
+	icon: React.ElementType;
+}
+
+const initialServicesData: ServiceItem[] = [
+	{
+		id: 'mantenimiento-general',
+		title: 'Mantenimiento General',
+		description: 'Cambio de aceite y filtro, inspección y cambio de fluidos (transmisión, frenos, dirección asistida, refrigerante), Rotación de Neumáticos, etc.',
+		icon: Wrench,
+	},
+	{
+		id: 'reparaciones-mecanicas',
+		title: 'Reparaciones Mecánicas',
+		description: 'Las reparaciones mecánicas comprenden un conjunto diverso de servicios que se enfocan en solucionar problemas y mantener el funcionamiento óptimo de los componentes mecánicos de un vehículo.',
+		icon: Zap, // Usando Zap para reparaciones eléctricas, puedes cambiarlo
+	},
+	{
+		id: 'sistema-electrico',
+		title: 'Sistema Eléctrico',
+		description: 'La reparación del sistema eléctrico de un vehículo implica diagnosticar, identificar y solucionar problemas relacionados con los componentes eléctricos.',
+		icon: Zap, // O considera `CircuitBoard` o similar
+	},
+	{
+		id: 'sistema-climatizacion',
+		title: 'Sistema de Climatización',
+		description: 'La reparación del sistema de climatización en un vehículo implica diagnosticar y solucionar problemas que puedan afectar la capacidad del sistema para enfriar o calentar el habitáculo.',
+		icon: Thermometer,
+	},
+	{
+		id: 'diagnostico-computadora',
+		title: 'Diagnóstico y Escaneo de Computadora',
+		description: 'El diagnóstico y escaneo de la computadora en un vehículo son procesos fundamentales para identificar y solucionar problemas relacionados con los sistemas electrónicos y computarizados del automóvil.',
+		icon: HardDrive,
+	},
+	{
+		id: 'cambio-partes',
+		title: 'Cambio de partes y accesorios',
+		description: 'El cambio de partes y accesorios abarca una amplia variedad de tareas que van desde la sustitución de componentes desgastados hasta la instalación de accesorios adicionales.',
+		icon: CarFront, // O `Settings2`
+	},
+];
+
+const additionalServicesData: ServiceItem[] = [
+	{
+		id: 'reparacion-neumaticos',
+		title: 'Reparación y reemplazo de Neumáticos',
+		description: 'La reparación y reemplazo de neumáticos en un taller automotriz son servicios esenciales para garantizar la seguridad, el rendimiento y la eficiencia del vehículo.',
+		icon: Replace,
+	},
+    {
+		id: 'inspeccion-gases',
+		title: 'Inspección y emisión de gases',
+		description: 'La inspección y emisión de gases es un servicio clave que se realiza para evaluar y garantizar que los vehículos cumplan con los estándares ambientales y de emisiones.',
+		icon: Wind,
+	},
+    {
+		id: 'servicios-especializados',
+		title: 'Servicios especializados',
+		description: 'Los servicios especializados abarcan una variedad de tareas más específicas y técnicas, dirigidas a aspectos particulares del vehículo.',
+		icon: UsersIcon, // Icono de ejemplo
+	},
+];
 
 // --- Exportaciones ---
 export {
@@ -177,5 +252,7 @@ export {
 	contactUsItems,
 	aboutSectionTabsData,
 	promotionsData,
+	additionalServicesData,
+	initialServicesData,
 	Laptop,
 };
