@@ -40,7 +40,7 @@
 	--secondary: oklch(0.59 0.1318 239.89);
 	--secondary-foreground: var(--white);
 
-	--accent: oklch(0.72 0.1129 233.14);
+	--accent: oklch(0.8 0.022907 248.1146);
 	--accent-foreground: var(--white);
 
 	--muted: oklch(0.83 0.04523146645439987 248.3683331941857);
@@ -101,7 +101,7 @@
 
 .dark {
 	/* CORE */
-	--background: oklch(0.23 0.0238 256.85);
+	--background: #030917;
 	--foreground: oklch(0.96 0.0033 247.86);
 
 	--muted: oklch(0.26 0.0288 256.85);
@@ -369,8 +369,6 @@
 	--animate-roll-reveal: roll-reveal 0.4s cubic-bezier(0.22, 1.28, 0.54, 0.99);
 	--animate-slide-left: slide-left 0.3s ease-out;
 	--animate-slide-top: slide-top 0.3s ease-out;
- 	--animate-float: float 3s ease-in-out infinite;
-
 
 	@keyframes roll-reveal {
 		from {
@@ -407,137 +405,6 @@
 			transform: rotate(360deg);
 		}
 	}
- @keyframes float {
-        0%, 100% {
-            transform: translateY(0px);
-        }
-        50% {
-            transform: translateY(-15px);
-        }
-    }
-}
-
- /* Nuevas clases de efectos */
-
-/* Estilos para la animación Flip Card */
-.flip-card {
-  background-color: transparent;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.7s;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 0.75rem;
-  overflow: hidden;
-}
-.flip-card-front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 0.75rem;
-  overflow: hidden;}
-
-.flip-card-back {
-  color: white;
-  transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  padding: 0;
-}
-
-.flip-card-back-content-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  text-align: center;
-  z-index: 1;
-}
-
-.flip-card-back-content-wrapper::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 0.75rem;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.85));
-  z-index: -1;
-}
-
- //Estilos para la animacion del Circulo verde
-.content-card-hover-effect {
-  position: relative;
-  overflow: hidden;
-}
-
-.content-card-hover-effect::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 0;
-  height: 0;
-  background-image: radial-gradient(circle, rgba(74, 222, 128, 0.3) 0%, rgba(74, 222, 128, 0) 70%); /* Verde (#4ade80) translúcido a transparente */
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: width 0.4s ease-out, height 0.4s ease-out, transform 0.4s ease-out, opacity 0.4s ease-out;
-  opacity: 0;
-  z-index: 0;
-}
-
-.content-card-hover-effect:hover::before {
-  width: 400px;
-  height: 400px;
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-}
-
-//Aspectos predefinidos
-@layer utilities {
-    .shadow-white-soft {
-        box-shadow: 0px 0px 15px -3px rgba(255, 255, 255, 0.25);
-    }
-    .dark .shadow-white-soft {
-        box-shadow: 0px 0px 15px -3px rgba(255, 255, 255, 0.15);
-    }
-    .animate-float {
-        animation: float 3s ease-in-out infinite;
-    }
-    .animate-bounce-slow {
-        animation-name: bounce;
-        animation-duration: 2s;
-        animation-iteration-count: infinite;
-    }
 }
 
 @utility container {
