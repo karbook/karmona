@@ -1,4 +1,4 @@
-app = "tedi-stack"
+app = "Karmona"
 primary_region = "gdl"
 kill_signal = "SIGINT"
 kill_timeout = 5
