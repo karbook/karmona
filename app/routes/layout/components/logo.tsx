@@ -19,8 +19,13 @@ type LogoProps = {
 export const logoVariants = cva('', {
 	variants: {
 		variant: {
+<<<<<<< HEAD
 			long: 'w-20 h-auto',
             icon: 'w-5 h-5',
+=======
+			long: 'w-85 h-auto',
+			icon: 'size-7',
+>>>>>>> 6c098227fa35a5094a05777aab029ab2355d8c87
 		},
 	},
 })
@@ -32,8 +37,13 @@ export default function Logo({ redirect, className, variant, alt, colorScheme }:
 			<img
 				loading="lazy"
 				className={cn(logoVariants({ variant }), className)}
+<<<<<<< HEAD
 				alt={alt ? alt : 'Karmona Logo'}
 				src={`/images/logo/karmona-${variant}-${colorScheme === 'dark' ? 'dark' : preferredColorScheme === 'dark' ? 'dark' : 'light'}.png`}
+=======
+				alt={alt ? alt : 'Karmona | Logo'}
+				src={`/images/logo/karmona-long-white.svg`}
+>>>>>>> 6c098227fa35a5094a05777aab029ab2355d8c87
 			/>
 		</Link>
 	)

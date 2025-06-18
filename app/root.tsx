@@ -1,7 +1,10 @@
 // CORE
 import { useEffect } from 'react'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { data, Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router'
 import type { Route } from '@/rr/+types/root'
+import { PostHogProvider} from 'posthog-js/react'
 
 // I18N
 import { useTranslation } from 'react-i18next'
@@ -33,16 +36,18 @@ import { EpicProgress } from './components/progress-bar'
 import appleTouchIconAssetUrl from '/favicons/apple-touch-icon.png'
 import faviconAssetUrl from '/favicons/favicon.png'
 
+
 export const links: Route.LinksFunction = () => {
 	return [
 		// Preload svg sprite as a resource to avoid render blocking
 		{ rel: 'preload', href: iconsHref, as: 'image' },
 		{
 			rel: 'icon',
-			href: '/favicon.ico',
+			type: 'image/svg',
+			href: 'images/logo/karmona-square-simple.svg',
 			sizes: '48x48',
 		},
-		{ rel: 'icon', type: 'image/svg+xml', href: faviconAssetUrl },
+		{ rel: 'icon', type: 'image/png', href: '/favicons/KarmonaIcon.png' },
 		{ rel: 'apple-touch-icon', href: appleTouchIconAssetUrl },
 		{
 			rel: 'manifest',
