@@ -1,4 +1,3 @@
-// CORE
 import { useFetcher } from 'react-router'
 
 // UTILS
@@ -42,37 +41,45 @@ export function ColorSchemeSwitch() {
 			value: 'light',
 			name: t('Light'),
 			icon: 'sun',
+			bgColor: 'bg-white text-black', 
+			hoverColor: 'hover:bg-gray-200',
+			iconColor: 'text-black', 
 		},
 		{
 			value: 'dark',
 			name: t('Dark'),
 			icon: 'moon',
-		},
-		{
-			value: 'system',
-			name: t('System'),
-			icon: 'laptop',
+			bgColor: 'bg-black text-black', 
+			hoverColor: 'hover:bg-gray-300 text black', 
+			iconColor: 'text-white', 
 		},
 	]
 
+
 	const mode = optimisticMode ?? colorScheme
+
+	const currentOption = COLOR_SCHEME_OPTIONS.find(option => option.value === mode)
+	const otherOption = COLOR_SCHEME_OPTIONS.find(option => option.value !== mode)
 
 	return (
 		<fetcher.Form method="POST" action="/r/color-scheme">
-			<div className="flex items-center gap-2">
-				{COLOR_SCHEME_OPTIONS.map((option) => (
-					<Button
-						key={option.value}
-						name={fields.colorScheme.name}
-						value={option.value}
-						variant={mode === option.value ? 'secondary' : 'ghost'}
-						type="submit"
-						size="icon"
-					>
-						<Icon name={option.icon as IconName} />
-					</Button>
-				))}
-			</div>
+			<Button
+				name={fields.colorScheme.name}
+				value={otherOption?.value}
+				variant="ghost"
+				type="submit"
+				size="icon"
+				aria-label={`Alternar tema a ${otherOption?.name}`}
+				title={`Alternar tema a ${otherOption?.name}`}
+				className={`${currentOption?.bgColor} ${currentOption?.hoverColor} p-3 rounded-full transition-colors duration-200`} 
+			>
+				<Icon
+					name={currentOption?.icon as IconName}
+					className={`${currentOption?.iconColor
+						} ${mode === 'dark' ? 'hover:text-black' : 'hover:text-black'}`}
+				/>
+			</Button>
 		</fetcher.Form>
+
 	)
 }

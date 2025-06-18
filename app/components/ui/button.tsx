@@ -49,6 +49,11 @@ const buttonVariants = cva(
 				dashed: cn(
 					'border-2 border-dashed bg-button-outline border-button-outline-border hover:bg-accent hover:text-accent-foreground'
 				),
+				 black: cn(
+                    'bg-black text-white text-2xl hover:bg-neutral-800',
+                    'dark:bg-white dark:text-black dark:hover:bg-neutral-300 dark:hover:text-black',
+                    'font-bold rounded-md'
+                ),
 			},
 			size: {
 				default: 'h-button p-button',
