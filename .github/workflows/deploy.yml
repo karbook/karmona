@@ -3,13 +3,11 @@ on:
   push:
     branches:
       - main
-      - dev
   pull_request:
     branches:
       - main
-      - dev
 env:
-  OP_ENV: development
+  APP_NAME: Karmona
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -27,16 +25,8 @@ jobs:
     if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}
 
     steps:
-      - name: Set OP_ENV
-        run: |
-          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
-            echo "OP_ENV=production" >> $GITHUB_ENV
-          else
-            echo "OP_ENV=development" >> $GITHUB_ENV
-          fi
-
-      - name: Print OP_ENV
-        run: echo $OP_ENV
+      - name: Print APP_NAME
+        run: echo $APP_NAME
 
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v4
@@ -69,30 +59,17 @@ jobs:
           # Export loaded secrets as environment variables
           export-env: true
         env:
-          FLY_API_TOKEN: op://${{ env.OP_ENV }}/FLY/FLY_API_TOKEN
-          SENTRY_AUTH_TOKEN: op://${{ env.OP_ENV }}/SENTRY/SENTRY_AUTH_TOKEN
+          FLY_API_TOKEN: op://Karmona/FLY/FLY_API_TOKEN
+          SENTRY_AUTH_TOKEN: op://Karmona/SENTRY/SENTRY_AUTH_TOKEN
 
       - name: Install 1Password CLI
         uses: 1password/install-cli-action@v1
-
-      - name: 🚀 Deploy Staging 🚧
-        if: ${{ github.ref == 'refs/heads/dev' }}
-        run: |
-          flyctl deploy --remote-only \
-          --build-arg COMMIT_SHA=${{ github.sha }} \
-          --build-arg OP_ENV=${{ env.OP_ENV }} \
-          --build-arg OP_SERVICE_ACCOUNT_TOKEN=${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }} \
-          --build-secret SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }} \
-          --app ${{ steps.app_name.outputs.value }}-staging
-        env:
-          FLY_API_TOKEN: ${{ env.FLY_API_TOKEN }}
 
       - name: 🚀 Deploy Production 🚀
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
           flyctl deploy --remote-only \
           --build-arg COMMIT_SHA=${{ github.sha }} \
-          --build-arg OP_ENV=${{ env.OP_ENV }} \
           --build-arg OP_SERVICE_ACCOUNT_TOKEN=${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }} \
           --build-secret SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}
         env:
