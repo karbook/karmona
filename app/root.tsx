@@ -157,7 +157,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
 	// ANALYTICS
 	useEffect(() => {
 		if (window !== undefined) {
-			initPosthog()
+			//initPosthog()
 		}
 	}, [])
 	usePosthogPageView()

@@ -49,9 +49,9 @@ export function ColorSchemeSwitch() {
 			value: 'dark',
 			name: t('Dark'),
 			icon: 'moon',
-			bgColor: 'bg-black text-black', 
-			hoverColor: 'hover:bg-gray-300 text black', 
-			iconColor: 'text-white', 
+			bgColor: 'white',
+			hoverColor: 'hover:bg-gray-700 dark:hover:text-black',
+			iconColor: 'white dark:hover:black',
 		},
 	]
 

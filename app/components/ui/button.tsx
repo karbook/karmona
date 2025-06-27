@@ -50,11 +50,20 @@ const buttonVariants = cva(
 				dashed: cn(
 					'border-2 border-dashed bg-button-outline border-button-outline-border hover:bg-accent hover:text-accent-foreground'
 				),
-				 black: cn(
-                    'bg-black text-white text-2xl hover:bg-neutral-800',
-                    'dark:bg-white dark:text-black dark:hover:bg-neutral-300 dark:hover:text-black',
-                    'font-bold rounded-md'
-                ),
+				black: cn(
+					'bg-black text-white text-2xl hover:bg-neutral-800',
+					'dark:bg-white dark:text-black dark:hover:bg-neutral-300 dark:hover:text-black',
+					'font-bold rounded-md',
+					'py-6 px-6'
+				),
+				date: cn(
+					'bg-button-date border border-gray-700 justify-start text-left overflow-auto text-3xl font-semibold',
+					'data-[empty=true]:text-gray-800 dark:data-[empty=true]:text-[#98a6b5]',
+					'text-button-date-foreground'
+				),
+				schedule: cn(
+					'bg-black text-white dark:bg-white dark:text-black w-full h-full rounded-full hover:bg-gray-300 ',
+				),
 			},
 			size: {
 				default: 'h-button p-button',
