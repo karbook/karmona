@@ -16,7 +16,7 @@ export const promotions: Promotions[] = [
 
 		location: "📍 Av 2Pte 3106, Col. Amor, Puebla, Pue.",
 		validity: "🗓️ Válido del 10 de mayo al 10 de junio",
-		image: "/images/promotions/promotion20.webp",
+		image: "/images/promotions/mother-day-promotion.webp",
 	},
 	{
 		title: "🎉 30 años juntos",
@@ -24,14 +24,14 @@ export const promotions: Promotions[] = [
 			"¡En Karmona estamos de fiesta gracias a ti y tu confianza por más de 30 años! 🙌 🎉Por eso queremos agradecerte con este increíble descuento. Festejemos juntos nuestros 30 años de servicio y confiabilidad con un 15% de descuento en servicio de mantenimiento de motor o frenos ” 🤯Trae a consentir tu auto con nosotros, adquiere tu servicio de mantenimiento y/o a servicio de frenos y obtén un 15% de descuento 🥳🍾 📍 Avenida 2 poniente 3106 Col. Amor 72140, Puebla, Pue.",
 		details: ["Mantenimiento de motor o frenos con 15% de descuento"],
 		location: "📍 Av. 2 Poniente 3106, Col. Amor, Puebla, Pue.",
-		image: "/images/promotions/promotion30.webp",
+		image: "/images/promotions/promotion-engine-service.webp",
 	},
 	{
 		title: "🛢️ Aceite Premium Motul",
 		description:
 			'En Karmona estamos de fiesta y celebramos juntos cuidando el alma de tu vehículo y más en este mes tan especial de las Madres! "Ven y celebra 30 años de seguridad y confiabilidad para tu auto obten 10% de descuento en aceite Premium Motul sintético” 🤯 🙌🎉 Regala seguridad a quien más te ama este 10 de mayo 🙌 🎉 Karmona, tu aliado de confianza.📍 Av 2Pte 3106 Col. Amor 72140, Puebla, Pue.',
 		location: "📍 Av 2Pte 3106, Col. Amor, Puebla, Pue.",
-		image: "/images/promotions/promotion15.webp",
+		image: "/images/promotions/promotion-discount-oil.webp",
 	},
 ]
 
@@ -221,22 +221,22 @@ export type GridImage = {
 }
 
 export const gridImages: GridImage[] = [
-	{ id: 'img-01', src: '/images/grid/audi.jpeg', alt: 'Auto deportivo rojo', column: 1, row: 1 },
-	{ id: 'img-02', src: '/images/grid/bmw.jpeg', alt: 'Mecánico revisando motor', column: 2, row: 1 },
-	{ id: 'img-03', src: '/images/grid/bocho.jpeg', alt: 'Interior de taller', column: 3, row: 1 },
-	{ id: 'img-04', src: '/images/grid/dodge.jpeg', alt: 'Interior de taller', column: 4, row: 1 },
-	{ id: 'img-05', src: '/images/grid/explorer.jpeg', alt: 'Interior de taller', column: 1, row: 2 },
-	{ id: 'img-06', src: '/images/grid/ford.jpeg', alt: 'Interior de taller', column: 2, row: 2 },
-	{ id: 'img-07', src: '/images/grid/gmc.jpeg', alt: 'Interior de taller', column: 3, row: 2 },
-	{ id: 'img-08', src: '/images/grid/mazda.jpeg', alt: 'Interior de taller', column: 4, row: 2 },
-	{ id: 'img-09', src: '/images/grid/mercedez-glc.jpeg', alt: 'Interior de taller', column: 1, row: 3 },
-	{ id: 'img-10', src: '/images/grid/mercedez-volante.jpeg', alt: 'Interior de taller', column: 2, row: 3 },
-	{ id: 'img-11', src: '/images/grid/mercedez.jpeg', alt: 'Interior de taller', column: 3, row: 3 },
-	{ id: 'img-12', src: '/images/grid/mini.jpeg', alt: 'Interior de taller', column: 4, row: 3 },
-	{ id: 'img-13', src: '/images/grid/mustang.jpeg', alt: 'Interior de taller', column: 1, row: 4 },
-	{ id: 'img-14', src: '/images/grid/nissan.jpeg', alt: 'Interior de taller', column: 2, row: 4 },
-	{ id: 'img-15', src: '/images/grid/roadster.jpeg', alt: 'Interior de taller', column: 3, row: 4 },
-	{ id: 'img-16', src: '/images/grid/toyota.jpeg', alt: 'Interior de taller', column: 4, row: 4 }
+	{ id: 'img-01', src: '/images/grid-cars/audi.jpeg', alt: 'Auto deportivo rojo', column: 1, row: 1 },
+	{ id: 'img-02', src: '/images/grid-cars/bmw.jpeg', alt: 'Mecánico revisando motor', column: 2, row: 1 },
+	{ id: 'img-03', src: '/images/grid-cars/bocho.jpeg', alt: 'Interior de taller', column: 3, row: 1 },
+	{ id: 'img-04', src: '/images/grid-cars/dodge.jpeg', alt: 'Interior de taller', column: 4, row: 1 },
+	{ id: 'img-05', src: '/images/grid-cars/explorer.jpeg', alt: 'Interior de taller', column: 1, row: 2 },
+	{ id: 'img-06', src: '/images/grid-cars/ford.jpeg', alt: 'Interior de taller', column: 2, row: 2 },
+	{ id: 'img-07', src: '/images/grid-cars/gmc.jpeg', alt: 'Interior de taller', column: 3, row: 2 },
+	{ id: 'img-08', src: '/images/grid-cars/mazda.jpeg', alt: 'Interior de taller', column: 4, row: 2 },
+	{ id: 'img-09', src: '/images/grid-cars/mercedez-glc.jpeg', alt: 'Interior de taller', column: 1, row: 3 },
+	{ id: 'img-10', src: '/images/grid-cars/mercedez-volante.jpeg', alt: 'Interior de taller', column: 2, row: 3 },
+	{ id: 'img-11', src: '/images/grid-cars/mercedez.jpeg', alt: 'Interior de taller', column: 3, row: 3 },
+	{ id: 'img-12', src: '/images/grid-cars/mini.jpeg', alt: 'Interior de taller', column: 4, row: 3 },
+	{ id: 'img-13', src: '/images/grid-cars/mustang.jpeg', alt: 'Interior de taller', column: 1, row: 4 },
+	{ id: 'img-14', src: '/images/grid-cars/nissan.jpeg', alt: 'Interior de taller', column: 2, row: 4 },
+	{ id: 'img-15', src: '/images/grid-cars/roadster.jpeg', alt: 'Interior de taller', column: 3, row: 4 },
+	{ id: 'img-16', src: '/images/grid-cars/toyota.jpeg', alt: 'Interior de taller', column: 4, row: 4 }
 ]
 export type MediaItem = {
 	id: string;
@@ -258,41 +258,41 @@ export const mediaItems: MediaItem[] = [
 	{
 		id: 'video-mustang-01',
 		type: 'video',
-		content: '/videos/ford-mustang5-WRZIEZKP.mp4',
+		content: '/image-video-projects-karmona/ford-mustang5-WRZIEZKP.mp4',
 		alt: 'Mustang restaurado frontal',
 		project: 'mustang'
 	},
 	{
 		id: 'video-mustang-02',
 		type: 'video',
-		content: '/videos/ford-mustang4-UOE22YOF.mp4',
+		content: '/images/karmona-projects-content/ford-mustang4-UOE22YOF.mp4',
 		alt: 'Motor Mustang detallado',
 		project: 'mustang'
 	},
 	{
 		id: 'image-mustang-03',
 		type: 'image',
-		content: '/videos/karmona-mustang-IC4RMYXQ.webp',
+		content: '/images/karmona-projects-content/karmona-mustang-IC4RMYXQ.webp',
 		project: 'mustang'
 	},
 	{
 		id: 'video-mustang-04',
 		type: 'video',
-		content: '/videos/ford-mustang-AQKUH433.mp4',
+		content: '/images/karmona-projects-content/ford-mustang-AQKUH433.mp4',
 		alt: 'Motor Mustang detallado',
 		project: 'mustang'
 	},
 	{
 		id: 'video-mustang-05',
 		type: 'video',
-		content: '/videos/ford-mustang6-3ZXOAML7.mp4',
+		content: '/images/karmona-projects-content/ford-mustang6-3ZXOAML7.mp4',
 		alt: 'Motor Mustang detallado',
 		project: 'mustang'
 	},
 	{
 		id: 'video-mustang-06',
 		type: 'video',
-		content: '/videos/ford-mustang2-4DNM75MB.mp4',
+		content: '/images/karmona-projects-content/ford-mustang2-4DNM75MB.mp4',
 		alt: 'Motor Mustang detallado',
 		project: 'mustang'
 	},
@@ -307,7 +307,7 @@ export const mediaItems: MediaItem[] = [
 	{
 		id: 'video-vw-01',
 		type: 'video',
-		content: '/videos/volswagen-QHBH3UND.mp4',
+		content: '/images/karmona-projects-content/volkswagen-QHBH3UND.mp4',
 		alt: 'Proceso de restauración VW',
 		project: 'vw'
 	}
@@ -669,3 +669,4 @@ export const socialPlatforms: SocialPlatform[] = [
     extra: "tiktok.com/@karmona.mx",
   },
 ];
+

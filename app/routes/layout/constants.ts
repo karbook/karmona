@@ -18,14 +18,14 @@ export const menuItems: readonly MenuItem[] = [
     label: 'Us',
     icon: 'users',
     dropdownItems: [
-      { path: '#club', label: 'Karmona', icon: 'karmona-square-simple-dark' },
-      { path: '#aboutus', label: 'About Us', icon: 'users' },
-      { path: '#promotions', label: 'Promotions', icon: 'megaphone' },
+      { path: '/#club', label: 'Karmona', icon: 'karmona-square-simple-dark' },
+      { path: '/#aboutus', label: 'About Us', icon: 'users' },
+      { path: '/#promotions', label: 'Promotions', icon: 'megaphone' },
     ],
   },
   {
     type: 'link',
-    path: '#services',
+    path: '/#services',
     label: 'Services',
   },
   {
@@ -33,14 +33,14 @@ export const menuItems: readonly MenuItem[] = [
     label: 'Our Work',
     icon: 'cake',
     dropdownItems: [
-      { path: '#specialist', label: 'We are specialists', icon: 'settings' },
-      { path: '#projects', label: 'Our projects', icon: 'wrench' },
-      { path: '#cars', label: 'Cars', icon: 'car' },
+      { path: '/#specialist', label: 'We are specialists', icon: 'settings' },
+      { path: '/#projects', label: 'Our projects', icon: 'wrench' },
+      { path: '/#cars', label: 'Cars', icon: 'car' },
     ],
   },
   {
     type: 'link',
-    path: '#FAQ',
+    path: '/#FAQ',
     label: 'FAQ',
   },
   {
@@ -48,8 +48,8 @@ export const menuItems: readonly MenuItem[] = [
     label: 'Contact',
     icon: 'phone',
     dropdownItems: [
-      { path: '#contact', label: 'Contact Us', icon: 'mail' },
-      { path: '#instagram', label: 'Our Instagram', icon: 'instagram' },
+      { path: '/#contact', label: 'Contact Us', icon: 'mail' },
+      { path: '/#instagram', label: 'Our Instagram', icon: 'instagram' },
     ],
   },
 ] as const

@@ -29,7 +29,7 @@ export function Header() {
           <MobileNavigation />
         </div>
         <div className="flex-grow flex justify-center">
-          <Logo className="h-10 w-auto" variant="long" />
+          <Logo className="h-7 w-auto" variant="long" />
         </div>
         <div className="flex-shrink-0 flex items-center gap-4" />
       </div>

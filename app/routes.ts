@@ -15,6 +15,8 @@ export default [
 		route('healthcheck', 'routes/resource/healthcheck.ts'),
 		route('locales', 'routes/resource/language.ts'),
 		route('color-scheme', 'routes/resource/color-scheme.tsx'),
+		route('send-email', 'routes/resource/schedule-action.ts'),
+
 	]),
 
 	// PUBLIC

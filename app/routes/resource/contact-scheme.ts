@@ -14,7 +14,10 @@ export const ScheduleFormSchema = z.object({
   model: z.string().min(1, 'Modelo obligatorio'),
   year: z.coerce.number().min(1900, 'Año inválido'),
   description: z.string().min(10, 'Describe el problema'),
-  termsAccepted: z.literal(true, {
-    errorMap: () => ({ message: 'Debes aceptar los términos y condiciones' }),
-  }),
+  termsAccepted: z
+    .boolean()
+    .refine(val => val === true, {
+      message: 'Debes aceptar los términos y condiciones',
+    }),
+
 })

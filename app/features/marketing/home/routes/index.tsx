@@ -11,6 +11,9 @@ import Services from '../components/services'
 import ShowcaseGrid from '../components/especialits'
 import Projects from '../components/projects'
 import { FAQ } from '../components/frequently-asked-questions'
+import AboutUs from '../components/about-us'
+import Promotions from '../components/promotions'
+import Cars from '../components/cars'
 export async function loader({ request }: Route.LoaderArgs) {
 	const t = await remixI18Next.getFixedT(request)
 	const title = t("Karmona")
@@ -21,7 +24,10 @@ export default function Index() {
 	return (
 		<>
 			<Hero />
+			<Promotions />
+			<AboutUs />
 			<Services />
+			<Cars/>
 			<ShowcaseGrid />
 			<Projects />
 			<FAQ />

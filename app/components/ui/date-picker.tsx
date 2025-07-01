@@ -13,8 +13,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Label } from "@/components/ui/label";
-import {Icon } from "@/components/ui/icon";
 interface DatePickerDemoProps {
   value?: Date;
   onChange: (date?: Date) => void;
@@ -39,7 +37,7 @@ export function DatePickerDemo({
 
   const handleDateChange = (date?: Date) => {
     onChange(date);
-    if (date !== undefined) { 
+    if (date !== undefined) {
       setIsUserSelected(true);
     } else {
       setIsUserSelected(false);
@@ -51,11 +49,6 @@ export function DatePickerDemo({
 
   return (
     <div className="flex flex-col gap-2 space-y-2">
-      {label && (
-        <Label className="text-3xl font-semibold leading-none"> 
-          {label} <Icon name="calendar" size="2xl" />
-        </Label>
-      )}
       <Popover
         open={isOpen}
         onOpenChange={setIsOpen}
@@ -65,8 +58,12 @@ export function DatePickerDemo({
             variant="date"
             data-empty={isEmptyState}
             className={cn(
-              "w-[400px] h-full justify-start text-left font-semibold",
+              "w-full justify-start text-left font-semibold",
               error && "border-destructive text-destructive",
+              "text-base sm:text-lg md:text-xl lg:text-3xl",
+              "data-[empty=true]:text-gray-800 dark:data-[empty=true]:text-[#98a6b5]",
+              "text-button-date-foreground",
+              "h-17 sm:h-18 md:h-16 lg:h-16"
             )}
           >
             <CalendarIcon className="mr-2 h-4 w-4" />
@@ -78,7 +75,7 @@ export function DatePickerDemo({
             mode="single"
             selected={value}
             className="border-none shadow-none bg-background"
-            onSelect={handleDateChange} 
+            onSelect={handleDateChange}
           />
         </PopoverContent>
       </Popover>

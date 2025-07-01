@@ -57,13 +57,12 @@ export default function PromoRulesSection() {
                 </p>
                 <div className="flex flex-col md:flex-row items-center justify-center gap-28 mt-8">
                     <img
-                        src="/images/promotions/instagram-qrcode.jpg"
+                        src="/images/qr-codes/instagram-qrcode.jpg"
                         alt="QR Instagram"
                         className="w-84 h-84 rounded-xl shadow-lg"
                     />
-
                     <img
-                        src="/images/promotions/maps-qrcode.png"
+                        src="/images/qr-codes/maps-qrcode.png"
                         alt="QR Google Maps"
                         className="w-84 h-84 rounded-xl shadow-lg"
                     />

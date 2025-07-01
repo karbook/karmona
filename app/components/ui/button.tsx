@@ -57,13 +57,21 @@ const buttonVariants = cva(
 					'py-6 px-6'
 				),
 				date: cn(
-					'bg-button-date border border-gray-700 justify-start text-left overflow-auto text-3xl font-semibold',
+					'bg-button-date border border-gray-700 justify-start text-left overflow-auto',
+					'text-base sm:text-lg md:text-xl lg:text-3xl font-semibold',
 					'data-[empty=true]:text-gray-800 dark:data-[empty=true]:text-[#98a6b5]',
 					'text-button-date-foreground'
 				),
 				schedule: cn(
-					'bg-black text-white dark:bg-white dark:text-black w-full h-full rounded-full hover:bg-gray-300 ',
+					'bg-black text-white dark:bg-white dark:text-black w-full h-full rounded-full hover:bg-gray-300',
 				),
+				whatsapp: cn(
+					'bg-[#25D366] text-white hover:bg-[#1DA851]',
+					'rounded-full shadow-xl',
+					'transition-transform duration-300 ease-in-out hover:scale-110',
+					'flex items-center justify-center'
+				),
+
 			},
 			size: {
 				default: 'h-button p-button',
@@ -78,6 +86,7 @@ const buttonVariants = cva(
 				input: 'h-input p-button-sm',
 				full: 'w-full h-full px-4 py-2',
 				dropdown: 'h-button-lg p-button-lg justify-start w-full',
+				whatsapp: 'w-[100px] h-[100px]',
 			},
 		},
 		defaultVariants: {

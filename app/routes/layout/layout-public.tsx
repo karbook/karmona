@@ -7,18 +7,21 @@ import { remixI18Next } from '@/localization/i18n.server'
 
 // COMPONENTS
 import { Layout } from './components/public-layout'
-
+import WhatsAppButton from '@/components/ui/whatsapp-button'
 export async function loader({ request }: Route.LoaderArgs) {
 	const t = await remixI18Next.getFixedT(request)
-	const title = t('TEDI Stack | Get started with cutting edge technologies')
+	const title = t('Karmona')
 	return { meta: { title } }
 }
 
 export default function PublicLayout() {
 	return (
+		<>
 		<Layout>
 			<Outlet />
 		</Layout>
+		<WhatsAppButton />
+		</>
 	)
 }
 
