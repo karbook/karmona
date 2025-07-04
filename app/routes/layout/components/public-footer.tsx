@@ -1,7 +1,8 @@
 import { footerLinks } from "../constants";
 import { Link } from "react-router"; 
-
+import { useTranslation } from "react-i18next";
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <>
       <footer className="w-full bg-white dark:bg-[#030917] min-h-[300px] sm:min-h-[400px] border-t border-b border-gray-300 dark:border-gray-700 py-6 sm:py-10 text-white flex items-center">
@@ -28,7 +29,7 @@ export default function Footer() {
                   className="group text-sm transition-colors duration-200 hover:underline"
                 >
                   <span className="block text-base sm:text-lg md:text-xl text-center font-semibold mt-2 sm:mt-5 tracking-wide text-gray-700 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 hover:underline hover:decoration-blue-600 dark:hover:decoration-blue-400">
-                    {label}
+                    {t(label)}
                   </span>
                 </Link>
               ) : (
@@ -38,7 +39,7 @@ export default function Footer() {
                   className="group text-sm transition-colors duration-200 hover:underline"
                 >
                   <span className="block text-base sm:text-lg md:text-xl text-center font-semibold mt-2 sm:mt-5 tracking-wide text-gray-700 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 hover:underline hover:decoration-blue-600 dark:hover:decoration-blue-400">
-                    {label}
+                    {t(label)}
                   </span>
                 </a>
               )
@@ -53,16 +54,16 @@ export default function Footer() {
             to="/tos"
             className="font-semibold text-sm sm:text-base hover:underline cursor-pointer"
           >
-            Términos y Condiciones
+            {t("Terms and Conditions")}
           </Link>
 
-          <p className="text-sm sm:text-base">© 2025 Karmona Automotriz</p>
+          <p className="text-sm sm:text-base">{t("© 2025 Karmona Automotriz")}</p>
 
           <Link
             to="/privacy"
             className="hover:underline font-semibold text-sm sm:text-base cursor-pointer"
           >
-            Política de Privacidad
+            {t("Privacy Policy")}
           </Link>
         </div>
       </section>

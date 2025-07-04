@@ -33,7 +33,7 @@ export async function action({ request }: { request: Request }) {
         return new Response(
             JSON.stringify({
                 success: true,
-                message: 'Cita agendada con éxito. Recibirás una confirmación por email y WhatsApp.',
+                message: 'Appointment successfully scheduled. You will receive confirmation via email and WhatsApp.',
             }),
             {
                 status: 200,
@@ -53,7 +53,7 @@ export async function action({ request }: { request: Request }) {
             return new Response(
                 JSON.stringify({
                     success: false,
-                    message: 'Errores de validación en el formulario de la cita.',
+                    message: 'Validation errors in the appointment form.',
                     errors: fieldErrors,
                 }),
                 {
@@ -65,7 +65,7 @@ export async function action({ request }: { request: Request }) {
 
         const errorMessage = error instanceof Error
             ? `Error: ${error.message}`
-            : 'Ocurrió un error interno del servidor al agendar la cita.';
+            : 'An internal server error occurred while scheduling the appointment.';
 
         return new Response(
             JSON.stringify({ success: false, message: errorMessage }),

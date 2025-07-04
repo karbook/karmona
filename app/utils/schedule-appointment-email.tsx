@@ -36,7 +36,7 @@ export function ScheduleAppointmentEmail({
       month: 'long',
       day: 'numeric',
     })
-    : 'No especificada';
+    : 'Not specified';
 
   const getCleanHour = (rawHour: string) => rawHour.split(":")[0] ?? rawHour;
   const formattedTime = `${getCleanHour(hour).padStart(2, '0')}:${minutes.padStart(2, '0')}`;
@@ -56,7 +56,7 @@ export function ScheduleAppointmentEmail({
 
           <div className="bg-[#020814] py-4 px-4 text-center shadow-sm">
             <Heading className="text-3xl font-bold text-white">
-              {t('Hello')}, {fullName}
+              {t('Hello')}
             </Heading>
             <Text className="text-xl text-gray-300 mt-2">
               {t('Your appointment request has been received')}
@@ -100,7 +100,7 @@ export function ScheduleAppointmentEmail({
               <strong>{t('Car Year')}:</strong> {year || 'N/A'}
             </Text>
             <Text className="mb-3 text-base text-gray-300">
-              <strong>{t('Problem Description')}:</strong> {description || 'No se proporcionó descripción.'}
+              <strong>{t('Problem Description')}:</strong> {description || 'Not provided.'}
             </Text>
 
             <Hr className="border-gray-700 my-4" />

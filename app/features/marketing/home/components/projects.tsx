@@ -10,29 +10,39 @@ import {
     CarouselContent,
     CarouselItem
 } from '@/components/ui/carousel';
-
+import { useTranslation } from 'react-i18next';
 const tabs = [
     { label: 'Mustang', value: 'mustang' },
     { label: 'VW', value: 'vw' },
 ];
-
+import {motion} from 'framer-motion';
+import {cardVariants} from '@/components/ui/card-animation';
 export default function Projects() {
+    const { t } = useTranslation();
+
     return (
-        <section id='projects' className="w-full bg-white mt-10 sm:mt-20 items-center dark:bg-[#030917] py-10 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-32 text-gray-900 dark:text-white scroll-mt-20 sm:scroll-mt-25">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-6 sm:mb-8">Nuestros Proyectos</h2>
+        <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: false, amount: 0.2 }}
+            >
+        <motion.section
+            id='projects'
+            className="w-full bg-white mt-10 sm:mt-20 items-center dark:bg-[#030917] py-10 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-32 text-gray-900 dark:text-white scroll-mt-20 sm:scroll-mt-25"
+            variants={cardVariants}
+        >
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-6 sm:mb-8">{t('Our Projects')}</h2>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-7xl font-medium mx-auto text-center mb-6 text-gray-700 dark:text-gray-300 px-2 sm:px-0">
-                En Karmona, la dedicación a la excelencia se manifiesta en cada proyecto que emprendemos.
-                Cada vehículo que llega a nuestras instalaciones es tratado con la máxima atención, respaldado
-                por la pasión de nuestro equipo de expertos y la firme convicción de ofrecer servicios de calidad sobresaliente.
+                {t('At Karmona, our dedication to excellence is evident in every project we undertake. Each vehicle that arrives at our facilities is treated with the utmost care, backed by the passion of our expert team and the firm belief in delivering outstanding quality services.')}
             </p>
 
             <Tabs defaultValue="mustang" className="max-w-[1400px] mx-auto w-full">
                 <TabsList
                     className="
-        p-0 bg-transparent flex flex-wrap justify-center // Added flex-wrap, kept justify-center
-        mb-4 mx-auto // Removed whitespace-nowrap, overflow-x-auto, and scrollbar classes
-        h-auto sm:h-18 // Changed height to auto for wrapping content
-        gap-2 sm:gap-4 // Added gap for spacing between wrapped tabs
+        p-0 bg-transparent flex flex-wrap justify-center 
+        mb-4 mx-auto
+        h-auto sm:h-18
+        gap-2 sm:gap-4
     "
                 >
                     {tabs.map((tab) => (
@@ -55,7 +65,7 @@ export default function Projects() {
                 data-[state=active]:shadow-md
                 data-[state=active]:before:translate-x-0
                 data-[state=active]:before:opacity-100
-                min-w-[unset] sm:min-w-[unset] // Removed explicit min-width to allow wrapping
+                min-w-[unset] sm:min-w-[unset]
             `}
                         >
                             <span className="relative z-10 block whitespace-nowrap">{tab.label}</span>
@@ -80,21 +90,21 @@ export default function Projects() {
                                         mousewheel={true}
                                         className="w-full max-w-[1400px] border border-gray-800 rounded-xl mx-auto shadow-[0_0_8px_rgba(255,255,255,0.15)] overflow-hidden" // Ensure overflow is handled by Carousel
                                     >
-                                        <CarouselContent className="rounded-3xl pl-4 sm:pl-6 md:pl-8 lg:pl-0"> {/* Adjusted padding on content */}
+                                        <CarouselContent className="rounded-3xl pl-4 sm:pl-6 md:pl-8 lg:pl-0"> 
                                             {projectMedia.map((item) => (
                                                 <CarouselItem
                                                     key={item.id}
                                                     className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-[30%] // Responsive item width
-                                                                mt-5 mb-5 flex justify-center items-center px-2 sm:px-4" // Adjusted padding
+                                                                mt-5 mb-5 flex justify-center items-center px-2 sm:px-4" 
                                                 >
                                                     {item.type === 'text' && (
                                                         <div className="text-center max-w-2xl space-y-2 px-2">
-                                                            {item.title && <h4 className="text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-10 font-semibold">{item.title}</h4>}
-                                                            <p className="text-sm sm:text-base md:text-lg text-left">{item.content}</p>
+                                                            {item.title && <h4 className="text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-10 font-semibold">{t(item.title)}</h4>}
+                                                            <p className="text-sm sm:text-base md:text-lg text-left">{t(item.content)}</p>
                                                         </div>
                                                     )}
                                                     {item.type === 'image' && (
-                                                        <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[550px]"> {/* Responsive height for images/videos */}
+                                                        <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[550px]"> 
                                                             <img
                                                                 src={item.content}
                                                                 alt={item.alt}
@@ -103,7 +113,7 @@ export default function Projects() {
                                                         </div>
                                                     )}
                                                     {item.type === 'video' && (
-                                                        <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[550px]"> {/* Responsive height for images/videos */}
+                                                        <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[550px]"> 
                                                             <video
                                                                 autoPlay
                                                                 muted
@@ -112,7 +122,7 @@ export default function Projects() {
                                                                 className="rounded-xl shadow-md object-cover w-full h-full"
                                                             >
                                                                 <source src={item.content} type="video/mp4" />
-                                                                Tu navegador no soporta videos.
+                                                                {t('Your browser does not support videos.')}
                                                             </video>
                                                         </div>
                                                     )}
@@ -121,13 +131,14 @@ export default function Projects() {
                                         </CarouselContent>
                                     </Carousel>
                                 ) : (
-                                    <p className="text-center text-base sm:text-xl text-gray-500 dark:text-gray-400">No hay contenido multimedia para este proyecto aún.</p>
+                                    <p className="text-center text-base sm:text-xl text-gray-500 dark:text-gray-400">{t('No multimedia content for this project yet.')}</p>
                                 )}
                             </div>
                         </TabsContent>
                     );
                 })}
             </Tabs>
-        </section>
+        </motion.section>
+        </motion.div>
     );
 }

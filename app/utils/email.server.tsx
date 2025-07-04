@@ -13,7 +13,7 @@ export async function sendScheduleEmail(data: ScheduleFormValues) {
   const resendApiKey = getServerEnv().RESEND_API_KEY;
 
   if (!resendApiKey) {
-    throw new Error("RESEND_API_KEY no configurada.");
+    throw new Error("RESEND_API_KEY not configured.");
   }
 
   const resend = new Resend(resendApiKey);
@@ -36,7 +36,7 @@ export async function sendScheduleEmail(data: ScheduleFormValues) {
   try {
     const response = await resend.emails.send({
       from: "Citas Karmona <noreply@karbook.com>",
-      to: [data.email, "eriksen5518@gmail.com"],
+      to: [data.email, "oficina@karmona.mx"],
       subject: `🗓️ Confirmación de Cita: ${data.carBrand} ${data.model} — ${data.date.toLocaleDateString()}`,
       html: emailHtmlContent,
     });
@@ -45,9 +45,9 @@ export async function sendScheduleEmail(data: ScheduleFormValues) {
       throw new Error(`Resend API Error: ${response.error.message || "Unknown Resend error"}`);
     }
 
-    console.log("Cita agendada. Email enviado con éxito:", response);
+    console.log("Appointment scheduled. Email sent successfully:", response);
   } catch (error) {
-    console.error("ERROR INTERNO EN sendScheduleEmail (Resend):", error);
+    console.error("INTERNAL ERROR IN sendScheduleEmail (Resend):", error);
     throw error;
   }
 }

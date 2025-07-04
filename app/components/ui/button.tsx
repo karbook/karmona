@@ -63,15 +63,14 @@ const buttonVariants = cva(
 					'text-button-date-foreground'
 				),
 				schedule: cn(
-					'bg-black text-white dark:bg-white dark:text-black w-full h-full rounded-full hover:bg-gray-300',
+					'bg-black text-white dark:bg-white dark:text-black w-full h-full rounded-full hover:bg-gray-700 dark:hover:bg-gray-300',
 				),
 				whatsapp: cn(
-					'bg-[#25D366] text-white hover:bg-[#1DA851]',
+					'bg-[#eff4f8] dark:bg-[#030917]',
 					'rounded-full shadow-xl',
 					'transition-transform duration-300 ease-in-out hover:scale-110',
 					'flex items-center justify-center'
 				),
-
 			},
 			size: {
 				default: 'h-button p-button',

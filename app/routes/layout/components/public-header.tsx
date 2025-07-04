@@ -11,7 +11,6 @@ import {
   NavigationMenuLink,
 } from '@/components/ui/navigation-menu';
 import { Icon } from '@/components/ui/icon';
-
 import { ColorSchemeSwitch } from '@/components/color-scheme-switch';
 import Logo from './logo';
 import LanguageDropDown from './language-dropdown';

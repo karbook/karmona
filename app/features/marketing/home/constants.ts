@@ -1,3 +1,4 @@
+import { t } from '@/localization/utils';
 import type { IconName } from "@/components/ui/icons/types";
 
 export type Promotions = {
@@ -9,30 +10,34 @@ export type Promotions = {
 	image: string;
 }
 export const promotions: Promotions[] = [
-	{
-		title: "Día de las Madres 💐",
-		description:
-			"Celebra el mes de la madre, si eres maestra, abogada, doctora, madre de familia, etc. obtén con nosotros 🥰 hasta 20% de descuento para ustedes” 🤯 En Karmona, reconocemos la labor de las mujeres extraordinarias en nuestras vidas con descuentos exclusivos como este: 👉 Arma tu team de mamás de 3 unidades o más para servicio de mantenimiento y/o frenos y obtén un 20% de descuento en la mano de obra. 🚨 ¡Este mes de la madre, regala seguridad y confianza en su movilidad, ven a Karmona y celebremos a esas mujeres especiales juntos!",
-
-		location: "📍 Av 2Pte 3106, Col. Amor, Puebla, Pue.",
-		validity: "🗓️ Válido del 10 de mayo al 10 de junio",
-		image: "/images/promotions/mother-day-promotion.webp",
-	},
-	{
-		title: "🎉 30 años juntos",
-		description:
-			"¡En Karmona estamos de fiesta gracias a ti y tu confianza por más de 30 años! 🙌 🎉Por eso queremos agradecerte con este increíble descuento. Festejemos juntos nuestros 30 años de servicio y confiabilidad con un 15% de descuento en servicio de mantenimiento de motor o frenos ” 🤯Trae a consentir tu auto con nosotros, adquiere tu servicio de mantenimiento y/o a servicio de frenos y obtén un 15% de descuento 🥳🍾 📍 Avenida 2 poniente 3106 Col. Amor 72140, Puebla, Pue.",
-		details: ["Mantenimiento de motor o frenos con 15% de descuento"],
-		location: "📍 Av. 2 Poniente 3106, Col. Amor, Puebla, Pue.",
-		image: "/images/promotions/promotion-engine-service.webp",
-	},
-	{
-		title: "🛢️ Aceite Premium Motul",
-		description:
-			'En Karmona estamos de fiesta y celebramos juntos cuidando el alma de tu vehículo y más en este mes tan especial de las Madres! "Ven y celebra 30 años de seguridad y confiabilidad para tu auto obten 10% de descuento en aceite Premium Motul sintético” 🤯 🙌🎉 Regala seguridad a quien más te ama este 10 de mayo 🙌 🎉 Karmona, tu aliado de confianza.📍 Av 2Pte 3106 Col. Amor 72140, Puebla, Pue.',
-		location: "📍 Av 2Pte 3106, Col. Amor, Puebla, Pue.",
-		image: "/images/promotions/promotion-discount-oil.webp",
-	},
+  {
+    title: t("Mother's Day 💐"),
+    description: t(
+      "Celebrate Mother’s Month — if you’re a teacher, lawyer, doctor, mom, etc., enjoy up to 20% off with us 🥰. At Karmona, we recognize the invaluable work of the extraordinary women in our lives with exclusive discounts like this: 👉 Gather your team of moms with 3 or more vehicles for maintenance and/or brake service and get 20% off on labor. 🚨 This Mother's Month, gift them safety and confidence — come celebrate these special women at Karmona!"
+    ),
+    validity: t("🗓️ Valid from May 10 to June 10"),
+    location: "📍 Av 2Pte 3106, Col. Amor, Puebla, Pue.",
+    image: "/images/promotions/mother-day-promotion.webp",
+  },
+  {
+    title: t("🎉 30 Years Together"),
+    description: t(
+      "We're celebrating at Karmona thanks to you and your trust over more than 30 years! 🙌 🎉 That’s why we want to thank you with an incredible discount. Let’s celebrate 30 years of service and reliability with 15% off engine maintenance or brake service 🤯. Pamper your car with us — get your service and enjoy 15% off 🥳🍾 📍 Avenida 2 Poniente 3106, Col. Amor, 72140, Puebla, Pue."
+    ),
+    validity: t("🗓️ Valid throughout the month of May"),
+    details: [t("Engine or brake service with 15% discount")],
+    location: "📍 Av. 2 Poniente 3106, Col. Amor, Puebla, Pue.",
+    image: "/images/promotions/promotion-engine-service.webp",
+  },
+  {
+    title: t("🛢️ Premium Motul Oil"),
+    description: t(
+      "We’re celebrating at Karmona and taking care of your car’s soul — especially this special month for moms! Celebrate 30 years of security and reliability for your car with 10% off Premium Motul synthetic oil 🤯 🙌🎉. Give the gift of protection to those who love you most this May 10 🙌 🎉 Karmona, your trusted ally. 📍 Av 2Pte 3106, Col. Amor 72140, Puebla, Pue."
+    ),
+    validity: t("🗓️ Valid through May while supplies last"),
+    location: "📍 Av 2Pte 3106, Col. Amor, Puebla, Pue.",
+    image: "/images/promotions/promotion-discount-oil.webp",
+  },
 ]
 
 export type Details = {
@@ -50,70 +55,74 @@ export type HistorySlide = {
 
 }
 export const details: Details[] = [
-	{
-		value: 'karmona',
-		title: '¿Quiénes Somos?',
-		content: `En Karmona, nos enorgullecemos de ser una empresa dedicada y apasionada por la excelencia en el servicio automotriz. Con una trayectoria sólida en la industria, nos comprometemos a brindar a nuestros clientes una experiencia excepcional en mantenimiento y reparación de vehículos.`,
-		icon: 'message-circle-question',
-	},
-	{
-		value: 'mision',
-		title: 'Misión',
-		content: `Nuestra misión es proporcionar soluciones automotrices integrales de la más alta calidad, garantizando la seguridad, eficiencia y durabilidad de los vehículos de nuestros clientes. Buscamos superar las expectativas a través de un servicio honesto, transparente y con personal altamente capacitado.`,
-		icon: 'target',
-	},
-	{
-		value: 'vision',
-		title: 'Visión',
-		content: `Ser reconocidos por nuestra excelencia en el servicio, la transparencia en nuestras operaciones y la confiabilidad en cada reparación, construyendo relaciones sólidas y duraderas con cada uno de nuestros clientes.`,
-		icon: 'eye',
-	},
-	{
-		value: 'historia',
-		title: 'Historia',
-		icon: 'library-big',
-
-		content: [
-			{
-				date: 'Oct-1992',
-				headline: 'Fundación',
-				description: 'Se funda el taller automotriz Karmona con un enfoque en servicios generales de reparación y mantenimiento.',
-				icon: 'karmona-square-simple-dark'
-			},
-			{
-				date: 'Ene-1995',
-				headline: 'Ampliación de servicios',
-				description: 'El taller amplía sus servicios para incluir diagnósticos computarizados.',
-				icon: 'car-front'
-			},
-			{
-				date: 'Mar-1998',
-				headline: 'Incorporación de servicio de hojalatería y pintura',
-				description: 'Se inauguran las áreas de hojalatería y pintura.',
-				icon: 'paint-roller'
-			},
-			{
-				date: '2019-2023',
-				headline: 'Implementación y Marketing',
-				description: 'Se inicia una campaña de marketing para promocionar los nuevos servicios.',
-				icon: 'newspaper'
-			},
-			{
-				date: 'Jun-2023',
-				headline: 'Celebración de 30 años de servicio',
-				description: 'Se celebra 30 años de servicio en la industria automotriz.',
-				icon: 'cake'
-			},
-
-			{
-				date: 'Sep-2023',
-				headline: 'Apertura de nueva sucursal',
-				description: 'Nueva Casa de Karmona',
-				icon: 'store'
-			}
-		]
-	}
-];
+  {
+    value: 'karmona',
+    title: t('Who We Are'),
+    content: t(
+      'At Karmona, we take pride in being a company dedicated and passionate about excellence in automotive service. With a solid track record in the industry, we are committed to providing our customers with an exceptional experience in vehicle maintenance and repair.'
+    ),
+    icon: 'message-circle-question',
+  },
+  {
+    value: 'mision',
+    title: t('Mission'),
+    content: t(
+      'Our mission is to provide comprehensive automotive solutions of the highest quality, ensuring the safety, efficiency, and durability of our clients’ vehicles. We aim to exceed expectations through honest and transparent service, delivered by highly trained staff.'
+    ),
+    icon: 'target',
+  },
+  {
+    value: 'vision',
+    title: t('Vision'),
+    content: t(
+      'To be recognized for our service excellence, operational transparency, and reliability in every repair, building strong and lasting relationships with each of our clients.'
+    ),
+    icon: 'eye',
+  },
+  {
+    value: 'historia',
+    title: t('History'),
+    icon: 'library-big',
+    content: [
+      {
+        date: 'Oct-1992',
+        headline: t('Foundation'),
+        description: t('Karmona automotive workshop is founded, focused on general repair and maintenance services.'),
+        icon: 'karmona-square-simple-dark',
+      },
+      {
+        date: 'Ene-1995',
+        headline: t('Service Expansion'),
+        description: t('The workshop expands its offerings to include computerized diagnostics.'),
+        icon: 'car-front',
+      },
+      {
+        date: 'Mar-1998',
+        headline: t('Body and Paint Services Added'),
+        description: t('The bodywork and paint areas are inaugurated.'),
+        icon: 'paint-roller',
+      },
+      {
+        date: '2019-2023',
+        headline: t('Marketing and Implementation'),
+        description: t('A marketing campaign is launched to promote new services.'),
+        icon: 'newspaper',
+      },
+      {
+        date: 'Jun-2023',
+        headline: t('30-Year Anniversary'),
+        description: t('We celebrate 30 years of service in the automotive industry.'),
+        icon: 'cake',
+      },
+      {
+        date: 'Sep-2023',
+        headline: t('New Branch Opening'),
+        description: t('New Karmona headquarters.'),
+        icon: 'store',
+      },
+    ],
+  },
+]
 
 export type Service= {
 	title: string
@@ -121,62 +130,97 @@ export type Service= {
 	info: string
 	icon: IconName
 }
-
 export const services: Service[] = [
-	{
-		title: 'Mantenimiento General',
-		description: 'El mantenimiento general de un vehículo es esencial para prolongar su vida útil, prevenir averías inesperadas y garantizar un rendimiento óptimo. Este servicio integral abarca una variedad de aspectos clave para el buen funcionamiento del vehículo.',
-		info: 'Este servicio incluye revisiones periódicas, cambios de aceite, filtros y chequeos generales para mantener tu auto en óptimas condiciones.',
-		icon: 'wrench',
-	},
-	{
-		title: 'Reparaciones Mecánicas',
-		description: 'Las reparaciones mecánicas comprenden un conjunto diverso de servicios que se enfocan en solucionar problemas y mantener el funcionamiento óptimo de los componentes mecánicos de un vehículo.',
-		info: 'Contamos con técnicos especializados en motores, transmisiones y suspensión para brindarte soluciones efectivas.',
-		icon: 'bolt',
-	},
-	{
-		title: 'Sistema Eléctrico',
-		description: 'La reparación del sistema eléctrico de un vehículo implica diagnosticar, identificar y solucionar problemas relacionados con los componentes eléctricos.',
-		info: 'Nos especializamos en detectar fallas eléctricas con herramientas de diagnóstico avanzadas y resolverlas con precisión.',
-		icon: 'zap',
-	},
-	{
-		title: 'Sistema de Climatización',
-		description: 'La reparación del sistema de climatización en un vehículo implica diagnosticar y solucionar problemas que puedan afectar la capacidad del sistema para enfriar o calentar el habitáculo.',
-		info: 'Reparamos compresores, sensores, filtros de cabina y recargamos el sistema para mantener una temperatura ideal.',
-		icon: 'cloudy',
-	},
-	{
-		title: 'Diagnóstico y Escaneo de la Computadora',
-		description: 'El diagnóstico y escaneo de la computadora en un vehículo son procesos fundamentales para identificar y solucionar problemas relacionados con los sistemas electrónicos y computarizados del automóvil.',
-		info: 'Utilizamos escáner OBD-II para detectar códigos de error, monitorear sensores y ayudarte a tomar decisiones informadas.',
-		icon: 'laptop',
-	},
-	{
-		title: 'Cambio de Partes y Accesorios',
-		description: 'El cambio de partes y accesorios abarca una amplia variedad de tareas que van desde la sustitución de componentes desgastados hasta la instalación de accesorios adicionales.',
-		info: 'Sustituimos faros, espejos, limpiaparabrisas, baterías, pastillas de freno y más con repuestos de alta calidad.',
-		icon: 'car-front',
-	},
-	{
-		title: 'Revisión de Alineación y Balanceo',
-		description: 'La reparación y reemplazo de neumáticos en un taller automotriz son servicios esenciales para garantizar la seguridad, el rendimiento y la eficiencia del vehículo.',
-		info: 'Realizamos alineación digital y balanceo para mejorar estabilidad, tracción y seguridad en el camino.',
-		icon: 'drafting-compass',
-	},
-	{
-		title: 'Inspección y emisión de Gases',
-		description: 'La inspección y emisión de gases es un servicio clave que se realiza para evaluar y garantizar que los vehículos cumplan con los estándares ambientales y de emisiones.',
-		info: 'Ofrecemos limpieza profunda, detallado de interiores, pulido de faros y encerado profesional.',
-		icon: 'wind',
-	},
-	{
-		title: 'Servicios especializados',
-		description: 'Los servicios especializados abarcan una variedad de tareas más específicas y técnicas, dirigidas a aspectos particulares del vehículo.',
-		info: 'Incluye revisión de frenos, llantas, niveles de fluidos, luces y sistema de carga para asegurar tu seguridad en el trayecto.',
-		icon: 'users',
-	},
+  {
+    title: t('General Maintenance'),
+    description: t(
+      'General vehicle maintenance is essential to extend its lifespan, prevent unexpected breakdowns, and ensure optimal performance. This comprehensive service covers key aspects to keep your vehicle running smoothly.'
+    ),
+    info: t(
+      'This service includes routine inspections, oil changes, filters, and general checkups to keep your car in excellent condition.'
+    ),
+    icon: 'wrench',
+  },
+  {
+    title: t('Mechanical Repairs'),
+    description: t(
+      'Mechanical repairs cover a wide range of services focused on solving issues and maintaining the optimal function of a vehicle’s mechanical components.'
+    ),
+    info: t(
+      'We have specialized technicians in engines, transmissions, and suspensions to offer effective solutions.'
+    ),
+    icon: 'bolt',
+  },
+  {
+    title: t('Electrical System'),
+    description: t(
+      'Repairing a vehicle’s electrical system involves diagnosing, identifying, and resolving problems related to its electrical components.'
+    ),
+    info: t(
+      'We specialize in detecting electrical faults using advanced diagnostic tools and resolving them with precision.'
+    ),
+    icon: 'zap',
+  },
+  {
+    title: t('Air Conditioning System'),
+    description: t(
+      'Repairing the climate control system in a vehicle involves diagnosing and resolving issues that affect the system’s ability to heat or cool the cabin.'
+    ),
+    info: t(
+      'We repair compressors, sensors, cabin filters, and recharge systems to maintain ideal temperatures.'
+    ),
+    icon: 'cloudy',
+  },
+  {
+    title: t('Computer Diagnostics & Scanning'),
+    description: t(
+      'Vehicle computer diagnostics and scanning are essential processes to identify and address problems in the car’s electronic and computerized systems.'
+    ),
+    info: t(
+      'We use OBD-II scanners to detect error codes, monitor sensors, and help you make informed decisions.'
+    ),
+    icon: 'laptop',
+  },
+  {
+    title: t('Parts & Accessories Replacement'),
+    description: t(
+      'Replacing parts and accessories includes a wide range of tasks from swapping worn components to installing add-ons.'
+    ),
+    info: t(
+      'We replace headlights, mirrors, wipers, batteries, brake pads, and more with high-quality parts.'
+    ),
+    icon: 'car-front',
+  },
+  {
+    title: t('Alignment & Balancing Check'),
+    description: t(
+      'Tire repair and replacement are essential services in an auto workshop to ensure safety, performance, and vehicle efficiency.'
+    ),
+    info: t(
+      'We perform digital alignment and balancing to improve stability, traction, and safety on the road.'
+    ),
+    icon: 'drafting-compass',
+  },
+  {
+    title: t('Gas Emissions & Inspection'),
+    description: t(
+      'Emission inspection is a key service to ensure that vehicles meet environmental and regulatory emission standards.'
+    ),
+    info: t(
+      'We offer deep cleaning, interior detailing, headlight polishing, and professional waxing.'
+    ),
+    icon: 'wind',
+  },
+  {
+    title: t('Specialized Services'),
+    description: t(
+      'Specialized services include more specific and technical tasks targeting particular vehicle systems.'
+    ),
+    info: t(
+      'Includes brake, tire, fluid level, lighting, and charging system checks to ensure road safety.'
+    ),
+    icon: 'users',
+  },
 ]
 
 export type CarLogo = {
@@ -221,22 +265,22 @@ export type GridImage = {
 }
 
 export const gridImages: GridImage[] = [
-	{ id: 'img-01', src: '/images/grid-cars/audi.jpeg', alt: 'Auto deportivo rojo', column: 1, row: 1 },
-	{ id: 'img-02', src: '/images/grid-cars/bmw.jpeg', alt: 'Mecánico revisando motor', column: 2, row: 1 },
-	{ id: 'img-03', src: '/images/grid-cars/bocho.jpeg', alt: 'Interior de taller', column: 3, row: 1 },
-	{ id: 'img-04', src: '/images/grid-cars/dodge.jpeg', alt: 'Interior de taller', column: 4, row: 1 },
-	{ id: 'img-05', src: '/images/grid-cars/explorer.jpeg', alt: 'Interior de taller', column: 1, row: 2 },
-	{ id: 'img-06', src: '/images/grid-cars/ford.jpeg', alt: 'Interior de taller', column: 2, row: 2 },
-	{ id: 'img-07', src: '/images/grid-cars/gmc.jpeg', alt: 'Interior de taller', column: 3, row: 2 },
-	{ id: 'img-08', src: '/images/grid-cars/mazda.jpeg', alt: 'Interior de taller', column: 4, row: 2 },
-	{ id: 'img-09', src: '/images/grid-cars/mercedez-glc.jpeg', alt: 'Interior de taller', column: 1, row: 3 },
-	{ id: 'img-10', src: '/images/grid-cars/mercedez-volante.jpeg', alt: 'Interior de taller', column: 2, row: 3 },
-	{ id: 'img-11', src: '/images/grid-cars/mercedez.jpeg', alt: 'Interior de taller', column: 3, row: 3 },
-	{ id: 'img-12', src: '/images/grid-cars/mini.jpeg', alt: 'Interior de taller', column: 4, row: 3 },
-	{ id: 'img-13', src: '/images/grid-cars/mustang.jpeg', alt: 'Interior de taller', column: 1, row: 4 },
-	{ id: 'img-14', src: '/images/grid-cars/nissan.jpeg', alt: 'Interior de taller', column: 2, row: 4 },
-	{ id: 'img-15', src: '/images/grid-cars/roadster.jpeg', alt: 'Interior de taller', column: 3, row: 4 },
-	{ id: 'img-16', src: '/images/grid-cars/toyota.jpeg', alt: 'Interior de taller', column: 4, row: 4 }
+	{ id: 'img-01', src: '/images/grid-cars/audi.jpeg', alt: 'Audi', column: 1, row: 1 },
+	{ id: 'img-02', src: '/images/grid-cars/bmw.jpeg', alt: 'BMW', column: 2, row: 1 },
+	{ id: 'img-03', src: '/images/grid-cars/bocho.jpeg', alt: 'Bocho', column: 3, row: 1 },
+	{ id: 'img-04', src: '/images/grid-cars/dodge.jpeg', alt: 'Dodge', column: 4, row: 1 },
+	{ id: 'img-05', src: '/images/grid-cars/explorer.jpeg', alt: 'Explorer', column: 1, row: 2 },
+	{ id: 'img-06', src: '/images/grid-cars/ford.jpeg', alt: 'Ford', column: 2, row: 2 },
+	{ id: 'img-07', src: '/images/grid-cars/gmc.jpeg', alt: 'GMC', column: 3, row: 2 },
+	{ id: 'img-08', src: '/images/grid-cars/mazda.jpeg', alt: 'Mazda', column: 4, row: 2 },
+	{ id: 'img-09', src: '/images/grid-cars/mercedez-glc.jpeg', alt: 'Mercedes GLC', column: 1, row: 3 },
+	{ id: 'img-10', src: '/images/grid-cars/mercedez-volante.jpeg', alt: 'Mercedes Volante', column: 2, row: 3 },
+	{ id: 'img-11', src: '/images/grid-cars/mercedez.jpeg', alt: 'Mercedes', column: 3, row: 3 },
+	{ id: 'img-12', src: '/images/grid-cars/mini.jpeg', alt: 'Mini', column: 4, row: 3 },
+	{ id: 'img-13', src: '/images/grid-cars/mustang.jpeg', alt: 'Mustang', column: 1, row: 4 },
+	{ id: 'img-14', src: '/images/grid-cars/nissan.jpeg', alt: 'Nissan', column: 2, row: 4 },
+	{ id: 'img-15', src: '/images/grid-cars/roadster.jpeg', alt: 'Roadster', column: 3, row: 4 },
+	{ id: 'img-16', src: '/images/grid-cars/toyota.jpeg', alt: 'Toyota', column: 4, row: 4 }
 ]
 export type MediaItem = {
 	id: string;
@@ -248,70 +292,73 @@ export type MediaItem = {
 };
 
 export const mediaItems: MediaItem[] = [
-	{
-		id: 'text-mustang-01',
-		type: 'text',
-		title: 'Ford Mustang 1965',
-		content: 'El proyecto de restauración de un Ford Mustang 1965 implica la recuperación y mejora de un clásico automóvil Mustang para devolverlo a su estado original o personalizado, mejorando su estética, rendimiento y funcionalidad. Este tipo de proyectos a menudo requiere una combinación de habilidades mecánicas, técnicas y estéticas para lograr un resultado satisfactorio.',
-		project: 'mustang'
-	},
-	{
-		id: 'video-mustang-01',
-		type: 'video',
-		content: '/image-video-projects-karmona/ford-mustang5-WRZIEZKP.mp4',
-		alt: 'Mustang restaurado frontal',
-		project: 'mustang'
-	},
-	{
-		id: 'video-mustang-02',
-		type: 'video',
-		content: '/images/karmona-projects-content/ford-mustang4-UOE22YOF.mp4',
-		alt: 'Motor Mustang detallado',
-		project: 'mustang'
-	},
-	{
-		id: 'image-mustang-03',
-		type: 'image',
-		content: '/images/karmona-projects-content/karmona-mustang-IC4RMYXQ.webp',
-		project: 'mustang'
-	},
-	{
-		id: 'video-mustang-04',
-		type: 'video',
-		content: '/images/karmona-projects-content/ford-mustang-AQKUH433.mp4',
-		alt: 'Motor Mustang detallado',
-		project: 'mustang'
-	},
-	{
-		id: 'video-mustang-05',
-		type: 'video',
-		content: '/images/karmona-projects-content/ford-mustang6-3ZXOAML7.mp4',
-		alt: 'Motor Mustang detallado',
-		project: 'mustang'
-	},
-	{
-		id: 'video-mustang-06',
-		type: 'video',
-		content: '/images/karmona-projects-content/ford-mustang2-4DNM75MB.mp4',
-		alt: 'Motor Mustang detallado',
-		project: 'mustang'
-	},
-	{
-		id: 'text-vw-01',
-		type: 'text',
-		title: 'Volkswagen Clásico',
-		content: 'La transformación de este clásico Volkswagen se centró en fusionar la nostalgia de su diseño original con un enfoque ecológico y de alto rendimiento. Se realizó una restauración estructural completa, se actualizaron los componentes mecánicos y se implementaron mejoras estéticas con detalles cromados y acabados premium.',
-		project: 'vw'
-	},
-
-	{
-		id: 'video-vw-01',
-		type: 'video',
-		content: '/images/karmona-projects-content/volkswagen-QHBH3UND.mp4',
-		alt: 'Proceso de restauración VW',
-		project: 'vw'
-	}
-];
+  {
+    id: 'text-mustang-01',
+    type: 'text',
+    title: t('Ford Mustang 1965'),
+    content: t(
+      'The 1965 Ford Mustang restoration project involves reviving and upgrading a classic Mustang to restore it to its original or custom state, improving its aesthetics, performance, and functionality. These kinds of projects often require a combination of mechanical, technical, and design skills to achieve a satisfying result.'
+    ),
+    project: 'mustang',
+  },
+  {
+    id: 'video-mustang-01',
+    type: 'video',
+    content: '/images/karmona-projects-content/ford-mustang5-WRZIEZKP.mp4',
+    alt: 'Mustang front restored',
+    project: 'mustang',
+  },
+  {
+    id: 'video-mustang-02',
+    type: 'video',
+    content: '/images/karmona-projects-content/ford-mustang4-UOE22YOF.mp4',
+    alt: 'Detailed Mustang engine',
+    project: 'mustang',
+  },
+  {
+    id: 'image-mustang-03',
+    type: 'image',
+    content: '/images/karmona-projects-content/karmona-mustang-IC4RMYXQ.webp',
+    project: 'mustang',
+  },
+  {
+    id: 'video-mustang-04',
+    type: 'video',
+    content: '/images/karmona-projects-content/ford-mustang-AQKUH433.mp4',
+    alt: 'Detailed Mustang engine',
+    project: 'mustang',
+  },
+  {
+    id: 'video-mustang-05',
+    type: 'video',
+    content: '/images/karmona-projects-content/ford-mustang6-3ZXOAML7.mp4',
+    alt: 'Detailed Mustang engine',
+    project: 'mustang',
+  },
+  {
+    id: 'video-mustang-06',
+    type: 'video',
+    content: '/images/karmona-projects-content/ford-mustang2-4DNM75MB.mp4',
+    alt: 'Detailed Mustang engine',
+    project: 'mustang',
+  },
+  {
+    id: 'text-vw-01',
+    type: 'text',
+    title: t('Classic Volkswagen'),
+    content: t(
+      'The transformation of this classic Volkswagen focused on merging the nostalgia of its original design with an eco-friendly and high-performance approach. A full structural restoration was carried out, mechanical components were upgraded, and aesthetic improvements were added with chrome accents and premium finishes.'
+    ),
+    project: 'vw',
+  },
+  {
+    id: 'video-vw-01',
+    type: 'video',
+    content: '/images/karmona-projects-content/volkswagen-QHBH3UND.mp4',
+    alt: 'VW restoration process',
+    project: 'vw',
+  },
+]
 
 export const tabs = [
 	{ value: 'mustang', label: 'Mustang' },
@@ -321,48 +368,57 @@ export type Faq = {
 	question: string;
 	answer: string;
 };
+
 export const faqs: Faq[] = [
-	{
-		question: "¿Es necesario realizar el mantenimiento preventivo cada ciertos kilómetros?",
-		answer:
-			"Sí, el mantenimiento preventivo es crucial para mantener el rendimiento y prevenir problemas costosos a largo plazo."
-	},
-	{
-		question: "¿Qué debo hacer si mi vehículo emite ruidos extraños?",
-		answer:
-			"Los ruidos extraños pueden indicar varios problemas. Es recomendable una inspección para identificar y abordar el problema."
-	},
-	{
-		question: "¿Cómo puedo saber si mis frenos necesitan ser reemplazados?",
-		answer:
-			"Los signos incluyen chirridos, vibraciones o un pedal de freno esponjoso. Realizar una inspección regular es crucial."
-	},
-	{
-		question: "¿Por qué mi vehículo podría estar experimentando problemas de sobrecalentamiento?",
-		answer:
-			"Problemas con el sistema de refrigeración, termostato o líquido refrigerante pueden causar sobrecalentamiento. Se recomienda una revisión."
-	},
-	{
-		question: "¿Qué puedo hacer para mejorar la eficiencia de combustible de mi automóvil?",
-		answer:
-			"Mantén neumáticos inflados, realiza un mantenimiento regular, conduce de manera eficiente y utiliza combustibles de calidad."
-	},
-	{
-		question: "¿Cuáles son sus Métodos de Pago Aceptados?",
-		answer:
-			"Aceptamos una variedad de métodos de pago, que pueden incluir efectivo, tarjetas de débito y crédito."
-	},
-	{
-		question: "¿Cómo sé si mi batería está fallando?",
-		answer:
-			"Arranque lento, luces tenues, y la luz de la batería encendida son indicadores. Prueba la batería si experimentas estos problemas."
-	},
-	{
-		question: "¿Cada cuántos kilómetros debo realizar el cambio de aceite en mi vehículo?",
-		answer:
-			"Se recomienda cambiar el aceite cada 8,000 a 12,000 kilómetros o según las indicaciones del fabricante."
-	},
-];
+  {
+    question: t('Is preventive maintenance necessary every certain number of kilometers?'),
+    answer: t(
+      'Yes, preventive maintenance is essential to maintain performance and avoid costly issues in the long term.'
+    ),
+  },
+  {
+    question: t('What should I do if my vehicle makes strange noises?'),
+    answer: t(
+      'Strange noises can indicate various issues. It’s best to schedule an inspection to identify and resolve the problem.'
+    ),
+  },
+  {
+    question: t('How can I tell if my brakes need replacing?'),
+    answer: t(
+      'Signs include squealing, vibrations, or a spongy brake pedal. Regular inspections are key.'
+    ),
+  },
+  {
+    question: t('Why might my vehicle be overheating?'),
+    answer: t(
+      'Issues with the cooling system, thermostat, or coolant can cause overheating. A system check is recommended.'
+    ),
+  },
+  {
+    question: t('What can I do to improve my car’s fuel efficiency?'),
+    answer: t(
+      'Keep tires properly inflated, schedule regular maintenance, drive efficiently, and use quality fuel.'
+    ),
+  },
+  {
+    question: t('What are your accepted payment methods?'),
+    answer: t(
+      'We accept a variety of payment methods, including cash, debit cards, and credit cards.'
+    ),
+  },
+  {
+    question: t('How do I know if my battery is failing?'),
+    answer: t(
+      'Slow engine start, dim lights, and a lit battery warning light are indicators. Test the battery if you notice these signs.'
+    ),
+  },
+  {
+    question: t('How often should I change the oil in my vehicle?'),
+    answer: t(
+      'It’s recommended to change the oil every 8,000 to 12,000 kilometers or as per the manufacturer’s guidelines.'
+    ),
+  },
+]
 export type Contact = {
   label: string
   value: string | string[]
@@ -374,34 +430,37 @@ export type Contact = {
 
 export const contacts: Contact[] = [
   {
-    label: "Teléfono",
-    value: "(222) 5 39 03 69",
-    icon: "phone",
-    type: "tel",
+    label: t('Phone'),
+    value: '(222) 5 39 03 69',
+    icon: 'phone',
+    type: 'tel',
   },
   {
-    label: "Correo",
-    value: "oficina@karmona.mx",
-    icon: "mail",
-    type: "email",
+    label: t('Email'),
+    value: 'oficina@karmona.mx',
+    icon: 'mail',
+    type: 'email',
   },
   {
-    label: "Horario de Atención",
-    value: ["Lun–Vie: 9:00 AM – 6:00 PM", "Sábado: 9:00 AM – 2:00 PM"],
-    icon: "history",
+    label: t('Business Hours'),
+    value: [
+      t('Mon–Fri: 9:00 AM – 6:00 PM'),
+      t('Saturday: 9:00 AM – 2:00 PM'),
+    ],
+    icon: 'history',
     type: null,
   },
- {
-  label: "Ubicación",
-  value: [
-    "Av 2 Pte 3106, Amor",
-    "72140 Heroica Puebla de Zaragoza, Pue.",
-  ],
-  icon: "map-pin",
-  type: null,
-  buttonText: "¿Cómo llegar?",
-  href: "https://www.google.com/maps/place/Karmona/@19.0577392,-98.2230611,17z/data=!3m1!4b1!4m6!3m5!1s0x85cfc72c254b6ee9:0xefd5da50a79db37d!8m2!3d19.0577341!4d-98.2204862!16s%2Fg%2F1tcwlxb2?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D",
-},
+  {
+    label: t('Location'),
+    value: [
+      t('Av 2 Pte 3106, Amor'),
+      t('72140 Heroica Puebla de Zaragoza, Pue.'),
+    ],
+    icon: 'map-pin',
+    type: null,
+    buttonText: t('Get Directions'),
+    href: 'https://www.google.com/maps/place/Karmona/@19.0577392,-98.2230611,17z/data=!3m1!4b1!4m6!3m5!1s0x85cfc72c254b6ee9:0xefd5da50a79db37d!8m2!3d19.0577341!4d-98.2204862!16s%2Fg%2F1tcwlxb2?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D',
+  },
 ]
 export type TermsOfService = {
   id: string
@@ -416,163 +475,181 @@ export const tosRules: TermsOfService[] = [
     id: 'tos',
     items: [
       {
-        title: 'Aceptación de los Términos',
-        text:
-          'Al acceder y utilizar los servicios de Karmona, aceptas cumplir con estos términos y condiciones. Si no estás de acuerdo con alguna parte de estos términos, por favor, no utilices nuestros servicios.',
+        title: t('Acceptance of Terms'),
+        text: t(
+          'By accessing and using Karmona’s services, you agree to comply with these terms and conditions. If you do not agree to any part of these terms, please do not use our services.'
+        ),
       },
       {
-        title: 'Uso de los Servicios',
-        text:
-          'Aceptas utilizar los servicios de Karmona únicamente con fines legales y de acuerdo con estos términos. No debes dañar, sobrecargar o perjudicar la disponibilidad o el rendimiento de nuestros servicios.',
+        title: t('Use of Services'),
+        text: t(
+          'You agree to use Karmona’s services solely for lawful purposes and in accordance with these terms. You must not damage, overload, or impair the availability or performance of our services.'
+        ),
       },
       {
-        title: 'Información del Usuario',
-        text:
-          'Al proporcionar información a Karmona, garantizas que es precisa, completa y actualizada. Podemos suspender cuentas o rechazar el acceso si se detectan datos falsos.',
+        title: t('User Information'),
+        text: t(
+          'By providing information to Karmona, you guarantee it is accurate, complete, and up-to-date. We may suspend accounts or deny access if false data is detected.'
+        ),
       },
       {
-        title: 'Citas y Reservas',
-        text:
-          'El proceso de programación de citas y reservas está sujeto a disponibilidad. Karmona se reserva el derecho de cancelar o reprogramar citas si es necesario.',
+        title: t('Appointments and Bookings'),
+        text: t(
+          'The appointment and booking process is subject to availability. Karmona reserves the right to cancel or reschedule appointments if necessary.'
+        ),
       },
       {
-        title: 'Pago y Facturación',
-        text:
-          'Los servicios pagos están sujetos a las tarifas vigentes y pueden ser modificadas previo aviso.',
+        title: t('Payment and Billing'),
+        text: t(
+          'Paid services are subject to current rates and may be modified with prior notice.'
+        ),
       },
       {
-        title: 'Cancelaciones y Reembolsos',
-        text:
-          'Las cancelaciones y los reembolsos seguirán los términos definidos al momento de reservar. Karmona puede modificar o cancelar citas según su criterio.',
+        title: t('Cancellations and Refunds'),
+        text: t(
+          'Cancellations and refunds will follow the terms defined at the time of booking. Karmona may modify or cancel appointments at its discretion.'
+        ),
       },
       {
-        title: 'Limitación de Responsabilidad',
-        text:
-          'Karmona no será responsable por ningún daño directo, indirecto o consecuente que surja del uso de nuestros servicios.',
+        title: t('Limitation of Liability'),
+        text: t(
+          'Karmona shall not be held liable for any direct, indirect, or consequential damages arising from the use of our services.'
+        ),
       },
       {
-        title: 'Modificaciones',
-        text:
-          'Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado implica tu aceptación de los cambios.',
+        title: t('Modifications'),
+        text: t(
+          'We reserve the right to modify these terms at any time. Continued use implies your acceptance of any changes.'
+        ),
       },
       {
-        title: 'Ley Aplicable',
-        text:
-          'Estos términos se rigen por las leyes del Estado de Puebla, México. Aceptas la jurisdicción exclusiva de sus tribunales.',
+        title: t('Governing Law'),
+        text: t(
+          'These terms are governed by the laws of the State of Puebla, Mexico. You agree to the exclusive jurisdiction of its courts.'
+        ),
       },
       {
-        title: 'Contacto',
-        text:
-          'Si tienes alguna pregunta sobre estos términos y condiciones, puedes contactarnos a través de nuestro correo electrónico: oficina@karmona.mx',
+        title: t('Contact'),
+        text: t(
+          'If you have any questions about these terms and conditions, you can contact us via email at oficina@karmona.mx.'
+        ),
       },
     ],
   },
 ]
-
 export type TermsContent = {
   title: string;
   body: string;
 }	
-
-export const termsContent:TermsContent[] = [
+export const termsContent: TermsContent[] = [
   {
-    title: 'Privacidad del Usuario',
-    body:
-      'Karmona respeta la privacidad de sus clientes y visitantes en línea. Esta política describe cómo recopilamos, utilizamos y protegemos tu información personal. Al usar nuestro sitio, aceptas estas prácticas.',
+    title: t('User Privacy'),
+    body: t(
+      'Karmona respects the privacy of its customers and online visitors. This policy explains how we collect, use, and protect your personal information. By using our site, you agree to these practices.'
+    ),
   },
   {
-    title: 'Aceptación de los Términos',
-    body:
-      'Al usar los servicios de Karmona, aceptas cumplir con estos términos. Si no estás de acuerdo con alguna parte, por favor no utilices nuestros servicios.',
+    title: t('Acceptance of Terms'),
+    body: t(
+      'By using Karmona’s services, you agree to comply with these terms. If you do not agree with any part, please do not use our services.'
+    ),
   },
   {
-    title: 'Uso de los Servicios',
-    body:
-      'Te comprometes a usar nuestros servicios solo con fines legales. No debes causar daño intencional ni afectar el rendimiento del sitio o nuestros sistemas.',
+    title: t('Use of Services'),
+    body: t(
+      'You agree to use our services only for lawful purposes. You must not cause intentional harm or negatively affect the site’s performance or our systems.'
+    ),
   },
   {
-    title: 'Información del Usuario',
-    body:
-      'Toda la información que proporciones debe ser precisa y actualizada. Nos reservamos el derecho de restringir el acceso si se detectan datos falsos.',
+    title: t('User Information'),
+    body: t(
+      'All information you provide must be accurate and up to date. We reserve the right to restrict access if false data is detected.'
+    ),
   },
   {
-    title: 'Citas y Reservas',
-    body:
-      'Las citas están sujetas a disponibilidad y condiciones específicas. Karmona puede reprogramar o cancelar si es necesario.',
+    title: t('Appointments and Bookings'),
+    body: t(
+      'Appointments are subject to availability and specific conditions. Karmona may reschedule or cancel if necessary.'
+    ),
   },
   {
-    title: 'Pago y Facturación',
-    body:
-      'Servicios de pago están sujetos a las tarifas establecidas. Karmona puede modificarlas previo aviso.',
+    title: t('Payment and Billing'),
+    body: t(
+      'Paid services are subject to established rates. Karmona may modify them with prior notice.'
+    ),
   },
   {
-    title: 'Cancelaciones y Reembolsos',
-    body:
-      'Sujetos a los términos del proceso de reserva. Karmona podrá reagendar o cancelar servicios si lo considera necesario.',
+    title: t('Cancellations and Refunds'),
+    body: t(
+      'These are subject to the terms of the booking process. Karmona may reschedule or cancel services as it deems necessary.'
+    ),
   },
   {
-    title: 'Limitación de Responsabilidad',
-    body:
-      'Karmona no será responsable por daños directos o indirectos derivados del uso de nuestros servicios.',
+    title: t('Limitation of Liability'),
+    body: t(
+      'Karmona shall not be liable for any direct or indirect damages resulting from the use of our services.'
+    ),
   },
   {
-    title: 'Modificaciones',
-    body:
-      'Podemos actualizar estos términos en cualquier momento. El uso continuado de nuestros servicios implica tu aceptación de los nuevos términos.',
+    title: t('Modifications'),
+    body: t(
+      'We may update these terms at any time. Continued use of our services implies your acceptance of the updated terms.'
+    ),
   },
   {
-    title: 'Ley Aplicable',
-    body:
-      'Estos términos se rigen por las leyes del Estado de Puebla, México, y cualquier disputa será resuelta bajo su jurisdicción.',
+    title: t('Governing Law'),
+    body: t(
+      'These terms are governed by the laws of the State of Puebla, Mexico, and any dispute will be resolved under its jurisdiction.'
+    ),
   },
   {
-    title: 'Contacto',
-    body:
-      'Para consultas sobre estos términos, escríbenos a: oficina@karmona.mx',
+    title: t('Contact'),
+    body: t(
+      'If you have questions regarding these terms, please write to us at: oficina@karmona.mx'
+    ),
   },
 ]
 
 export type PromoSteps = {
-  id: 'promogeneral' | 'promomama'
+  id: 'promotiongeneral' | 'promotionmom'
   title: string
   items: string[]
   note: string
 }
-
 export const promoRules: PromoSteps[] = [
   {
-    id: 'promogeneral',
-    title: 'General Promotion Rules 2024',
+    id: 'promotiongeneral',
+    title: t('General Promotion Rules 2024'),
     items: [
-      'Request the promotion at the beginning.',
-      'Bring your coupon.',
-      'Follow us on social media.',
-      'Schedule your appointment before June 10th.',
-      'Not combinable with other promotions.',
-      'Attend the scheduled appointment.',
-      'Leave your car in our hands.',
-      'Enjoy your day, we’ll call you when it’s ready (same-day delivery by 6pm).',
-      'Give us 5 stars on Google Maps.',
-      'Enjoy your discount and pay (we accept all cards, cash, or transfers).',
+      t('Request the promotion at the beginning.'),
+      t('Bring your coupon.'),
+      t('Follow us on social media.'),
+      t('Schedule your appointment before June 10th.'),
+      t('Not combinable with other promotions.'),
+      t('Attend the scheduled appointment.'),
+      t('Leave your car in our hands.'),
+      t("Enjoy your day, we’ll call you when it’s ready (same-day delivery by 6pm)."),
+      t('Give us 5 stars on Google Maps.'),
+      t('Enjoy your discount and pay (we accept all cards, cash, or transfers).'),
     ],
-    note: '3-month maintenance warranty.',
+    note: t('3-month maintenance warranty.'),
   },
   {
-    id: 'promomama',
-    title: 'Team Mamá Promotion Rules 2024',
+    id: 'promotionmom',
+    title: t('Team Mamá Promotion Rules 2024'),
     items: [
-      'Request the promotion at the beginning.',
-      'Bring your coupon.',
-      'Follow us on social media.',
-      'Book a team of at least 3 women before June 10th.',
-      'Not combinable with other promotions.',
-      'Attend the scheduled appointment.',
-      'Leave your car in our hands.',
-      'Enjoy your day, we’ll call you when it’s ready (same-day delivery by 6pm).',
-      'Give us 5 stars on Google Maps.',
-      'Enjoy your discount and pay (we accept all cards, cash, or transfers).',
+      t('Request the promotion at the beginning.'),
+      t('Bring your coupon.'),
+      t('Follow us on social media.'),
+      t('Book a team of at least 3 women before June 10th.'),
+      t('Not combinable with other promotions.'),
+      t('Attend the scheduled appointment.'),
+      t('Leave your car in our hands.'),
+      t("Enjoy your day, we’ll call you when it’s ready (same-day delivery by 6pm)."),
+      t('Give us 5 stars on Google Maps.'),
+      t('Enjoy your discount and pay (we accept all cards, cash, or transfers).'),
     ],
-    note: '3-month maintenance warranty.',
+    note: t('3-month maintenance warranty.'),
   },
 ]
 export type PrivacyPolicies = {
@@ -582,49 +659,66 @@ export type PrivacyPolicies = {
 
 export const privacyPolicies: PrivacyPolicies[] = [
   {
-    title: 'Información Recopilada',
-    content: 'Recopilamos información personal, como nombres, direcciones de correo electrónico, números de teléfono y detalles del vehículo.',
+    title: t('Collected Information'),
+    content: t(
+      'We collect personal information such as names, email addresses, phone numbers, and vehicle details.'
+    ),
   },
   {
-    title: 'Uso de la Información',
-    content: 'Utilizamos la información para programar citas, enviar actualizaciones sobre el estado del vehículo, proporcionar servicios y mejorar la experiencia del usuario.',
+    title: t('Use of Information'),
+    content: t(
+      'We use the information to schedule appointments, send updates about vehicle status, provide services, and improve user experience.'
+    ),
   },
   {
-    title: 'Consentimiento',
-    content: 'Obtenemos el consentimiento de los usuarios antes de recopilar su información y ofrecemos opciones para retirar el consentimiento.',
+    title: t('Consent'),
+    content: t(
+      'We obtain user consent before collecting their information and offer options to withdraw consent.'
+    ),
   },
   {
-    title: 'Retención de Datos',
-    content: 'Retenemos la información personal durante el tiempo que sea necesario para proporcionar servicios y mejorar la experiencia del usuario.',
+    title: t('Data Retention'),
+    content: t(
+      'We retain personal information for as long as necessary to provide services and enhance the user experience.'
+    ),
   },
   {
-    title: 'Seguridad',
-    content: 'Implementamos medidas de seguridad para proteger la información personal de los usuarios.',
+    title: t('Security'),
+    content: t(
+      'We implement security measures to protect users’ personal information.'
+    ),
   },
   {
-    title: 'Divulgación',
-    content: 'No vendemos ni alquilamos la información personal de los usuarios a terceros.',
+    title: t('Disclosure'),
+    content: t(
+      'We do not sell or rent users’ personal information to third parties.'
+    ),
   },
   {
-    title: 'Enlaces',
-    content: 'Nuestro sitio web contiene enlaces a otros sitios web. No somos responsables de las prácticas de privacidad de otros sitios web.',
+    title: t('Links'),
+    content: t(
+      'Our website contains links to other websites. We are not responsible for the privacy practices of those websites.'
+    ),
   },
   {
-    title: 'Cambios',
-    content: 'Podemos actualizar esta política de privacidad de vez en cuando. Te notificaremos cualquier cambio publicando la nueva política de privacidad en esta página.',
+    title: t('Changes'),
+    content: t(
+      'We may update this privacy policy from time to time. We will notify you by posting the new policy on this page.'
+    ),
   },
   {
-    title: 'Contacto',
-    content: 'Si tienes alguna pregunta sobre esta política de privacidad, puedes contactarnos a través de nuestro formulario de contacto.',
+    title: t('Contact'),
+    content: t(
+      'If you have any questions about this privacy policy, you can contact us through our contact form.'
+    ),
   },
   {
-    title: 'Última Actualización',
-    content: 'Esta política de privacidad se actualizó por última vez el 10 de enero de 2024.',
+    title: t('Last Updated'),
+    content: t(
+      'This privacy policy was last updated on January 10, 2024.'
+    ),
   },
 ]
-
-// types.ts or directly in your component file
-
 export type SocialPlatform = {
   name: string;
   icon: IconName;
@@ -635,38 +729,35 @@ export type SocialPlatform = {
   stats: string;
   extra?: string;
 };
-// data.ts
-
 export const socialPlatforms: SocialPlatform[] = [
   {
-    name: "Facebook",
-    icon: "facebook",
-    color: "#1877f2",
-    url: "https://www.facebook.com/karmonamx",
-    username: "Karmona",
-    description: "Club Automotriz, cambiando el concepto común de taller automotriz, todo lo que tu auto necesita.",
-    stats: "1.8K Me gusta • 1.9K Seguidores",
-    extra: "facebook.com/karmonamx",
+    name: t('Facebook'),
+    icon: 'facebook',
+    color: '#1877f2',
+    url: 'https://www.facebook.com/karmonamx',
+    username: 'Karmona',
+    description: t('Automotive Club redefining the traditional auto workshop — everything your car needs.'),
+    stats: t('1.8K Likes • 1.9K Followers'),
+    extra: 'facebook.com/karmonamx',
   },
   {
-    name: "Instagram",
-    icon: "instagram",
-    color: "#e1306c",
-    url: "https://www.instagram.com/karmona.mx/",
-    username: "@karmona.mx",
-    description: "Centro Integral de Servicios automotrices. 📍Puebla, Puebla. Mx. Especialistas en: Motores | Suspensión | Restauración | Hojalateria y pintura.",
-    stats: "399 Seguidores • 230 seguidos",
-    extra: "instagram.com/karmona.mx",
+    name: t('Instagram'),
+    icon: 'instagram',
+    color: '#e1306c',
+    url: 'https://www.instagram.com/karmona.mx/',
+    username: '@karmona.mx',
+    description: t('Comprehensive Automotive Service Center. 📍Puebla, Puebla, MX. Specialists in: Engines | Suspension | Restoration | Bodywork and Painting.'),
+    stats: t('399 Followers • 230 Following'),
+    extra: 'instagram.com/karmona.mx',
   },
   {
-    name: "TikTok",
-    icon: "music-2",
-    color: "#00f3eb",
-    url: "https://www.tiktok.com/@karmona.mx",
-    username: "@karmona.mx",
-    description: "Especialistas en servicio automotriz Restauraciones y Mecánica Especializada🚗🔧",
-    stats: "+3.5K Seguidores • 15.3k Me gusta",
-    extra: "tiktok.com/@karmona.mx",
+    name: t('TikTok'),
+    icon: 'tiktok',
+    color: '#00f3eb',
+    url: 'https://www.tiktok.com/@karmona.mx',
+    username: '@karmona.mx',
+    description: t('Automotive service specialists — Restorations and Specialized Mechanics 🚗🔧'),
+    stats: t('+3.5K Followers • 15.3K Likes'),
+    extra: 'tiktok.com/@karmona.mx',
   },
-];
-
+]

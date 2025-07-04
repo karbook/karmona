@@ -42,7 +42,7 @@ export function ColorSchemeSwitch() {
 			name: t('Light'),
 			icon: 'sun',
 			bgColor: 'bg-white text-black', 
-			hoverColor: 'hover:bg-gray-200',
+			hoverColor: 'hover:bg-[#ebf0f7]',
 			iconColor: 'text-black', 
 		},
 		{
@@ -50,8 +50,8 @@ export function ColorSchemeSwitch() {
 			name: t('Dark'),
 			icon: 'moon',
 			bgColor: 'white',
-			hoverColor: 'hover:bg-gray-700 dark:hover:text-black',
-			iconColor: 'white dark:hover:black',
+			hoverColor: 'hover:bg-gray-700 dark:hover:text-white',
+			iconColor: 'white dark:hover:white',
 		},
 	]
 

@@ -6,11 +6,11 @@ import type { Route } from '@/rr/features/marketing/home/routes/+types/index'
 import { remixI18Next } from '@/localization/i18n.server'
 
 // COMPONENTS
-import Hero from '../components/hero'
+import Club from '../components/club'
 import Services from '../components/services'
 import ShowcaseGrid from '../components/especialits'
 import Projects from '../components/projects'
-import { FAQ } from '../components/frequently-asked-questions'
+import FAQ  from '../components/frequently-asked-questions'
 import AboutUs from '../components/about-us'
 import Promotions from '../components/promotions'
 import Cars from '../components/cars'
@@ -23,13 +23,13 @@ export async function loader({ request }: Route.LoaderArgs) {
 export default function Index() {
 	return (
 		<>
-			<Hero />
+			<Club />
 			<Promotions />
 			<AboutUs />
 			<Services />
-			<Cars/>
+			<Cars />
 			<ShowcaseGrid />
-			<Projects />
+			<Projects /> 
 			<FAQ />
 		</>
 	)

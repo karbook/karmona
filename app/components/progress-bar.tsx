@@ -43,7 +43,7 @@ function EpicProgress() {
 			<div
 				ref={ref}
 				className={cn(
-					'h-full w-0 bg-linear-to-r from-purple-500 via-pink-500 to-red-500 transition-all duration-500 ease-in-out',
+					'h-full w-0 bg-gradient-to-r from-[#030917] via-[#0a0f1a] to-[#1a1f2b] transition-all duration-500 ease-in-out',
 					transition.state === 'idle' &&
 						(animationComplete ? 'transition-none' : 'w-full opacity-0 transition-all'),
 					delayedPending && transition.state === 'submitting' && 'w-5/12',

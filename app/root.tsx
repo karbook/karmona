@@ -77,13 +77,12 @@ export const loader = async ({ context, request }: Route.LoaderArgs) => {
 	const colorScheme = await getColorScheme(request)
 	const domainUrl = getDomainUrl(request)
 
-	const title = t('TEDI Stack | React Router v7 + Hono + Bun')
-	const description = t('The fast, modern stack for building web applications')
-	const error = t('Error | TEDI Stack')
+	const title = t('karmona')
+	const error = t('Error | Karmona')
 
 	return data(
 		{
-			meta: { title, description, error },
+			meta: { title, error },
 			requestInfo: {
 				origin: domainUrl,
 				domain: domainUrl,
@@ -177,16 +176,12 @@ export const meta = ({ data }: Route.MetaArgs) => {
 			title: data?.meta.title ?? data?.meta.error,
 		},
 		{
-			name: 'description',
-			content: data?.meta.description,
-		},
-		{
 			name: 'keywords',
 			content: 'fast,modern,repair,garage,paint,auto,business,workflow,invoicing,mechanic,software',
 		},
 		{
 			name: 'author',
-			content: 'TEDI',
+			content: 'Karmona',
 		},
 		{
 			name: 'theme-color',

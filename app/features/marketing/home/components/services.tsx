@@ -5,7 +5,7 @@ import { services } from '../constants';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from '@/components/ui/icon';
-
+import { cardVariants } from '@/components/ui/card-animation';
 export default function ServicesWithBrandCarousel() {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     const [showAll, setShowAll] = useState(false);
@@ -14,8 +14,14 @@ export default function ServicesWithBrandCarousel() {
     const displayedServices = showAll ? services : services.slice(0, 6);
 
     return (
-        <>
-            <section id='services' className="py-12 px-6 max-w-[1600px] mx-auto scroll-mt-20">
+        <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: false, amount: 0.2 }}
+        >
+            <motion.section
+                variants={cardVariants}
+                id='services' className="py-12 px-6 max-w-[1600px] mx-auto scroll-mt-20">
                 <h2 className="text-6xl font-bold text-center mb-10 fade-in-up delay-400">Servicios</h2>
                 <p className="text-3xl text-center max-w-6xl mx-auto mb-12 fade-in-up delay-400">
                     En nuestro taller automotriz, nos enorgullece ofrecer una amplia gama de servicios diseñados para mantener, reparar y mejorar el rendimiento de su vehículo.
@@ -100,9 +106,8 @@ export default function ServicesWithBrandCarousel() {
                         </Button>
                     </div>
                 )}
-            </section>
+            </motion.section>
 
-           
-        </>
+        </motion.div>
     );
 }

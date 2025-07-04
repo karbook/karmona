@@ -2,19 +2,20 @@ import { promoRules, tosRules } from '../constants'
 import type { MetaFunction } from 'react-router'
 import type { Route } from '@/rr/features/marketing/home/routes/+types/index'
 import { remixI18Next } from '@/localization/i18n.server'
-
+import { useTranslation } from 'react-i18next'
 export async function loader({ request }: Route.LoaderArgs) {
     const t = await remixI18Next.getFixedT(request)
     const title = t("Karmona")
     return { meta: { title } }
 }
 export default function PromoRulesSection() {
+    const { t } = useTranslation()
     return (
         <>
             <section className="w-full bg-white dark:bg-[#030917] text-gray-800 dark:text-gray-100 px-4 sm:px-6 lg:px-12 xl:px-20 py-16 max-w-screen-2xl mx-auto space-y-20">
-                <h1 className="text-7xl font-bold text-center mb-6">Terminos y Condiciones de Karmona</h1>
+                <h1 className="text-7xl font-bold text-center mb-6">{t("Terms and Conditions of Karmona")}</h1>
                 <p className="text-lg md:text-2xl max-w-6xl font-semibold mx-auto text-center mb-12 text-gray-700 dark:text-gray-300">
-                    Karmona respeta la privacidad de sus clientes y visitantes en línea. La presente política de privacidad describe cómo recopilamos, utilizamos y protegemos la información personal. Al utilizar nuestro sitio web, aceptas las prácticas descritas en esta política.
+                    {t("Karmona respects the privacy of its customers and online visitors. This privacy policy describes how we collect, use, and protect personal information. By using our website, you agree to the practices described in this policy.")}
                 </p>
                 <div
                     className="space-y-10 max-w-7xl mx-auto w-full px-4"            >
@@ -22,8 +23,8 @@ export default function PromoRulesSection() {
                         <article key={id} className="space-y-8 ">
                             {items.map(({ title, text }, index) => (
                                 <div key={`${id}-clause-${index}`} className="space-y-1">
-                                    <h3 className="text-2xl font-bold text-blue-700 dark:text-blue-400">{title}**</h3>
-                                    <p className="text-lg md:text-xl font-semibold text-gray-700 dark:text-gray-200 leading-relaxed">{text}</p>
+                                    <h3 className="text-2xl font-bold text-blue-700 dark:text-blue-400">{t(title)}**</h3>
+                                    <p className="text-lg md:text-xl font-semibold text-gray-700 dark:text-gray-200 leading-relaxed">{t(text)}</p>
                                 </div>
                             ))}
                         </article>
@@ -31,18 +32,18 @@ export default function PromoRulesSection() {
                 </div>
 
                 <div className="space-y-16">
-                    <h1 className="text-7xl font-bold text-center mb-10">Terminos y Condiciones generales para hacer validas nuestras promociones.</h1>
+                    <h1 className="text-7xl font-bold text-center mb-10">{t("General Terms and Conditions for Validating Our Promotions.")}</h1>
 
                     {promoRules.map(({ id, title, items, note }) => (
                         <article key={id} id={id} className="space-y-4">
-                            <h2 className="text-2xl md:text-3xl font-bold">{title}</h2>
+                            <h2 className="text-2xl md:text-3xl font-bold">{t(title)}</h2>
                             <ul className="list-decimal ml-5 space-y-2">
                                 {items.map((step, index) => (
-                                    <li className='text-2xl font-semibold' key={`${id}-step-${index}`}>{step}</li>
+                                    <li className='text-2xl font-semibold' key={`${id}-step-${index}`}>{t(step)}</li>
                                 ))}
                             </ul>
                             {note && (
-                                <p className="text-lg md:text-2xl text-gray-700 font-semibold dark:text-gray-200 leading-relaxed">{note}</p>
+                                <p className="text-lg md:text-2xl text-gray-700 font-semibold dark:text-gray-200 leading-relaxed">{t(note)}</p>
                             )}
                         </article>
                     ))}
@@ -50,10 +51,10 @@ export default function PromoRulesSection() {
 
             </section>
             <section className="w-full bg-white dark:bg-[#030917] text-gray-800 dark:text-gray-100 px-4 sm:px-6 lg:px-12 xl:px-20 py-16 max-w-screen-2xl mx-auto space-y-12">
-                <h2 className="text-7xl font-bold text-center mb-4">Visítanos y síguenos</h2>
+                <h2 className="text-7xl font-bold text-center mb-4">{t("Visit us and follow us")}</h2>
 
                 <p className="text-lg md:text-2xl max-w-6xl font-semibold mx-auto text-center mb-12 text-gray-700 dark:text-gray-300">
-                    Escanea los códigos QR para encontrarnos en Google Maps o seguirnos en Instagram.
+                    {t("Scan the QR codes to find us on Google Maps or follow us on Instagram.")}
                 </p>
                 <div className="flex flex-col md:flex-row items-center justify-center gap-28 mt-8">
                     <img
