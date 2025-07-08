@@ -6,12 +6,14 @@ import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from '@/components/ui/icon';
 import { cardVariants } from '@/components/ui/card-animation';
+import { useTranslation } from 'react-i18next';
 export default function ServicesWithBrandCarousel() {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
     const [showAll, setShowAll] = useState(false);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const displayedServices = showAll ? services : services.slice(0, 6);
+    const { t } = useTranslation();
 
     return (
         <motion.div
@@ -22,9 +24,9 @@ export default function ServicesWithBrandCarousel() {
             <motion.section
                 variants={cardVariants}
                 id='services' className="py-12 px-6 max-w-[1600px] mx-auto scroll-mt-20">
-                <h2 className="text-6xl font-bold text-center mb-10 fade-in-up delay-400">Servicios</h2>
+                <h2 className="text-6xl font-bold text-center mb-10 fade-in-up delay-400">{t("Services")}</h2>
                 <p className="text-3xl text-center max-w-6xl mx-auto mb-12 fade-in-up delay-400">
-                    En nuestro taller automotriz, nos enorgullece ofrecer una amplia gama de servicios diseñados para mantener, reparar y mejorar el rendimiento de su vehículo.
+                    {t("In our automotive workshop, we take pride in offering a wide range of services designed to maintain, repair, and enhance the performance of your vehicle.")}
                 </p>
 
                 <motion.div
@@ -34,6 +36,7 @@ export default function ServicesWithBrandCarousel() {
                     <AnimatePresence initial={false}>
                         {displayedServices.map((service, i) => {
                             const isActive = activeIndex === i;
+                            const isHovered = hoveredIndex === i;
 
                             return (
                                 <motion.div
@@ -60,15 +63,15 @@ export default function ServicesWithBrandCarousel() {
                                         hover:shadow-lg transition-all duration-300
                                     `}
                                 >
-                                    {hoveredIndex === i && (
-                                        <div
-                                            className="absolute inset-0 pointer-events-none z-0"
-                                            style={{
-                                                filter: 'blur(100px)',
-                                                background: `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, rgba(12, 142, 244, 0.5) 10%, transparent 40%)`,
-                                            }}
-                                        />
-                                    )}
+                                    <div
+                                        className="absolute inset-0 pointer-events-none z-0"
+                                        style={{
+                                            filter: 'blur(100px)',
+                                            background: `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, rgba(12, 142, 244, 0.5) 10%, transparent 40%)`,
+                                            opacity: isHovered ? 1 : 0,
+                                            transition: 'opacity 0.4s ease-out',
+                                        }}
+                                    />
 
                                     <div className="absolute -top-7 -right-5 z-0 transition-transform duration-500 ease-in-out group-hover:-rotate-12">
                                         <Icon
@@ -81,13 +84,13 @@ export default function ServicesWithBrandCarousel() {
                                         className={`text-3xl text-center font-semibold mb-3 ${isActive ? 'text-white' : 'text-[#334155] dark:text-white'
                                             } relative z-10`}
                                     >
-                                        {service.title}
+                                        {t(service.title)}
                                     </h3>
                                     <p
                                         className={`text-2xl text-center ${isActive ? 'text-gray-200' : 'text-[#475569] dark:text-[#94a3b8]'
                                             } relative z-10`}
                                     >
-                                        {isActive ? service.info : service.description}
+                                      {t(isActive ? service.info : service.description)}
                                     </p>
                                 </motion.div>
                             );

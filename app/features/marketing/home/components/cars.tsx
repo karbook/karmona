@@ -8,18 +8,16 @@ import type { CarouselApi } from '@/components/ui/carousel'
 import type { AutoScrollOptionsType } from 'embla-carousel-auto-scroll'
 import { carLogos } from '../constants'
 import { useTranslation } from 'react-i18next'
+import { Icon } from '@/components/ui/icon'
 
-// motion
 import { motion, useMotionValue, useMotionTemplate } from 'framer-motion'
 import { cardVariants } from '@/components/ui/card-animation'
 
 export default function Cars() {
     const { t } = useTranslation()
     const [isMouseInside, setIsMouseInside] = useState(false)
-
     const emblaApiCarouselTop = useRef<CarouselApi | null>(null)
     const emblaApiCarouselBottom = useRef<CarouselApi | null>(null)
-
     const autoScrollOptionsTop: Partial<AutoScrollOptionsType> = {
         speed: 4,
         startDelay: 800,
@@ -39,7 +37,6 @@ export default function Cars() {
         carLogos.map((logo) => ({
             ...logo,
             id: `${logo.id}-${index}`,
-            src: `/images/car-brands/${logo.file}`,
         }))
     ).flat()
 
@@ -75,12 +72,12 @@ export default function Cars() {
                     style={{
                         opacity: isMouseInside ? 1 : 0,
                         background: useMotionTemplate`
-            radial-gradient(
-              circle at ${mouseX}px ${mouseY}px,
-              rgba(12, 142, 244, 0.3) 10%,
-              transparent 60%
-            )
-          `,
+                        radial-gradient(
+                        circle at ${mouseX}px ${mouseY}px,
+                        rgba(12, 142, 244, 0.3) 10%,
+                        transparent 60%
+                        )
+                    `,
                         transition: "opacity 0.4s ease-out",
                     }}
                     transition={{ duration: 0.4, ease: 'easeOut' }}
@@ -96,7 +93,6 @@ export default function Cars() {
                         )}
                     </motion.p>
 
-                    {/* Top carousel */}
                     <section className="overflow-hidden relative py-5 sm:py-10">
                         <Carousel
                             className="w-full relative z-20"
@@ -106,23 +102,20 @@ export default function Cars() {
                             autoScrollOptions={autoScrollOptionsTop}
                         >
                             <CarouselContent className="flex whitespace-nowrap relative -ml-8 sm:-ml-18">
-                                {repeatedLogos.map((logo) => (
+                                {repeatedLogos.map((carLogo) => (
                                     <CarouselItem
-                                        key={logo.id}
-                                        className="basis-1/3 sm:basis-auto shrink-0 grow-0 mt-5 mb-5 px-8 sm:px-16 flex justify-center items-center relative"
+                                        key={carLogo.id}
+                                        className="basis-1/3 sm:basis-auto shrink-0 grow-0 mt-5 mb-5 px-2 sm:px-2 flex justify-center items-center relative"
                                     >
-                                        <img
-                                            src={logo.src}
-                                            alt={`Logo ${logo.file.replace('.svg', '')}`}
-                                            className="h-24 w-auto sm:h-[120px] object-contain transition-all duration-300 dark:invert dark:brightness-[2]"
+                                        <Icon
+                                            name={carLogo.icon}
+                                            className="h-15 w-auto sm:h-[120px] object-contain transition-all duration-300 dark:text-white"
                                         />
                                     </CarouselItem>
                                 ))}
                             </CarouselContent>
                         </Carousel>
                     </section>
-
-                    {/* Bottom carousel */}
                     <section className="overflow-hidden relative py-5 sm:py-10">
                         <Carousel
                             className="w-full relative z-20"
@@ -132,15 +125,14 @@ export default function Cars() {
                             autoScrollOptions={autoScrollOptionsDown}
                         >
                             <CarouselContent className="flex whitespace-nowrap relative -ml-8 sm:-ml-18">
-                                {repeatedLogos.map((logo) => (
+                                {repeatedLogos.map((carLogo) => (
                                     <CarouselItem
-                                        key={logo.id}
-                                        className="basis-1/3 sm:basis-auto shrink-0 grow-0 mt-5 mb-5 px-8 sm:px-16 flex justify-center items-center relative"
+                                        key={carLogo.id}
+                                        className="basis-1/3 sm:basis-auto shrink-0 grow-0 mt-5 mb-5 px-2 sm:px-2 flex justify-center items-center relative"
                                     >
-                                        <img
-                                            src={logo.src}
-                                            alt={`Logo ${logo.file.replace('.svg', '')}`}
-                                            className="h-20 w-auto sm:h-[120px] object-contain transition-all duration-300 dark:invert dark:brightness-[2]"
+                                        <Icon
+                                            name={carLogo.icon}
+                                            className="h-15 w-auto sm:h-[120px] object-contain transition-all duration-300 dark:text-white"
                                         />
                                     </CarouselItem>
                                 ))}

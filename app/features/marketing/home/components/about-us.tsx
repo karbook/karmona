@@ -5,12 +5,12 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import { details } from "../constants";
 import { motion } from "framer-motion";
 import { cardVariants } from "@/components/ui/card-animation";
-
+import { useTranslation } from "react-i18next";
 export default function AboutUs() {
     const karmonaVideoHistory = '/images/karmona-projects-content/karmona-history-6KUIREJB.mp4';
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
     const [hovering, setHovering] = useState(false)
-
+    const { t } = useTranslation();
     return (
         <motion.div
             initial="offscreen"
@@ -21,9 +21,9 @@ export default function AboutUs() {
                 variants={cardVariants}
                 id="aboutus" className="bg-white dark:bg-[#030917] px-6 sm:px-12 mb-20 mt-5 lg:px-32 text-gray-900 dark:text-white animate-fade-in-up scroll-mt-28">
                 <div className="max-w-6xl mx-auto text-center mb-12">
-                    <h2 className="text-5xl sm:text-7xl font-bold">Sobre Nosotros</h2>
+                    <h2 className="text-5xl sm:text-7xl font-bold">{t("About Us")}</h2>
                     <p className="max-w-7xl mx-auto text-lg sm:text-2xl mb-2 mt-10">
-                        Nos complace compartir la esencia y los valores que nos definen como organización. Nuestra historia, misión y valores fundamentales nos guían en cada paso, y nos enorgullece presentar un vistazo a quiénes somos y qué representamos.
+                        {t("We are pleased to share the essence and values that define us as an organization. Our history, mission, and core values guide us at every step, and we are proud to present a glimpse of who we are and what we represent.")}
                     </p>
                 </div>
                 <div className="mx-auto flex flex-col md:flex-row gap-12 items-start justify-center">
@@ -68,7 +68,7 @@ export default function AboutUs() {
                             data-[state=active]:before:opacity-100
                         `}
                                 >
-                                    <span className="relative z-10 block whitespace-nowrap">{detail.title}</span>
+                                    <span className="relative z-10 block whitespace-nowrap">{t(detail.title)}</span>
                                 </TabsTrigger>
                             ))}
                         </TabsList>
@@ -100,14 +100,15 @@ export default function AboutUs() {
                                 <div className="space-y-4 relative z-10">
                                     <h3 className="text-4xl sm:text-5xl font-bold text-black dark:text-white mb-4 mt-10 text-center">
                                         {detail.value === "karmona"
-                                            ? "Karmona"
-                                            : detail.value === "mision"
-                                                ? "Nuestra Misión"
+                                            ? t("Karmona")
+                                            : detail.value === "mission"
+                                                ? t("Our Mission")
                                                 : detail.value === "vision"
-                                                    ? "Nuestra Visión"
-                                                    : "Nuestro Legado"}
+                                                    ? t("Our Vision")
+                                                    : t("Our Legacy")}
                                     </h3>
-                                    {detail.value === 'historia' && Array.isArray(detail.content) ? (
+
+                                    {detail.value === 'history' && Array.isArray(detail.content) ? (
                                         <Carousel className="w-full max-w-5xl mx-auto overflow-hidden">
                                             <CarouselContent className="flex gap-6 pl-6 pr-6">
                                                 {detail.content.map((slide, i) => (
@@ -130,8 +131,8 @@ export default function AboutUs() {
                                                             </div>
                                                         )}
                                                         <h4 className="text-lg sm:text-xl font-bold text-[#475569]">{slide.date}</h4>
-                                                        <h5 className="text-xl sm:text-2xl font-bold text-black dark:text-white">{slide.headline}</h5>
-                                                        <p className="text-lg sm:text-xl text-black dark:text-[#8a9baf]">{slide.description}</p>
+                                                        <h5 className="text-xl sm:text-2xl font-bold text-black dark:text-white">{t(slide.headline)}</h5>
+                                                        <p className="text-lg sm:text-xl text-black dark:text-[#8a9baf]">{t(slide.description)}</p>
                                                     </CarouselItem>
                                                 ))}
                                             </CarouselContent>
@@ -148,7 +149,7 @@ export default function AboutUs() {
                                             text-center mx-auto max-w-2xl
                                         "
                                                 >
-                                                    {paragraph}
+                                                    {t(paragraph)}
                                                 </p>
                                             ))
                                     )}

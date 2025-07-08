@@ -64,7 +64,7 @@ export const details: Details[] = [
     icon: 'message-circle-question',
   },
   {
-    value: 'mision',
+    value: 'mission',
     title: t('Mission'),
     content: t(
       'Our mission is to provide comprehensive automotive solutions of the highest quality, ensuring the safety, efficiency, and durability of our clients’ vehicles. We aim to exceed expectations through honest and transparent service, delivered by highly trained staff.'
@@ -80,7 +80,7 @@ export const details: Details[] = [
     icon: 'eye',
   },
   {
-    value: 'historia',
+    value: 'history',
     title: t('History'),
     icon: 'library-big',
     content: [
@@ -225,35 +225,44 @@ export const services: Service[] = [
 
 export type CarLogo = {
 	id: number
-	file: string
+	icon: IconName
 }
 export const carLogos: CarLogo[] = [
-	{ id: 1, file: 'acura.svg' },
-	{ id: 2, file: 'audi.svg' },
-	{ id: 3, file: 'bentley.svg' },
-	{ id: 4, file: 'bmw.svg' },
-	{ id: 5, file: 'cadillac.svg' },
-	{ id: 6, file: 'chevrolet.svg' },
-	{ id: 7, file: 'chrysler.svg' },
-	{ id: 8, file: 'fiat.svg' },
-	{ id: 9, file: 'ford.svg' },
-	{ id: 10, file: 'honda.svg' },
-	{ id: 11, file: 'jeep.svg' },
-	{ id: 12, file: 'kia.svg' },
-	{ id: 13, file: 'landrover.svg' },
-	{ id: 14, file: 'mazda.svg' },
-	{ id: 15, file: 'mg.svg' },
-	{ id: 16, file: 'mini.svg' },
-	{ id: 17, file: 'nissan.svg' },
-	{ id: 18, file: 'peugeot.svg' },
-	{ id: 19, file: 'porsche.svg' },
-	{ id: 20, file: 'ram.svg' },
-	{ id: 21, file: 'renault.svg' },
-	{ id: 22, file: 'seat.svg' },
-	{ id: 23, file: 'subaru.svg' },
-	{ id: 24, file: 'suzuki.svg' },
-	{ id: 25, file: 'toyota.svg' },
-	{ id: 26, file: 'volkswagen.svg' },
+	{ id: 1, icon: 'acura' },
+	{ id: 2, icon: 'audi' },
+	{ id: 3, icon: 'bentley' },
+	{ id: 4, icon: 'bmw' },
+	{ id: 5, icon: 'cadillac' },
+	{ id: 6, icon: 'chevrolet' },
+	{ id: 7, icon: 'chrysler' },
+	{ id: 8, icon: 'fiat' },
+	{ id: 9, icon: 'ford' },
+	{ id: 10, icon: 'honda' },
+	{ id: 11, icon: 'jeep' },
+	{ id: 12, icon: 'kia' },
+	{ id: 13, icon: 'landrover' },
+	{ id: 14, icon: 'mazda' },
+	{ id: 15, icon: 'mg' },
+	{ id: 16, icon: 'mini' },
+	{ id: 17, icon: 'nissan' },
+	{ id: 18, icon: 'peugeot' },
+	{ id: 19, icon: 'porsche' },
+	{ id: 20, icon: 'ram' },
+	{ id: 21, icon: 'renault' },
+	{ id: 22, icon: 'seat' },
+	{ id: 23, icon: 'subaru' },
+	{ id: 24, icon: 'suzuki' },
+	{ id: 25, icon: 'toyota' },
+	{ id: 26, icon: 'volkswagen' },
+	{ id: 27, icon: 'volvo' },
+	{ id: 28, icon: 'mercedes-benz' },
+  { id: 29, icon: 'gmc' },
+  { id: 30, icon: 'lincoln' },
+  { id: 31, icon: 'alfa-romeo' },
+  { id: 32, icon: 'cupra' },
+  { id: 33, icon: 'mitsubishi' },
+
+
 ];
 
 export type GridImage = {
