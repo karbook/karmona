@@ -12,27 +12,27 @@ export default function WhatsAppMenu() {
     {
       label: t("Status of my car"),
       icon: "car",
-      text: t("I want to know the status of my car"),
+      text: t("Hello, I'd like to ask you about the current status of my car repair. I'm interested in learning how the process is going and if there are any updates I should be aware of. Thank you!"),
     },
     {
       label: t("Request information"),
       icon: "message-circle-question-mark",
-      text: t("I want additional information"),
+      text: t("Hello, I'm interested in learning more about your services."),
     },
     {
       label: t("Cost and budget inquiry"),
       icon: "dollar-sign",
-      text: t("Cost and budget inquiry"),
+      text: t("Could you provide me with an estimate for '[type of service]' on my car?\nMake:\nModel:\nYear:\nColor:\nThank you."),
     },
     {
       label: t("Request invoice"),
       icon: "receipt",
-      text: t("I want to request an invoice"),
+      text: t("I want to request an Good morning, I hereby request that my invoice be generated for the following order\nwith the following information"),
     },
     {
       label: t("Send message"),
       icon: "message-circle",
-      text: t("I want to send a message"),
+      text: t("Hola, quisiera ponerme en contacto con ustedes."),
     },
   ]
 
@@ -45,7 +45,7 @@ export default function WhatsAppMenu() {
             size="whatsapp"
             aria-label="Abrir WhatsApp"
           >
-          <Icon name="whatsapp" className="text-[#030917] dark:text-white !w-14 !h-14" />
+            <Icon name="whatsapp" className="text-[#030917] dark:text-white !w-14 !h-14" />
 
             <span className="sr-only">{t('Open WhatsApp')}</span>
           </Button>
@@ -72,7 +72,7 @@ export default function WhatsAppMenu() {
             {items.map(({ label, icon, text }) => (
               <a
                 key={label}
-                href={`https://wa.me/522218246060?text=${encodeURIComponent(text)}`}
+                href={`https://wa.me/522225390369?text=${encodeURIComponent(text)}`}
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-5 bg-white dark:bg-[#030917] border border-gray-300 dark:border-gray-700 hover:bg-[#eff4f8] dark:hover:bg-zinc-700 transition-all duration-200 ease-in-out rounded-xl px-6 py-5 text-black dark:text-white font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5"

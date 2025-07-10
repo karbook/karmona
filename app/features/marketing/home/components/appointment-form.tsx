@@ -120,7 +120,7 @@ export default function ScheduleForm() {
       setIsSubmitting(false);
     }
   };
-  
+
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isActive, setIsActive] = useState(false);
 
@@ -147,7 +147,7 @@ export default function ScheduleForm() {
                overflow-hidden mt-10 mb-10 sm:mt-20 sm:mb-20"
         onSubmit={handleSubmit(onSubmit)}
         onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+        onMouseLeave={handleMouseLeave}
       >
         <div
           className="absolute inset-0 pointer-events-none z-0"
@@ -177,7 +177,6 @@ export default function ScheduleForm() {
                 {t(field.label)}
                 {field.icon && <Icon name={field.icon as any} size="lg" className="w-5 h-5 sm:w-6 sm:h-6" />}
               </Label>
-
               {field.type === "input" && (
                 <Input
                   id={field.name}
@@ -187,6 +186,7 @@ export default function ScheduleForm() {
                   className="w-full bg-transparent h-10 sm:h-12 text-base sm:text-lg md:text-3xl font-semibold"
                 />
               )}
+
 
               {field.type === "select" && (
                 <Controller
