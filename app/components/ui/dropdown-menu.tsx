@@ -162,9 +162,10 @@ const DropdownMenuRadioItem = ({
 	<DropdownMenuPrimitive.RadioItem
 		data-slot="dropdown-menu-radio-item"
 		className={cn(
-			'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-hidden transition-colors focus:bg-white dark:focus:bg-white focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50',
-			className
-		)}
+  'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-hidden transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 focus:bg-black focus:text-white dark:focus:bg-white dark:focus:text-black data-disabled:pointer-events-none data-disabled:opacity-50',
+  className
+)}
+
 		{...props}
 	>
 		{indicator && (

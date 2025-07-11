@@ -63,7 +63,7 @@ export default function Cars() {
             <motion.section
                 id="cars"
                 variants={cardVariants}
-                className="overflow-hidden relative py-14 sm:py-28 mt-20 scroll-mt-25"
+                className="overflow-hidden relative py-14 sm:py-28 mt-20 scroll-mt-55 sm:scroll-mt-70"
                 onMouseMove={handleSectionMouseMove}
                 onMouseLeave={handleSectionMouseLeave}
             >
@@ -105,8 +105,9 @@ export default function Cars() {
                                 {repeatedLogos.map((carLogo) => (
                                     <CarouselItem
                                         key={carLogo.id}
-                                        className="basis-1/3 sm:basis-auto shrink-0 grow-0 mt-5 mb-5 px-2 sm:px-2 flex justify-center items-center relative"
+                                        className="basis-1/3 sm:basis-auto shrink-0 grow-0 mt-2 mb-2 px-1 sm:px-1 flex justify-center items-center relative"
                                     >
+
                                         <Icon
                                             name={carLogo.icon}
                                             className="h-15 w-auto sm:h-[120px] object-contain transition-all duration-300 dark:text-white"
@@ -128,8 +129,9 @@ export default function Cars() {
                                 {repeatedLogos.map((carLogo) => (
                                     <CarouselItem
                                         key={carLogo.id}
-                                        className="basis-1/3 sm:basis-auto shrink-0 grow-0 mt-5 mb-5 px-2 sm:px-2 flex justify-center items-center relative"
+                                        className="basis-1/3 sm:basis-auto shrink-0 grow-0 mt-2 mb-2 px-1 sm:px-1 flex justify-center items-center relative"
                                     >
+
                                         <Icon
                                             name={carLogo.icon}
                                             className="h-15 w-auto sm:h-[120px] object-contain transition-all duration-300 dark:text-white"

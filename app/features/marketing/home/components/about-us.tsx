@@ -19,7 +19,7 @@ export default function AboutUs() {
         >
             <motion.section
                 variants={cardVariants}
-                id="aboutus" className="bg-white dark:bg-[#030917] px-6 sm:px-12 mb-20 mt-5 lg:px-32 text-gray-900 dark:text-white animate-fade-in-up scroll-mt-28">
+                id="aboutus" className="bg-white dark:bg-[#030917] px-6 sm:px-12 mb-20 mt-5 lg:px-32 text-gray-900 dark:text-white animate-fade-in-up scroll-mt-55">
                 <div className="max-w-6xl mx-auto text-center mb-12">
                     <h2 className="text-5xl sm:text-7xl font-bold">{t("About Us")}</h2>
                     <p className="max-w-7xl mx-auto text-lg sm:text-2xl mb-2 mt-10">
@@ -109,7 +109,12 @@ export default function AboutUs() {
                                     </h3>
 
                                     {detail.value === 'history' && Array.isArray(detail.content) ? (
-                                        <Carousel className="w-full max-w-5xl mx-auto overflow-hidden">
+                                        <Carousel opts={{
+                                            align: 'start',
+                                            loop: false,
+                                        }}
+                                            mousewheel={true}
+                                            className="w-full max-w-5xl mx-auto overflow-hidden">
                                             <CarouselContent className="flex gap-6 pl-6 pr-6">
                                                 {detail.content.map((slide, i) => (
                                                     <CarouselItem

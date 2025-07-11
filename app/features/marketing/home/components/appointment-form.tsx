@@ -275,11 +275,11 @@ export default function ScheduleForm() {
             />
             <div className="flex-1 text-sm sm:text-base md:text-2xl font-semibold leading-tight sm:leading-snug text-center">
               {t('By clicking "Schedule Appointment", you agree to our')}{" "}
-              <a href="/privacy" className="inline-block underline text-blue-600 dark:text-blue-400">
+              <a href="/privacy" className="inline-block underline text-blue-400 dark:text-blue-400">
                 {t('Privacy Policy')}
               </a>{" "}
-              y nuestros{" "}
-              <a href="/tos" className="inline-block underline text-blue-600 dark:text-blue-400">
+              {t('and our')}{" "}
+              <a href="/tos" className="inline-block underline text-blue-400 dark:text-blue-400">
                 {t('Terms and Conditions')}
               </a>.
             </div>

@@ -15,7 +15,6 @@ import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
 type CarouselOptions = UseCarouselParameters[0];
-type CarouselPlugin = UseEmblaCarouselType[1]
 
 
 type CarouselProps = {
@@ -26,6 +25,11 @@ type CarouselProps = {
   autoScrollOptions?: AutoScrollOptionsType;
   onIndexChange?: (index: number) => void;
   mousewheel?: boolean;
+  instantScroll?: boolean;
+  autoplayNext?: boolean;
+  autoplayNextDelay?: number;
+
+
 };
 
 type CarouselContextProps = {
@@ -36,7 +40,7 @@ type CarouselContextProps = {
   canScrollPrev: boolean;
   canScrollNext: boolean;
   currentIndex: number;
-} & Omit<CarouselProps, 'onIndexChange' | 'mousewheel'>; 
+} & Omit<CarouselProps, 'onIndexChange' | 'mousewheel' | 'instantScroll'>;
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
 
@@ -52,24 +56,32 @@ function useCarousel() {
 
 const Carousel = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & CarouselProps
+  React.HTMLAttributes<HTMLDivElement> & CarouselProps & {
+    autoplayNext?: boolean;
+    autoplayNextDelay?: number;
+  }
 >(
+
   (
-    {
-      orientation = "horizontal",
-      opts,
-      setApi,
-      autoScroll = false,
-      autoScrollOptions,
-      className,
-      children,
-      onIndexChange,
-      mousewheel = false, 
-      ...props
-    },
+ {
+  orientation = "horizontal",
+  opts,
+  setApi,
+  autoScroll = false,
+  autoScrollOptions,
+  autoplayNext = false,
+  autoplayNextDelay = 3000,
+  className,
+  children,
+  onIndexChange,
+  mousewheel = false,
+  instantScroll = false,
+  ...props
+}
+,
     ref
   ) => {
-   
+
     const plugins = React.useMemo(() => {
       const activePlugins = [];
 
@@ -82,13 +94,14 @@ const Carousel = React.forwardRef<
       }
 
       return activePlugins;
-    }, [autoScroll, autoScrollOptions, mousewheel]); 
+    }, [autoScroll, autoScrollOptions, mousewheel]);
 
     const [carouselRef, api] = useEmblaCarousel(
       {
         ...opts,
         axis: orientation === "horizontal" ? "x" : "y",
-        loop: opts?.loop ?? false, 
+        loop: opts?.loop ?? false,
+        duration: instantScroll ? 0 : opts?.duration,
       },
       plugins
     );
@@ -153,6 +166,15 @@ const Carousel = React.forwardRef<
         api?.off("select", onSelect);
       };
     }, [api, onSelect]);
+React.useEffect(() => {
+  if (!api || !autoplayNext) return;
+
+  const timer = setInterval(() => {
+    api.scrollNext(); // como si presionaras "Next"
+  }, autoplayNextDelay ?? 3000); // delay por defecto de 3s
+
+  return () => clearInterval(timer);
+}, [api, autoplayNext, autoplayNextDelay]);
 
     return (
       <CarouselContext.Provider
@@ -197,7 +219,7 @@ const CarouselContent = React.forwardRef<
         ref={ref}
         className={cn(
           "flex",
-          orientation === "horizontal" ? "" : "flex-col", 
+          orientation === "horizontal" ? "" : "flex-col",
           className
         )}
         {...props}

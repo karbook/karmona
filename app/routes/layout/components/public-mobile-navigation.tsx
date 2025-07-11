@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { cn } from '@/utils/misc';
-
+import { useState } from 'react';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { ColorSchemeSwitch } from '@/components/color-scheme-switch';
 import {
@@ -19,9 +19,11 @@ import { menuItems } from '../constants';
 export function MobileNavigation() {
   const { t } = useTranslation();
   const location = useLocation();
+  const [open, setOpen] = useState(false);
+
 
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild className="lg:hidden">
         <Button variant="ghost" size="icon">
           <Icon name="menu" />
@@ -44,6 +46,7 @@ export function MobileNavigation() {
                 return item.dropdownItems.map((sub, subIndex) => (
                   <li key={`${index}-${subIndex}`}>
                     <Link
+                      onClick={() => setOpen(false)}
                       to={sub.path}
                       className={cn(
                         'flex items-center gap-3 p-2 rounded-lg text-base font-medium transition-colors',
@@ -65,6 +68,7 @@ export function MobileNavigation() {
                   <li key={index}>
                     <Link
                       to={item.path}
+                      onClick={() => setOpen(false)}
                       className={cn(
                         'block p-2 text-base font-medium rounded-md transition-colors',
                         location.pathname === item.path
@@ -83,11 +87,12 @@ export function MobileNavigation() {
           <div className="flex flex-col gap-3 pt-4 border-t border-border">
             <Link
               to="/appointment"
+              onClick={() => setOpen(false)}
               className={cn(buttonVariants({ variant: 'black' }), 'w-full')}
             >
               {t('Schedule Appointment')}
             </Link>
-            
+
           </div>
 
           <div className="flex justify-between items-center pt-4 border-t border-border">

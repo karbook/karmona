@@ -82,11 +82,13 @@ export const iconNames = [
 	'user',
 	'volvo',
 	'target',
+	'karmona-long-white-XMOO6ZKG',
 	'wind',
 	'chevrons-down',
 	'message-circle-question',
 	'toyota',
 	'megaphone',
+	'karmona-long-OLBYZOYR',
 	'arrow-down',
 	'receipt',
 ] as const

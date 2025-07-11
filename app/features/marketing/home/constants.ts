@@ -274,22 +274,22 @@ export type GridImage = {
 }
 
 export const gridImages: GridImage[] = [
-	{ id: 'img-01', src: '/images/grid-cars/audi.jpeg', alt: 'Audi', column: 1, row: 1 },
-	{ id: 'img-02', src: '/images/grid-cars/bmw.jpeg', alt: 'BMW', column: 2, row: 1 },
-	{ id: 'img-03', src: '/images/grid-cars/bocho.jpeg', alt: 'Bocho', column: 3, row: 1 },
-	{ id: 'img-04', src: '/images/grid-cars/dodge.jpeg', alt: 'Dodge', column: 4, row: 1 },
-	{ id: 'img-05', src: '/images/grid-cars/explorer.jpeg', alt: 'Explorer', column: 1, row: 2 },
-	{ id: 'img-06', src: '/images/grid-cars/ford.jpeg', alt: 'Ford', column: 2, row: 2 },
-	{ id: 'img-07', src: '/images/grid-cars/gmc.jpeg', alt: 'GMC', column: 3, row: 2 },
-	{ id: 'img-08', src: '/images/grid-cars/mazda.jpeg', alt: 'Mazda', column: 4, row: 2 },
-	{ id: 'img-09', src: '/images/grid-cars/mercedez-glc.jpeg', alt: 'Mercedes GLC', column: 1, row: 3 },
-	{ id: 'img-10', src: '/images/grid-cars/mercedez-volante.jpeg', alt: 'Mercedes Volante', column: 2, row: 3 },
-	{ id: 'img-11', src: '/images/grid-cars/mercedez.jpeg', alt: 'Mercedes', column: 3, row: 3 },
-	{ id: 'img-12', src: '/images/grid-cars/mini.jpeg', alt: 'Mini', column: 4, row: 3 },
-	{ id: 'img-13', src: '/images/grid-cars/mustang.jpeg', alt: 'Mustang', column: 1, row: 4 },
-	{ id: 'img-14', src: '/images/grid-cars/nissan.jpeg', alt: 'Nissan', column: 2, row: 4 },
-	{ id: 'img-15', src: '/images/grid-cars/roadster.jpeg', alt: 'Roadster', column: 3, row: 4 },
-	{ id: 'img-16', src: '/images/grid-cars/toyota.jpeg', alt: 'Toyota', column: 4, row: 4 }
+	{ id: 'img-01', src: '/images/especialist-grid/karmona-audi.webp', alt: 'Audi', column: 1, row: 1 },
+	{ id: 'img-02', src: '/images/especialist-grid/karmona-bmw.webp', alt: 'BMW', column: 2, row: 1 },
+	{ id: 'img-03', src: '/images/especialist-grid/karmona-ford.webp', alt: 'Ford', column: 3, row: 1 },
+	{ id: 'img-04', src: '/images/especialist-grid/karmona-ford2.webp', alt: 'Ford', column: 4, row: 1 },
+	{ id: 'img-05', src: '/images/especialist-grid/karmona-ford3.webp', alt: 'Ford', column: 1, row: 2 },
+	{ id: 'img-06', src: '/images/especialist-grid/karmona-gmc.webp', alt: 'GMC', column: 2, row: 2 },
+	{ id: 'img-07', src: '/images/especialist-grid/karmona-inside.webp', alt: 'Inside', column: 3, row: 2 },
+	{ id: 'img-08', src: '/images/especialist-grid/karmona-mazda.webp', alt: 'Mazda', column: 4, row: 2 },
+	{ id: 'img-09', src: '/images/especialist-grid/karmona-mazda2.webp', alt: 'Mazda', column: 1, row: 3 },
+	{ id: 'img-10', src: '/images/especialist-grid/karmona-mercedes.webp', alt: ' Mercedes', column: 2, row: 3 },
+	{ id: 'img-11', src: '/images/especialist-grid/karmona-mercedes2.webp', alt: 'Mercedes', column: 3, row: 3 },
+	{ id: 'img-12', src: '/images/especialist-grid/karmona-nissan.webp', alt: 'Nissan', column: 4, row: 3 },
+	{ id: 'img-13', src: '/images/especialist-grid/karmona-suspension.webp', alt: 'Suspension', column: 1, row: 4 },
+	{ id: 'img-14', src: '/images/especialist-grid/karmona-toyota.webp', alt: 'Toyota', column: 2, row: 4 },
+	{ id: 'img-15', src: '/images/especialist-grid/karmona-valiant.webp', alt: 'Valiant', column: 3, row: 4 },
+	{ id: 'img-16', src: '/images/especialist-grid/karmona-vw.webp', alt: 'Volkswagen', column: 4, row: 4 }
 ]
 export type MediaItem = {
 	id: string;

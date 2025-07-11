@@ -35,6 +35,7 @@ const buttonVariants = cva(
 				ghost: cn(
 					'hover:bg-accent hover:text-accent-foreground',
 					// CUSTOM STYLES OVERRIDE
+					'hover:bg-button-ghost hover:text-button-ghost-foreground',
 					'bg-button-ghost hover:bg-button-ghost-hover hover:text-button-ghost-foreground'
 				),
 				link: cn(
