@@ -19,8 +19,8 @@ export default function AboutUs() {
         >
             <motion.section
                 variants={cardVariants}
-                id="aboutus" className="bg-white dark:bg-[#030917] px-6 sm:px-12 mb-20 mt-5 lg:px-32 text-gray-900 dark:text-white animate-fade-in-up scroll-mt-55">
-                <div className="max-w-6xl mx-auto text-center mb-12">
+                id="aboutus" className="bg-white dark:bg-[#030917] px-6 sm:px-6 mb-20 mt-5 lg:px-24 text-gray-900 dark:text-white animate-fade-in-up scroll-mt-55">
+                <div className="max-w-4xl mx-auto text-center mb-12">
                     <h2 className="text-5xl sm:text-7xl font-bold">{t("About Us")}</h2>
                     <p className="max-w-7xl mx-auto text-lg sm:text-2xl mb-2 mt-10">
                         {t("We are pleased to share the essence and values that define us as an organization. Our history, mission, and core values guide us at every step, and we are proud to present a glimpse of who we are and what we represent.")}
@@ -40,19 +40,19 @@ export default function AboutUs() {
                     <Tabs defaultValue="karmona" className="flex flex-col w-full md:w-5/12 lg:w-[50%]">
                         <TabsList
                             className="
-                    p-0 bg-transparent flex w-full gap-2 mb-4 
-                    justify-start overflow-x-auto whitespace-nowrap 
-                    sm:justify-around sm:overflow-visible
-                    scrollbar-none
-                "
-                        >
+        p-0 bg-transparent flex max-w-[1200px] gap-2 mb-4
+        justify-start
+        sm:justify-around sm:overflow-visible
+        scrollbar-none
+    "                   >
                             {details.map((detail) => (
                                 <TabsTrigger
                                     key={detail.value}
                                     value={detail.value}
                                     className={`
+                                        align-center
                             relative group overflow-visible
-                            py-4 px-6 sm:py-6 sm:px-10 
+                            py-4 px-4 sm:py-6 sm:px-9 
                             rounded-4xl text-lg sm:text-2xl font-semibold 
                             transition-colors duration-300 ease-in-out
                             dark:text-white hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer
@@ -68,7 +68,7 @@ export default function AboutUs() {
                             data-[state=active]:before:opacity-100
                         `}
                                 >
-                                    <span className="relative z-10 block whitespace-nowrap">{t(detail.title)}</span>
+                                    <span className="relative z-10 block">{t(detail.title)}</span>
                                 </TabsTrigger>
                             ))}
                         </TabsList>

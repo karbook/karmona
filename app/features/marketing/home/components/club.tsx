@@ -36,7 +36,6 @@ export default function Club() {
           </div>
         </main>
       </div>
-
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -45,7 +44,6 @@ export default function Club() {
       >
         <motion.section
           variants={cardVariants}
-          id="start"
           className="w-full bg-white dark:bg-[#030917] flex flex-col items-center text-center py-12 sm:py-16 scroll-mt-40"
         >
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-12">

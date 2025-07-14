@@ -43,7 +43,7 @@ export default function FAQ() {
             <motion.section
                 id="FAQ"
                 variants={cardVariants}
-                className="w-full max-w-[1580px] mx-auto px-4 sm:px-6 py-8 md:py-12 mb-10 scroll-mt-34">
+                className="w-full max-w-[1580px] mx-auto px-4 sm:px-6 py-8 md:py-12 mb-10 mt-25 scroll-mt-40">
                 <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-center mb-4 md:mb-6">
                     {t("Frequently Asked Questions")}
                 </h1>
@@ -100,7 +100,7 @@ export default function FAQ() {
             >
                 <motion.section
                     id="contact"
-                    className="flex flex-col gap-4 sm:gap-6 max-w-3xl w-full mx-auto px-4 py-8 sm:px-6 md:py-12 scroll-mt-25 sm:scroll-mt-35"
+                    className="flex flex-col gap-4 sm:gap-6 max-w-3xl w-full mx-auto px-4 py-8 sm:px-6 md:py-12 scroll-mt-25 sm:scroll-mt-40"
                     variants={cardVariants}
                 >
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-center mb-4 md:mb-6">

@@ -26,7 +26,7 @@ export default function Logo({ redirect, className, variant, alt }: LogoProps) {
 				name={'karmona-long-white-XMOO6ZKG'}
 				className={cn(
 					logoVariants({ variant }),
-					'text-dark dark:text-white',
+					'text-[#030917] dark:text-white',
 					className
 				)}
 				aria-label={alt ?? 'Karmona Logo'}

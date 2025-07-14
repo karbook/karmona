@@ -4,7 +4,7 @@ import { t } from '@/localization/utils'
 export const ScheduleFormSchema = z.object({
   fullName: z.string().min(3, t('Full name is required')),
   email: z.string().email(t('Invalid email')),
-  phone: z.string().min(7, t('Phone number is required')),
+  phone: z.string().min(10, t('Phone number is required')),
   date: z.date({
     required_error: t('Please select a date'),
     invalid_type_error: t('Invalid date'),

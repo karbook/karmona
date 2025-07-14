@@ -20,7 +20,16 @@ import { Button } from "@/components/ui/button";
 import { Icon } from "@/components/ui/icon";
 import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion";
-import { formVariants, fadeIn, cardVariants } from "@/components/ui/card-animation";
+import { formVariants, fadeIn } from "@/components/ui/card-animation";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+} from "@/components/ui/dialog";
 
 export async function loader({ request }: Route.LoaderArgs) {
   const t = await remixI18Next.getFixedT(request);
@@ -186,8 +195,6 @@ export default function ScheduleForm() {
                   className="w-full bg-transparent h-10 sm:h-12 text-base sm:text-lg md:text-3xl font-semibold"
                 />
               )}
-
-
               {field.type === "select" && (
                 <Controller
                   control={control}
@@ -233,7 +240,7 @@ export default function ScheduleForm() {
 
               {errors[field.name as keyof ScheduleFormValues] && (
                 <p className="mt-2 px-3 py-2 rounded-md border border-red-500 bg-red-50 dark:bg-red-900/30 text-base sm:text-lg font-medium text-red-700 dark:text-red-300 max-w-xl">
-                  {(errors[field.name as keyof ScheduleFormValues] as any)?.message}
+                  {t((errors[field.name as keyof ScheduleFormValues] as any)?.message || '')}
                 </p>
               )}
             </motion.div>
@@ -254,7 +261,7 @@ export default function ScheduleForm() {
           />
           {errors.description && (
             <p className="mt-2 px-3 py-2 rounded-md border border-red-500 bg-red-50 dark:bg-red-950 text-sm sm:text-base font-medium text-red-700 dark:text-red-300 max-w-xl">
-              {errors.description.message}
+              {t(errors.description.message)}
             </p>
           )}
         </motion.div>
@@ -285,20 +292,38 @@ export default function ScheduleForm() {
             </div>
           </div>
         </motion.div>
-
         {formMessage?.type !== 'success' && errors.termsAccepted && (
-          <motion.p variants={fadeIn} className="mt-3 px-3 py-2 rounded-md border border-red-500 bg-red-50 dark:bg-red-900/30 text-center text-sm sm:text-base font-medium text-red-700 dark:text-red-300 max-w-2xl mx-auto">
-            {errors.termsAccepted.message}
-          </motion.p>
+          <p className="mt-3 px-3 py-2 rounded-md border border-red-500 bg-red-50 dark:bg-red-900/30 text-center text-sm sm:text-base font-medium text-red-700 dark:text-red-300 max-w-2xl mx-auto">
+            {t(errors.termsAccepted.message)}
+          </p>
         )}
+        <Dialog open={formMessage?.type === 'error'} onOpenChange={() => setFormMessage(null)}>
+          <DialogContent
+            className="max-w-md sm:max-w-xl bg-white dark:bg-[#030917] border border-gray-300 dark:border-gray-700 shadow-xl rounded-xl text-black dark:text-white"
+          >
+            <DialogHeader>
+              <DialogTitle className="text-2xl sm:text-3xl font-bold mb-2">
+                {t("Something went wrong")}
+              </DialogTitle>
 
-        {formMessage?.type === 'success' && (
-          <motion.div variants={fadeIn} className="mt-4 rounded-md border border-green-500 bg-green-50 dark:bg-green-900/20 px-4 py-3 text-center text-sm sm:text-base font-semibold text-green-700 dark:text-green-300 max-w-xl mx-auto">
-            {formMessage.text}
-          </motion.div>
-        )}
+              <DialogDescription className="text-base sm:text-lg font-medium text-gray-700 dark:text-[#8a9baf]">
+                {t("There was a connection problem.")}
+              </DialogDescription>
+              <DialogDescription className="text-base sm:text-lg font-medium text-gray-700 dark:text-[#8a9baf]">
+                {t("Please try again later")}
+              </DialogDescription>
+            </DialogHeader>
 
-        <motion.div variants={fadeIn} className="max-w-5xl mx-auto px-4 sm:px-6">
+            <DialogClose
+              className="mt-6 inline-flex items-center justify-center px-5 py-2 sm:px-6 sm:py-3 bg-black dark:bg-white text-white dark:text-black rounded-full text-sm sm:text-base font-semibold transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white"
+            >
+              {t("Close")}
+            </DialogClose>
+          </DialogContent>
+        </Dialog>
+
+        <div className="mt-6" />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <Button
             type="submit"
             variant="schedule"
@@ -307,7 +332,8 @@ export default function ScheduleForm() {
           >
             {isSubmitting ? t('Scheduling...') : t('Schedule Appointment')}
           </Button>
-        </motion.div>
+        </div>
+
       </motion.form>
     </div>
 

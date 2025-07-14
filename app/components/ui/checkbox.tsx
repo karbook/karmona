@@ -20,7 +20,10 @@ function Checkbox({
         data-slot="checkbox-indicator"
         className="flex items-center justify-center text-current transition-none"
       >
-<Icon name="check" className="h-10 w-10 text-white dark:text-black" />
+        <Icon
+          name="check"
+          className="h-6 w-6 sm:h-8 sm:w-8 text-white dark:text-black"
+        />
       </CheckboxPrimitive.Indicator>
     </CheckboxPrimitive.Root>
   )

@@ -11,12 +11,12 @@ export default function Promotions() {
     <motion.div
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ once: false, amount: 0.8 }}
+      viewport={{ once: false, amount: 0.2 }}
     >
       <motion.section
         variants={cardVariants}
         id="promotions"
-        className="bg-white dark:bg-[#030917] sm:py-28 px-6 sm:px-12 lg:px-32 text-center text-gray-900 dark:text-white animate-fade-in-up"
+        className="bg-white dark:bg-[#030917] sm:py-28 px-6 sm:px-12 lg:px-32 text-center text-gray-900 dark:text-white animate-fade-in-up scroll-mt-40"
       >
         <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
           {t("Promotions")}

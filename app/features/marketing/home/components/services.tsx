@@ -23,7 +23,7 @@ export default function ServicesWithBrandCarousel() {
         >
             <motion.section
                 variants={cardVariants}
-                id='services' className="py-12 px-6 max-w-[1600px] mx-auto scroll-mt-34">
+                id='services' className="py-12 px-6 max-w-[1600px] mx-auto scroll-mt-40">
                 <h2 className="text-6xl font-bold text-center mb-10 fade-in-up delay-400">{t("Services")}</h2>
                 <p className="text-3xl text-center max-w-6xl mx-auto mb-12 fade-in-up delay-400">
                     {t("In our automotive workshop, we take pride in offering a wide range of services designed to maintain, repair, and enhance the performance of your vehicle.")}
@@ -90,7 +90,7 @@ export default function ServicesWithBrandCarousel() {
                                         className={`text-2xl text-center ${isActive ? 'text-gray-200' : 'text-[#475569] dark:text-[#94a3b8]'
                                             } relative z-10`}
                                     >
-                                      {t(isActive ? service.info : service.description)}
+                                        {t(isActive ? service.info : service.description)}
                                     </p>
                                 </motion.div>
                             );
@@ -105,8 +105,8 @@ export default function ServicesWithBrandCarousel() {
                             onClick={() => setShowAll(!showAll)}
                             className="transition-all duration-300 hover:scale-105"
                         >
-                            {showAll ? 'Ver menos' : 'Ver más'}
-                        </Button>
+                            {showAll ? t('show Less') : t('show More')}
+                       </Button>
                     </div>
                 )}
             </motion.section>
