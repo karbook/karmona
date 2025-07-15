@@ -15,8 +15,9 @@ ENV COMMIT_SHA=$COMMIT_SHA
 ARG OP_SERVICE_ACCOUNT_TOKEN
 ENV OP_SERVICE_ACCOUNT_TOKEN=$OP_SERVICE_ACCOUNT_TOKEN
 
-ARG OP_ENV
-ENV OP_ENV=$OP_ENV
+# 🔑 API Key de Resend
+ARG RESEND_API_KEY
+ENV RESEND_API_KEY=$RESEND_API_KEY
 
 # 🔋 Install 1Password CLI dependencies and binary
 RUN apt-get update && apt-get install -y curl unzip jq && apt-get clean

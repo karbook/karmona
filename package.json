@@ -8,7 +8,7 @@
     "1password": "op run --no-masking --env-file .env.op --",
     "dev": "NODE_ENV=development bun --bun vite",
     "dev:op": "NODE_ENV=development OP_ENV=development bun --bun 1password vite",
-    "build": "OP_ENV=development bun 1password react-router build",
+    "build": "bun 1password react-router build",
     "start": "NODE_ENV=production bun 1password bun ./build/server/index.js",
     "start:dev": "NODE_ENV=production OP_ENV=development bun 1password bun ./build/server/index.js",
     "typegen": "react-router typegen",
