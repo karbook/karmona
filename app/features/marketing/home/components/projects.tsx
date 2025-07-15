@@ -29,7 +29,7 @@ export default function Projects() {
             >
         <motion.section
             id='projects'
-            className="w-full bg-white mt-10 sm:mt-20 items-center dark:bg-[#030917] py-10 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-32 text-gray-900 dark:text-white scroll-mt-20 sm:scroll-mt-35"
+            className="w-full bg-white mt-10 sm:mt-20 items-center dark:bg-[#030917] py-10 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-32 text-gray-900 dark:text-white scroll-mt-45 sm:scroll-mt-35 lg:scroll-mt-45"
             variants={cardVariants}
         >
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-6 sm:mb-8">{t('Our Projects')}</h2>

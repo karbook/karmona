@@ -35,7 +35,7 @@ export default function ShowcaseGrid() {
         <motion.section
           id="specialist"
           variants={cardVariants}
-          className="w-full bg-white dark:bg-[#030917] mb-10 py-10 px-4 sm:px-8 md:px-20 lg:px-32 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center scroll-mt-20 sm:scroll-mt-35"
+          className="w-full bg-white dark:bg-[#030917] mb-10 py-10 px-4 sm:px-8 md:px-20 lg:px-32 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center scroll-mt-40 sm:scroll-mt-35"
         >
           <div className="flex-1 text-center lg:text-left">
             <h2 className="text-5xl sm:text-5xl md:text-7xl font-bold text-center text-gray-900 dark:text-white mb-4 sm:mb-6 max-w-xl mx-auto">
@@ -48,7 +48,7 @@ export default function ShowcaseGrid() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-2xl sm:text-4xl md:text-7xl font-bold text-center text-[#3c84f4] max-w-xl mx-auto"
+                className="text-5xl sm:text-4xl md:text-7xl font-bold text-center text-[#3c84f4] max-w-xl mx-auto"
               >
                 {texts[currentTextIndex]}
               </motion.p>

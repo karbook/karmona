@@ -63,7 +63,7 @@ export default function Cars() {
             <motion.section
                 id="cars"
                 variants={cardVariants}
-                className="scroll-mt-55 sm:scroll-mt-70 overflow-hidden relative sm:py-52 mt-20"
+                className="scroll-mt-50 sm:scroll-mt-70 mt-20"
                 onMouseMove={handleSectionMouseMove}
                 onMouseLeave={handleSectionMouseLeave}
             >
