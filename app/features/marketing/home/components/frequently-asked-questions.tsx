@@ -100,7 +100,7 @@ export default function FAQ() {
             >
                 <motion.section
                     id="contact"
-                    className="flex flex-col gap-4 sm:gap-6 max-w-3xl w-full mx-auto px-4 py-8 sm:px-6 md:py-12 scroll-mt-35 sm:scroll-mt-40"
+                    className="flex flex-col gap-4 sm:gap-6 max-w-3xl w-full mx-auto px-4 py-8 sm:px-6 md:py-12 scroll-mt-40 sm:scroll-mt-45 lg:scroll-mt-50"
                     variants={cardVariants}
                 >
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-center mb-4 md:mb-6">
@@ -238,7 +238,7 @@ export default function FAQ() {
             >
             <motion.section
                 id="instagram"
-                className="w-full py-12 px-4 sm:px-6 md:px-20 lg:px-32 bg-white dark:bg-[#030917] text-center scroll-mt-25 sm:scroll-mt-40"
+                className="w-full py-12 px-4 sm:px-6 md:px-20 lg:px-32 bg-white dark:bg-[#030917] text-center scroll-mt-40 sm:scroll-mt-45 lg:scroll-mt-50"
                 variants={cardVariants}
             >
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-10 md:mb-12">

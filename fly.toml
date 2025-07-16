@@ -14,6 +14,8 @@ kill_timeout = '5s'
 [build]
   dockerfile = '/other/Dockerfile'
   ignorefile = '/other/Dockerfile.dockerignore'
+  secrets = ["SENTRY_AUTH_TOKEN"]
+
 
 [deploy]
   strategy = 'bluegreen'

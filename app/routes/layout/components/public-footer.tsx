@@ -20,7 +20,6 @@ export default function Footer() {
                 className="w-auto h-10 sm:h-12 hidden dark:block" 
               />
             </div>
-
             {footerLinks.map(({ id, label, path }) =>
               path.startsWith("/") ? (
                 <Link

@@ -77,7 +77,7 @@ export default function Club() {
                     muted
                     loop
                     playsInline
-                    poster="/images/team-karmona/karmona-poster.webp"
+                    poster="/images/team-karmona/karmona-about-BIMNP2RP.mp4"
                     className="w-full h-full object-cover"
                   >
                     <source

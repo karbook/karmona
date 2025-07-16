@@ -21,7 +21,7 @@ export default function AboutUs() {
         >
             <motion.section
                 variants={cardVariants}
-                id="aboutus" className="bg-white dark:bg-[#030917] px-6 sm:px-6 mb-20 mt-20 mt-5 lg:px-24 text-gray-900 dark:text-white animate-fade-in-up scroll-mt-35 lg:scroll-mt-55">
+                id="aboutus" className="bg-white dark:bg-[#030917] px-6 sm:px-6 mb-20 mt-20 mt-5 lg:px-24 text-gray-900 dark:text-white animate-fade-in-up scroll-mt-50 sm:scroll-mt-50 lg:scroll-mt-55">
                 <div className="max-w-4xl mx-auto text-center mb-12">
                     <h2 className="text-5xl sm:text-7xl font-bold">{t("About Us")}</h2>
                     <p className="max-w-7xl mx-auto text-lg sm:text-2xl mb-2 mt-10">
@@ -102,7 +102,7 @@ export default function AboutUs() {
                                 />
 
                                 <div className="absolute -top-2 -right-4 z-10 overflow-visible text-[#cbd5e1] dark:text-[#cbd5e1] transition-all duration-300 group-hover:text-[#475569] group-hover:-translate-y-1 group-hover:-rotate-8">
-                                    <Icon name={detail.icon} size="5xl" md:size="6xl" />
+                                    <Icon name={detail.icon} size="5xl" />
                                 </div>
                                 <div className="space-y-4 relative z-10">
                                     <h3 className="text-4xl sm:text-5xl font-bold text-black dark:text-white mb-4 mt-10 text-center">

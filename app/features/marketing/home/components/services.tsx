@@ -19,13 +19,13 @@ export default function ServicesWithBrandCarousel() {
         <motion.div
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: false }}
         >
             <motion.section
                 variants={cardVariants}
-                id='services' className="py-12 px-6 max-w-[1600px] mx-auto scroll-mt-30 lg:scroll-mt-40">
-                <h2 className="text-6xl font-bold text-center mb-10 fade-in-up delay-400">{t("Services")}</h2>
-                <p className="text-3xl text-center max-w-6xl mx-auto mb-12 fade-in-up delay-400">
+                id='services' className="py-12 px-6 max-w-[1600px] mx-auto scroll-mt-40 sm:scroll-mt-35 lg:scroll-mt-40">
+                <h2 className="text-7xl sm:text-6xl lg:text-7xl font-bold text-center mb-10 fade-in-up delay-400">{t("Services")}</h2>
+                <p className="text-2xl text-center max-w-6xl mx-auto mb-12 fade-in-up delay-400">
                     {t("In our automotive workshop, we take pride in offering a wide range of services designed to maintain, repair, and enhance the performance of your vehicle.")}
                 </p>
 
@@ -105,7 +105,7 @@ export default function ServicesWithBrandCarousel() {
                             onClick={() => setShowAll(!showAll)}
                             className="transition-all duration-300 hover:scale-105"
                         >
-                            {showAll ? t('show Less') : t('show More')}
+                            {showAll ? t('Show Less') : t('Show More')}
                        </Button>
                     </div>
                 )}

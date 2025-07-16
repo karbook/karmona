@@ -11,30 +11,27 @@ export type Promotions = {
 }
 export const promotions: Promotions[] = [
   {
-    title: t("Mother's Day 💐"),
-    description: t(
-      "Celebrate Mother’s Month — if you’re a teacher, lawyer, doctor, mom, etc., enjoy up to 20% off with us 🥰. At Karmona, we recognize the invaluable work of the extraordinary women in our lives with exclusive discounts like this: 👉 Gather your team of moms with 3 or more vehicles for maintenance and/or brake service and get 20% off on labor. 🚨 This Mother's Month, gift them safety and confidence — come celebrate these special women at Karmona!"
-    ),
-    validity: t("🗓️ Valid from May 10 to June 10"),
+    title: "Mother's Day 💐",
+    description:
+      "Celebrate Mother’s Month — if you’re a teacher, lawyer, doctor, mom, etc., enjoy up to 20% off with us 🥰. At Karmona, we recognize the invaluable work of the extraordinary women in our lives with exclusive discounts like this: 👉 Gather your team of moms with 3 or more vehicles for maintenance and/or brake service and get 20% off on labor. 🚨 This Mother's Month, gift them safety and confidence — come celebrate these special women at Karmona!",
+    validity: "🗓️ Valid from May 10 to June 10",
     location: "📍 Av 2Pte 3106, Col. Amor, Puebla, Pue.",
     image: "/images/promotions/mother-day-promotion.webp",
   },
   {
-    title: t("🎉 30 Years Together"),
-    description: t(
-      "We're celebrating at Karmona thanks to you and your trust over more than 30 years! 🙌 🎉 That’s why we want to thank you with an incredible discount. Let’s celebrate 30 years of service and reliability with 15% off engine maintenance or brake service 🤯. Pamper your car with us — get your service and enjoy 15% off 🥳🍾 📍 Avenida 2 Poniente 3106, Col. Amor, 72140, Puebla, Pue."
-    ),
-    validity: t("🗓️ Valid throughout the month of May"),
-    details: [t("Engine or brake service with 15% discount")],
+    title: "🎉 30 Years Together",
+    description:
+      "We're celebrating at Karmona thanks to you and your trust over more than 30 years! 🙌 🎉 That’s why we want to thank you with an incredible discount. Let’s celebrate 30 years of service and reliability with 15% off engine maintenance or brake service 🤯. Pamper your car with us — get your service and enjoy 15% off 🥳🍾 📍 Avenida 2 Poniente 3106, Col. Amor, 72140, Puebla, Pue.",
+    validity: "🗓️ Valid throughout the month of May",
+    details: ["Engine or brake service with 15% discount"],
     location: "📍 Av. 2 Poniente 3106, Col. Amor, Puebla, Pue.",
     image: "/images/promotions/promotion-engine-service.webp",
   },
   {
-    title: t("🛢️ Premium Motul Oil"),
-    description: t(
-      "We’re celebrating at Karmona and taking care of your car’s soul — especially this special month for moms! Celebrate 30 years of security and reliability for your car with 10% off Premium Motul synthetic oil 🤯 🙌🎉. Give the gift of protection to those who love you most this May 10 🙌 🎉 Karmona, your trusted ally. 📍 Av 2Pte 3106, Col. Amor 72140, Puebla, Pue."
-    ),
-    validity: t("🗓️ Valid through May while supplies last"),
+    title: "🛢️ Premium Motul Oil",
+    description:
+      "We’re celebrating at Karmona and taking care of your car’s soul — especially this special month for moms! Celebrate 30 years of security and reliability for your car with 10% off Premium Motul synthetic oil 🤯 🙌🎉. Give the gift of protection to those who love you most this May 10 🙌 🎉 Karmona, your trusted ally. 📍 Av 2Pte 3106, Col. Amor 72140, Puebla, Pue.",
+    validity: "🗓️ Valid through May while supplies last",
     location: "📍 Av 2Pte 3106, Col. Amor, Puebla, Pue.",
     image: "/images/promotions/promotion-discount-oil.webp",
   },

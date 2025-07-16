@@ -43,7 +43,6 @@ const buttonVariants = cva(
 					// CUSTOM STYLES OVERRIDE
 					'text-button-primary'
 				),
-
 				// CUSTOM VARIANTS
 				input: cn(
 					'bg-button-input text-button-input-foreground hover:bg-button-input-hover hover:text-accent-foreground border border-input-border justify-start text-left overflow-auto'

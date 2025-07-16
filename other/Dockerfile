@@ -1,17 +1,17 @@
-# This file is moved to the root directory before building the image
+# 📦 This file is moved to the root directory before building the image
 
-# Base Bun image
+# 🧱 Base Bun image (Linux-compatible)
 FROM oven/bun:1 AS base
 
-# Set production environment and all layer that inherit from it
+# 🌍 Set production environment variables
 ENV NODE_ENV=production
 ENV PORT="8080"
 
-# 🪲 Use the following environment variables to configure Sentry
+# 🔍 Sentry environment configuration
 ARG COMMIT_SHA
 ENV COMMIT_SHA=$COMMIT_SHA
 
-# 🔑 Set 1Password CLI authentication token and ENV variable
+# 🔐 1Password CLI token and environment
 ARG OP_SERVICE_ACCOUNT_TOKEN
 ENV OP_SERVICE_ACCOUNT_TOKEN=$OP_SERVICE_ACCOUNT_TOKEN
 
@@ -19,59 +19,47 @@ ENV OP_SERVICE_ACCOUNT_TOKEN=$OP_SERVICE_ACCOUNT_TOKEN
 ARG RESEND_API_KEY
 ENV RESEND_API_KEY=$RESEND_API_KEY
 
-# 🔋 Install 1Password CLI dependencies and binary
+# 🧰 Install required system packages for 1Password CLI
 RUN apt-get update && apt-get install -y curl unzip jq && apt-get clean
 
-# 📋 Copy OP binary from 1Password CLI Docker image
+# 📥 Copy OP CLI binary from official image
 COPY --from=1password/op:2 /usr/local/bin/op /usr/local/bin/op
 
-# 🔋 Install all node_modules, including dev dependencies & peer-legacy-deps
+# 📦 Dependency stage – installs all modules
 FROM base AS deps
-
 WORKDIR /app
-
 COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile
 
-# Setup production-only dependencies
+# 📦 Production-only dependencies stage
 FROM base AS production-deps
-
-# React router app lives here
 WORKDIR /app
-
 COPY --from=deps /app/node_modules /app/node_modules
 COPY package.json bun.lock ./
-
-# 🗑️ Remove development dependencies
 RUN bun install --production
 
-# 🚧 Build the app
+# 🏗️ Build stage – compile and prepare the app
 FROM base AS build
-
 WORKDIR /app
-
 COPY --from=deps /app/node_modules /app/node_modules
-
-# Add application code
 COPY . .
 
-# Run type generation for react-router
+# 🧬 Generate type definitions for react-router (optional)
 RUN bun run typegen
 
-# 🏗️ Mount the secret and set it as an environment variable and run the build
-RUN --mount=type=secret,id=SENTRY_AUTH_TOKEN \
-    export SENTRY_AUTH_TOKEN=$(cat /run/secrets/SENTRY_AUTH_TOKEN) && \
-    bun run build
+# ⚠️ Inject Sentry token as environment variable and run production build
+ARG SENTRY_AUTH_TOKEN
+ENV SENTRY_AUTH_TOKEN=$SENTRY_AUTH_TOKEN
+RUN bun run build
 
-# Finally, build the production image with minimal footprint
+# 🧼 Final production image – minimal and ready to run
 FROM base
-
 WORKDIR /app
 
-# Copy production dependencies
+# 🚚 Copy dependencies
 COPY --from=production-deps /app/node_modules /app/node_modules
 
-# Copy build artifacts and necessary files
+# 🚚 Copy build artifacts and required files
 COPY --from=build /app/build /app/build
 COPY --from=build /app/public /app/public
 COPY --from=build /app/package.json /app/package.json
@@ -79,5 +67,5 @@ COPY --from=build /app/app/components/ui/icons /app/app/components/ui/icons
 
 COPY . .
 
-# 🏁 Start the server
+# 🚀 Start the Bun server
 CMD ["bun", "run", "start"]

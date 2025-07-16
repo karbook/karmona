@@ -21,13 +21,11 @@ export default function Promotions() {
         <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
           {t("Promotions")}
         </h2>
-
         <p className="max-w-4xl mx-auto text-base sm:text-xl lg:text-2xl mb-4">
           {t(
             "Take advantage of our special promotions to save even more on your repairs and services. Come and discover why we're the preferred choice for so many drivers!"
           )}
         </p>
-
         <Link to="/tos">
           <p className="font-semibold text-sm sm:text-base lg:text-lg text-[#d63936] mb-10 hover:text-blue-400">
             {t("*Terms and conditions apply.")}
