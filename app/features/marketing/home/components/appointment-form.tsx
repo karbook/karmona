@@ -109,10 +109,30 @@ export default function ScheduleForm() {
       const result = await response.json() as ActionResponse;
 
       if (response.ok) {
-        setFormMessage({ type: 'success', text: result.message || 'Appointment successfully scheduled.' });
+        setFormMessage({
+          type: 'success',
+          text: result.message || 'Appointment successfully scheduled.',
+        });
+
+        const url = `https://api.whatsapp.com/send?phone=522225390369&text=
+      🚗 *Cita desde la Página Web Karmona.mx*%0a
+      👋 Hola, buen día! Me llamo: *${data.fullName}*%0a
+      📅 Estoy interesado/a en agendar una cita para mi automóvil.%0a
+      📝 *Mis datos son los siguientes:*%0a
+      👤 Nombre: ${data.fullName}%0a
+      📞 Teléfono: ${data.phone}%0a
+      📧 Correo: ${data.email}%0a
+      🚘 Automóvil: ${data.carBrand} ${data.model} ${data.year}%0a
+      📆 Fecha tentativa para la cita: ${data.date}%0a
+      🕑 Hora estimada de la cita: ${data.hour} con ${data.minutes}%0a
+      🔧 Descripción del problema: ${data.description?.replace(/\n/g, '%0A')}%0a
+      🙏 Agradezco tu atención y estoy ansioso/a de confirmar todos los detalles para esta cita.%0a
+      📲 Quedo a la espera de tu respuesta. ¡Saludos!%0a`;
         reset();
         clearErrors();
-      } else {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      }
+      else {
         if (result.errors) {
           for (const key in result.errors) {
             setError(key as keyof ScheduleFormValues, { message: result.errors[key] });
@@ -297,6 +317,22 @@ export default function ScheduleForm() {
             {t(errors.termsAccepted.message)}
           </p>
         )}
+        <Dialog open={formMessage?.type === 'success'} onOpenChange={() => setFormMessage(null)}>
+          <DialogContent className="max-w-md sm:max-w-xl bg-white dark:bg-[#030917] border border-gray-300 dark:border-gray-700 shadow-xl rounded-xl text-black dark:text-white">
+            <DialogHeader>
+              <DialogTitle className="text-2xl sm:text-3xl font-bold mb-2">
+                {t("Appointment Sent")}
+              </DialogTitle>
+              <DialogDescription className="text-base sm:text-lg font-medium text-gray-700 dark:text-[#8a9baf]">
+                {t("We've redirected you to WhatsApp. Your message is ready for confirmation.")}
+              </DialogDescription>
+            </DialogHeader>
+            <DialogClose className="mt-6 inline-flex items-center justify-center px-5 py-2 sm:px-6 sm:py-3 bg-black dark:bg-white text-white dark:text-black rounded-full text-sm sm:text-base font-semibold transition-all hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black dark:focus:ring-white">
+              {t("Close")}
+            </DialogClose>
+          </DialogContent>
+        </Dialog>
+
         <Dialog open={formMessage?.type === 'error'} onOpenChange={() => setFormMessage(null)}>
           <DialogContent
             className="max-w-md sm:max-w-xl bg-white dark:bg-[#030917] border border-gray-300 dark:border-gray-700 shadow-xl rounded-xl text-black dark:text-white"
@@ -336,9 +372,11 @@ export default function ScheduleForm() {
 
       </motion.form>
     </div>
-
   );
 }
+
+
+
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [{ title: data?.meta.title }];
 };

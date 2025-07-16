@@ -1,12 +1,10 @@
-// components/ui/date-picker.tsx
 "use client";
 
 import * as React from "react";
 import { format } from "date-fns";
-// Importa los locales que necesites. 'es' para español, 'enUS' para inglés (u otros)
 import { es, enUS } from "date-fns/locale";
 import { Calendar as CalendarIcon } from "lucide-react";
-import { useTranslation } from "react-i18next"; // <-- Importa useTranslation
+import { useTranslation } from "react-i18next"; 
 
 import { cn } from "@/utils/misc";
 import { Button } from "@/components/ui/button";
@@ -21,7 +19,7 @@ interface DatePickerDemoProps {
     value?: Date;
     onChange: (date?: Date) => void;
     error?: string;
-    label?: string; // Aunque 'label' no se usa en este snippet, lo mantengo de tu código
+    label?: string; 
 }
 
 export function DatePickerDemo({
@@ -30,23 +28,21 @@ export function DatePickerDemo({
     error,
     label,
 }: DatePickerDemoProps) {
-    const { i18n, t } = useTranslation(); // Obtén el objeto i18n y la función t
+    const { i18n, t } = useTranslation(); 
 
     const [isOpen, setIsOpen] = React.useState(false);
     const [isUserSelected, setIsUserSelected] = React.useState(false);
 
-    // Mapea los códigos de idioma de i18n a los locales de date-fns
     const dateFnsLocale = React.useMemo(() => {
         switch (i18n.language) {
             case 'es':
                 return es;
             case 'en':
                 return enUS;
-            // Añade más casos si usas otros idiomas (e.g., 'fr': return fr;)
             default:
-                return enUS; // Un locale por defecto si el idioma no está mapeado
+                return enUS; 
         }
-    }, [i18n.language]); // Recalcula el locale cuando el idioma de i18n cambia
+    }, [i18n.language]);
 
     React.useEffect(() => {
         if (value === undefined) {
@@ -87,8 +83,8 @@ export function DatePickerDemo({
                     >
                         <CalendarIcon className="mr-2 h-4 w-4" />
                         {value
-                            ? format(value, "PPP", { locale: dateFnsLocale }) // <-- Pasa el locale dinámico aquí
-                            : <span>{t("Pick a date")}</span> // <-- Usa t() para traducir "Pick a date"
+                            ? format(value, "PPP", { locale: dateFnsLocale })
+                            : <span>{t("Pick a date")}</span>
                         }
                     </Button>
                 </PopoverTrigger>

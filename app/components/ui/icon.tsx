@@ -19,7 +19,7 @@ const sizeClassName = {
   xl: 'size-7',
   '2xl': 'size-8',
   '3xl': 'size-10',
-  '4xl': 'size-[70px]',
+  '4xl': 'size-[90px]',
   '5xl': 'size-[120px]',
   '6xl': 'size-[150px]',
 } as const

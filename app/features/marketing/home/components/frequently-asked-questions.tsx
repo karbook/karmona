@@ -43,7 +43,7 @@ export default function FAQ() {
             <motion.section
                 id="FAQ"
                 variants={cardVariants}
-                className="w-full max-w-[1580px] mx-auto px-4 sm:px-6 py-8 md:py-12 mb-10 mt-25 scroll-mt-40">
+                className="w-full max-w-[1580px] mx-auto px-4 sm:px-6 py-8 md:py-12 mb-10 mt-25 scroll-mt-40 lg:scroll-mt-55">
                 <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-center mb-4 md:mb-6">
                     {t("Frequently Asked Questions")}
                 </h1>
@@ -100,7 +100,7 @@ export default function FAQ() {
             >
                 <motion.section
                     id="contact"
-                    className="flex flex-col gap-4 sm:gap-6 max-w-3xl w-full mx-auto px-4 py-8 sm:px-6 md:py-12 scroll-mt-25 sm:scroll-mt-40"
+                    className="flex flex-col gap-4 sm:gap-6 max-w-3xl w-full mx-auto px-4 py-8 sm:px-6 md:py-12 scroll-mt-35 sm:scroll-mt-40"
                     variants={cardVariants}
                 >
                     <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-center mb-4 md:mb-6">
@@ -139,7 +139,6 @@ export default function FAQ() {
                                 <h3 className="text-2xl sm:text-3xl font-semibold mb-2 relative z-10">
                                     {t(contact.label)}
                                 </h3>
-
                                 <div className="text-base sm:text-lg relative z-10 space-y-1 items-center text-center">
                                     {(() => {
                                         const { type, value, href, buttonText } = contact;
@@ -155,7 +154,6 @@ export default function FAQ() {
                                                 </a>
                                             );
                                         }
-
                                         if (type === "email" && typeof value === "string") {
                                             return (
                                                 <a
@@ -193,7 +191,6 @@ export default function FAQ() {
                                                 </>
                                             );
                                         }
-
                                         return (
                                             <p className="text-lg sm:text-xl dark:text-white font-semibold whitespace-pre-line">
                                                 {Array.isArray(value)
@@ -201,7 +198,6 @@ export default function FAQ() {
                                                     : t(value)}
                                             </p>
                                         )
-
                                     })()}
                                 </div>
                             </div>
