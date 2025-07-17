@@ -40,11 +40,11 @@ export default function Projects() {
             <Tabs defaultValue="mustang" className="max-w-[1400px] mx-auto w-full">
                 <TabsList
                     className="
-        p-0 bg-transparent flex flex-wrap justify-center 
-        mb-4 mx-auto
-        h-auto sm:h-18
-        gap-2 sm:gap-4
-    "
+                        p-0 bg-transparent flex flex-wrap justify-center 
+                        mb-4 mx-auto
+                        h-auto sm:h-18
+                        gap-2 sm:gap-4
+                    "
                 >
                     {tabs.map((tab) => (
                         <TabsTrigger
@@ -95,7 +95,7 @@ export default function Projects() {
                                             {projectMedia.map((item) => (
                                                 <CarouselItem
                                                     key={item.id}
-                                                    className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-[30%] // Responsive item width
+                                                    className="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-[30%]
                                                                 mt-5 mb-5 flex justify-center items-center px-2 sm:px-4" 
                                                 >
                                                     {item.type === 'text' && (
@@ -105,7 +105,7 @@ export default function Projects() {
                                                         </div>
                                                     )}
                                                     {item.type === 'image' && (
-                                                        <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[550px]"> 
+                                                        <div className="w-full h-[300px] sm:h-[300px] md:h-[400px] lg:h-[550px]"> 
                                                             <img
                                                                 src={item.content}
                                                                 alt={item.alt}
@@ -114,7 +114,7 @@ export default function Projects() {
                                                         </div>
                                                     )}
                                                     {item.type === 'video' && (
-                                                        <div className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[550px]"> 
+                                                        <div className="w-full h-[300px] sm:h-[300px] md:h-[400px] lg:h-[550px]"> 
                                                             <video
                                                                 autoPlay
                                                                 muted

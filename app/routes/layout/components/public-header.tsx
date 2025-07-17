@@ -113,7 +113,7 @@ export function Header() {
 
             <Link to="/appointment"
               className={cn(
-                "ml-5 p-4 text-lg flex items-center justify-between",
+                "ml-5 p-4  flex items-center justify-between",
                 buttonVariants({ variant: "black" })
               )}
             >

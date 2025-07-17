@@ -66,8 +66,8 @@ export default function ServicesWithBrandCarousel() {
                                     <div
                                         className="absolute inset-0 pointer-events-none z-0"
                                         style={{
-                                            filter: 'blur(100px)',
-                                            background: `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, rgba(12, 142, 244, 0.5) 10%, transparent 40%)`,
+                                            filter: 'blur(200px)',
+                                            background: `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, rgba(12, 142, 244, 0.5) 10%, transparent 60%)`,
                                             opacity: isHovered ? 1 : 0,
                                             transition: 'opacity 0.4s ease-out',
                                         }}

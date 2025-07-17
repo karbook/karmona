@@ -55,25 +55,27 @@ export default function AboutUs() {
                                 <TabsTrigger
                                     key={detail.value}
                                     value={detail.value}
-                                    className={`
-                                        sm:w-auto
-                                        py-6 px-3 sm:py-6 sm:px-8
-                                        text-3xl sm:text-2xl
-                                        text-left sm:text-center
-                                        align-center relative group overflow-visible
-                                        rounded-4xl font-semibold
-                                        transition-colors duration-300 ease-in-out
-                                        dark:text-white hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer
-                                        before:content-[''] before:absolute before:inset-0
-                                        before:bg-black dark:before:bg-[#fdf6e9]
-                                        before:rounded-4xl before:z-0
-                                        before:transition-transform before:duration-300 before:ease-out
-                                        before:translate-x-full before:opacity-0
-                                        data-[state=active]:text-white dark:data-[state=active]:text-[#030917]
-                                        data-[state=active]:shadow-md
-                                        data-[state=active]:before:translate-x-0
-                                        data-[state=active]:before:opacity-100
+                                 className={`
+                                    sm:w-auto
+                                    py-6 px-3 sm:py-6 sm:px-8
+                                    text-3xl sm:text-2xl
+                                    text-left sm:text-center
+                                    align-center relative group
+                                    rounded-4xl font-semibold
+                                    transition-colors duration-300 ease-in-out
+                                    dark:text-white hover:text-gray-600 dark:hover:text-gray-400 cursor-pointer
+
+                                    before:content-[''] before:absolute before:inset-0
+                                    before:bg-black dark:before:bg-[#fdf6e9]
+                                    before:rounded-4xl before:z-0
+                                    before:origin-left before:scale-x-0
+                                    before:transition-transform before:duration-300 before:ease-out
+
+                                    data-[state=active]:text-white dark:data-[state=active]:text-[#030917]
+                                    data-[state=active]:shadow-md
+                                    data-[state=active]:before:scale-x-100
                                     `}
+
                                 >
                                     <span className="relative z-10 block">{t(detail.title)}</span>
                                 </TabsTrigger>
@@ -89,7 +91,21 @@ export default function AboutUs() {
                                     setHovering(true);
                                 }}
                                 onMouseLeave={() => setHovering(false)}
-                                className="group relative w-full rounded-lg bg-transparent border-none shadow-none p-0 sm:p-0 lg:p-0 min-h-[400px] text-black transition-opacity duration-300 data-[state=inactive]:hidden overflow-hidden flex flex-col justify-center"
+                                className={`
+                                group relative w-full
+                                rounded-lg
+                                bg-transparent
+                                border border-gray-300 dark:border-gray-700
+                                shadow-[0_8px_24px_rgba(0,0,0,0.15)]
+                                hover:shadow-[0_12px_36px_rgba(0,0,0,0.25)]
+                                p-6 sm:p-6 lg:p-6
+                                min-h-[400px]
+                                text-black dark:text-white
+                                transition-all duration-300
+                                data-[state=inactive]:hidden
+                                overflow-hidden
+                                flex flex-col justify-center
+                                `}
                             >
                                 <div
                                     className="w-full absolute inset-0 pointer-events-none z-0"
@@ -131,7 +147,7 @@ export default function AboutUs() {
                                                             h-[320px]
                                                             mt-12 mb-8
                                                             flex flex-col items-center text-center space-y-2
-                                                            bg-transparent dark:bg-transparent
+                                                            bg-transparent dark:bg-[transparent]
                                                             rounded-lg border border-gray-500 dark:border-gray-700
                                                             shadow-sm p-6
                                                             last:mr-6

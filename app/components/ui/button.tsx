@@ -51,7 +51,7 @@ const buttonVariants = cva(
 					'border-2 border-dashed bg-button-outline border-button-outline-border hover:bg-accent hover:text-accent-foreground'
 				),
 				black: cn(
-					'bg-black text-white text-2xl hover:bg-neutral-800',
+					'bg-black text-white text-lg md:text-2xl lg:text-2xl hover:bg-neutral-800',
 					'dark:bg-white dark:text-black dark:hover:bg-neutral-300 dark:hover:text-black',
 					'font-bold rounded-md',
 					'py-6 px-6'

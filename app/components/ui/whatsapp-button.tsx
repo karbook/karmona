@@ -37,20 +37,19 @@ export default function WhatsAppMenu() {
   ]
 
   return (
-    <div className="fixed bottom-6 right-6 z-40">
+    <div className="fixed bottom-6 right-2 z-40">
       <Drawer>
         <DrawerTrigger asChild>
           <Button
+            className="w-16 h-16 sm:w-20 sm:h-20"
             variant="whatsapp"
             size="whatsapp"
             aria-label="Abrir WhatsApp"
           >
-            <Icon name="whatsapp" className="text-[#030917] dark:text-white !w-14 !h-14 sm:!w-16 sm:!h-16" />
-
+            <Icon name="whatsapp" className="text-[#030917] dark:text-white !w-10 !h-10 sm:!w-12 sm:!h-12" />
             <span className="sr-only">{t('Open WhatsApp')}</span>
           </Button>
         </DrawerTrigger>
-
         <DrawerContent className="
           fixed bottom-0 inset-x-0 w-full
           bg-white dark:bg-[#030917]
