@@ -31,7 +31,7 @@ export default function WhatsAppMenu() {
     },
     {
       label: t("Send message"),
-      icon: "message-circle",
+      icon: "whatsapp",
       text: t("Hola, quisiera ponerme en contacto con ustedes."),
     },
   ]

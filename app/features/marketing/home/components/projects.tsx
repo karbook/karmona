@@ -33,7 +33,7 @@ export default function Projects() {
             variants={cardVariants}
         >
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-6 sm:mb-8">{t('Our Projects')}</h2>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-7xl font-medium mx-auto text-center mb-6 text-gray-700 dark:text-gray-300 px-2 sm:px-0">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-7xl font-semibold mx-auto text-center mb-6 text-gray-700 dark:text-gray-300 px-2 sm:px-0">
                 {t('At Karmona, our dedication to excellence is evident in every project we undertake. Each vehicle that arrives at our facilities is treated with the utmost care, backed by the passion of our expert team and the firm belief in delivering outstanding quality services.')}
             </p>
 

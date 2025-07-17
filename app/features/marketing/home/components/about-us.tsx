@@ -24,7 +24,7 @@ export default function AboutUs() {
                 id="aboutus" className="bg-white dark:bg-[#030917] px-6 sm:px-6 mb-20 mt-20 mt-5 lg:px-24 text-gray-900 dark:text-white animate-fade-in-up scroll-mt-50 sm:scroll-mt-50 lg:scroll-mt-55">
                 <div className="max-w-4xl mx-auto text-center mb-12">
                     <h2 className="text-5xl sm:text-7xl font-bold">{t("About Us")}</h2>
-                    <p className="max-w-7xl mx-auto text-lg sm:text-2xl mb-2 mt-10">
+                    <p className="max-w-7xl mx-auto text-base sm:text-xl lg:text-2xl font-semibold mb-2 mt-10">
                         {t("We are pleased to share the essence and values that define us as an organization. Our history, mission, and core values guide us at every step, and we are proud to present a glimpse of who we are and what we represent.")}
                     </p>
                 </div>
@@ -93,7 +93,7 @@ export default function AboutUs() {
                                 onMouseLeave={() => setHovering(false)}
                                 className={`
                                 group relative w-full
-                                rounded-lg
+                                rounded-xl
                                 bg-transparent
                                 border border-gray-300 dark:border-gray-700
                                 shadow-[0_8px_24px_rgba(0,0,0,0.15)]
@@ -121,7 +121,7 @@ export default function AboutUs() {
                                     <Icon name={detail.icon} size="5xl" />
                                 </div>
                                 <div className="space-y-4 relative z-10">
-                                    <h3 className="text-4xl sm:text-5xl font-bold text-black dark:text-white mb-4 mt-10 text-center">
+                                    <h3 className="text-4xl sm:text-5xl font-bold text-black dark:text-white mb-4 mt-20 md:mt-5 lg:mt-5 md:mb-0 lg:mb-0 text-center">
                                         {detail.value === "karmona"
                                             ? t("Karmona")
                                             : detail.value === "mission"
@@ -138,19 +138,19 @@ export default function AboutUs() {
                                         }}
                                             mousewheel={true}
                                             className="w-full max-w-5xl mx-auto overflow-hidden">
-                                            <CarouselContent className="flex gap-6 pl-6 pr-6">
+                                            <CarouselContent className="flex gap-10 pl-8 pr-4 md:pl-9 md:pr-8 lg:pl-9 lg:pr-8">
                                                 {detail.content.map((slide, i) => (
                                                     <CarouselItem
                                                         key={i}
                                                         className="
                                                             basis-full sm:basis-[49%]
-                                                            h-[320px]
-                                                            mt-12 mb-8
+                                                            h-[345px]
+                                                            mt-6 lg:mt-8 mb-8
                                                             flex flex-col items-center text-center space-y-2
                                                             bg-transparent dark:bg-[transparent]
-                                                            rounded-lg border border-gray-500 dark:border-gray-700
+                                                            rounded-3xl border border-gray-500 dark:border-gray-700
                                                             shadow-sm p-6
-                                                            last:mr-6
+
                                                         "
                                                     >
                                                         {slide.icon && (
@@ -173,7 +173,7 @@ export default function AboutUs() {
                                                 <p
                                                     key={i}
                                                     className="
-                                                        text-lg sm:text-2xl font-custom text-black dark:text-[#8a9baf]
+                                                        text-lg sm:text-2xl lg:mt-10 font-custom text-black dark:text-[#8a9baf]
                                                         text-center mx-auto max-w-2xl
                                                     "
                                                 >

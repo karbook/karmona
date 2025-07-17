@@ -52,8 +52,8 @@ const buttonVariants = cva(
 				),
 				black: cn(
 					'bg-black text-white text-lg md:text-2xl lg:text-2xl hover:bg-neutral-800',
-					'dark:bg-white dark:text-black dark:hover:bg-neutral-300 dark:hover:text-black',
-					'font-bold rounded-md',
+					'dark:bg-[#fdf6e9] dark:text-black dark:hover:bg-neutral-300 dark:hover:text-black',
+					'font-bold rounded-3xl',
 					'py-6 px-6'
 				),
 				date: cn(
@@ -63,7 +63,7 @@ const buttonVariants = cva(
 					'text-button-date-foreground'
 				),
 				schedule: cn(
-					'bg-black text-white dark:bg-white dark:text-black w-full h-full rounded-full hover:bg-gray-700 dark:hover:bg-gray-300',
+					'bg-black text-white dark:bg-[#fdf6e9] dark:text-black w-full h-full rounded-full hover:bg-gray-700 dark:hover:bg-gray-300',
 				),
 				whatsapp: cn(
 					'bg-[#eff4f8] dark:bg-[#030917]',

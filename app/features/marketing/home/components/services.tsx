@@ -23,9 +23,9 @@ export default function ServicesWithBrandCarousel() {
         >
             <motion.section
                 variants={cardVariants}
-                id='services' className="py-12 px-6 max-w-[1600px] mx-auto scroll-mt-40 sm:scroll-mt-35 lg:scroll-mt-40">
-                <h2 className="text-7xl sm:text-6xl lg:text-7xl font-bold text-center mb-10 fade-in-up delay-400">{t("Services")}</h2>
-                <p className="text-2xl text-center max-w-6xl mx-auto mb-12 fade-in-up delay-400">
+                id='services' className="py-12 px-6 max-w-[1600px] mx-auto scroll-mt-40 sm:scroll-mt-35 lg:scroll-mt-45">
+                <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-center mb-10 fade-in-up delay-400">{t("Services")}</h2>
+                <p className="text-base sm:text-xl lg:text-2xl text-center max-w-6xl mx-auto mb-12 fade-in-up delay-400 font-semibold">
                     {t("In our automotive workshop, we take pride in offering a wide range of services designed to maintain, repair, and enhance the performance of your vehicle.")}
                 </p>
 
@@ -87,7 +87,7 @@ export default function ServicesWithBrandCarousel() {
                                         {t(service.title)}
                                     </h3>
                                     <p
-                                        className={`text-2xl text-center ${isActive ? 'text-gray-200' : 'text-[#475569] dark:text-[#94a3b8]'
+                                        className={`text-xl md:text-2xl lg:text-2xl text-center ${isActive ? 'text-gray-200' : 'text-[#475569] dark:text-[#94a3b8]'
                                             } relative z-10`}
                                     >
                                         {t(isActive ? service.info : service.description)}

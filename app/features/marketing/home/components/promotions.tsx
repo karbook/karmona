@@ -21,7 +21,7 @@ export default function Promotions() {
         <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
           {t("Promotions")}
         </h2>
-        <p className="max-w-4xl mx-auto text-base sm:text-xl lg:text-2xl mb-4">
+        <p className="max-w-4xl mx-auto text-base sm:text-xl lg:text-2xl mb-4 font-semibold">
           {t(
             "Take advantage of our special promotions to save even more on your repairs and services. Come and discover why we're the preferred choice for so many drivers!"
           )}

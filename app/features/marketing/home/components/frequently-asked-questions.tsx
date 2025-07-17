@@ -214,7 +214,7 @@ export default function FAQ() {
                 className="w-full py-20 px-6 md:px-20 lg:px-32 bg-white dark:bg-[#030917] text-center"
                 variants={cardVariants}
             >
-                <h2 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6">
                     {t("Our Location")}
                 </h2>
                 <p className="text-lg md:text-2xl max-w-7xl font-semibold mx-auto text-center mb-12 text-gray-700 dark:text-gray-300">
@@ -241,7 +241,7 @@ export default function FAQ() {
                 className="w-full py-12 px-4 sm:px-6 md:px-20 lg:px-32 bg-white dark:bg-[#030917] text-center scroll-mt-40 sm:scroll-mt-45 lg:scroll-mt-50"
                 variants={cardVariants}
             >
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8 sm:mb-10 md:mb-12">
+                <h2 className="text-4xl sm:text-6xl lg:text-7xl  font-bold text-gray-900 dark:text-white mb-8 sm:mb-10 md:mb-12">
                     {t("Follow us on social media")}
                 </h2>
 

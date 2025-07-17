@@ -4,7 +4,7 @@ export default function PrivacyPolicy() {
     const { t } = useTranslation();
     return (
         <section className="w-full max-w-[1580px] bg-white dark:bg-[#030917] text-gray-800 dark:text-gray-100 px-4 sm:px-6 lg:px-12 xl:px-20 py-16 mx-auto space-y-20">
-            <h1 className="text-7xl font-bold text-center mb-6">{t('Privacy Policy')}</h1>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-center mb-6">{t('Privacy Policy')}</h1>
             <p className="text-2xl md:text-2xl max-w-6xl font-semibold mx-auto text-center mb-12 text-gray-700 dark:text-gray-300">
                 {t('Karmona respects the privacy of its customers and online visitors. This privacy policy describes how we collect, use, and protect personal information. By using our website, you agree to the practices described in this policy.')}
 

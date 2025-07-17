@@ -13,7 +13,7 @@ export default function PromoRulesSection() {
     return (
         <>
             <section className="w-full bg-white dark:bg-[#030917] text-gray-800 dark:text-gray-100 px-4 sm:px-6 lg:px-12 xl:px-20 py-16 max-w-screen-2xl mx-auto space-y-20">
-                <h1 className="text-5xl lg:text-7xl font-bold text-center mb-6">{t("Terms and Conditions of Karmona")}</h1>
+                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-center mb-6">{t("Terms and Conditions of Karmona")}</h1>
                 <p className="text-lg md:text-2xl max-w-6xl font-semibold mx-auto text-center mb-12 text-gray-700 dark:text-gray-300">
                     {t("Karmona respects the privacy of its customers and online visitors. This privacy policy describes how we collect, use, and protect personal information. By using our website, you agree to the practices described in this policy.")}
                 </p>
@@ -31,13 +31,13 @@ export default function PromoRulesSection() {
                     ))}
                 </div>
                 <div className="space-y-16">
-                    <h1 className="text-4xl lg:text-7xl font-bold text-center mb-10">{t("General Terms and Conditions for Validating Our Promotions.")}</h1>
+                    <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-center mb-10">{t("General Terms and Conditions for Validating Our Promotions.")}</h1>
                     {promoRules.map(({ id, title, items, note }) => (
                         <article key={id} id={id} className="space-y-4">
                             <h2 className="text-2xl text-center md:text-left md:text-3xl font-bold">{t(title)}</h2>
                             <ul className="list-decimal ml-5 space-y-2">
                                 {items.map((step, index) => (
-                                    <li className='text-2xl font-semibold' key={`${id}-step-${index}`}>{t(step)}</li>
+                                    <li className='text-xl font-semibold' key={`${id}-step-${index}`}>{t(step)}</li>
                                 ))}
                             </ul>
                             {note && (
@@ -46,10 +46,9 @@ export default function PromoRulesSection() {
                         </article>
                     ))}
                 </div>
-
             </section>
             <section className="w-full bg-white dark:bg-[#030917] text-gray-800 dark:text-gray-100 px-4 sm:px-6 lg:px-12 xl:px-20 py-16 max-w-screen-2xl mx-auto space-y-12">
-                <h2 className="text-5xl lg:text-7xl font-bold text-center mb-4">{t("Visit us and follow us")}</h2>
+                <h2 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-center mb-4">{t("Visit us and follow us")}</h2>
 
                 <p className="text-lg md:text-2xl max-w-6xl font-semibold mx-auto text-center mb-12 text-gray-700 dark:text-gray-300">
                     {t("Scan the QR codes to find us on Google Maps or follow us on Instagram.")}

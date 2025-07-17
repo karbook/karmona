@@ -58,7 +58,6 @@ export default function Cars() {
       viewport={{ once: false, amount: 0.2 }}
     >
       <div id="cars" className="scroll-mt-35 sm:scroll-mt-40" />
-
       <motion.section
         variants={cardVariants}
         className="mt-20 relative overflow-hidden"
@@ -74,12 +73,11 @@ export default function Cars() {
             transition: 'opacity 0.4s ease-out, backdrop-filter 0.4s ease-out',
           }}
         />
-
         <div className="relative z-20">
-          <motion.h2 className="text-4xl sm:text-7xl font-bold text-center mb-6 px-4">
+          <motion.h2 className="text-4xl sm:text-7xl mt-20 font-bold text-center mb-6 px-4">
             {t('We repair all types of cars')}
           </motion.h2>
-          <motion.p className="text-lg sm:text-2xl text-center max-w-7xl mx-auto mb-10 px-4">
+          <motion.p className="text-lg sm:text-2xl text-center font-semibold max-w-7xl mx-auto mb-10 px-4">
             {t(
               'At Karmona, we take pride in offering comprehensive repair services for all types of cars, from compact vehicles to SUVs and trucks. Our team of highly trained technicians is ready to tackle a wide variety of mechanical issues and provide effective solutions to keep your vehicle in optimal condition.'
             )}
@@ -108,7 +106,6 @@ export default function Cars() {
               </CarouselContent>
             </Carousel>
           </section>
-
           <section className="overflow-hidden relative py-5 sm:py-10">
             <Carousel
               className="w-full relative z-20"
