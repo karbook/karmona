@@ -156,7 +156,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
 	// ANALYTICS
 	useEffect(() => {
 		if (window !== undefined) {
-			//initPosthog()
+			initPosthog()
 		}
 	}, [])
 	usePosthogPageView()
@@ -171,23 +171,31 @@ export default function App({ loaderData }: Route.ComponentProps) {
 }
 
 export const meta = ({ data }: Route.MetaArgs) => {
-	return [
-		{
-			title: data?.meta.title ?? data?.meta.error,
-		},
-		{
-			name: 'keywords',
-			content: 'fast,modern,repair,garage,paint,auto,business,workflow,invoicing,mechanic,software',
-		},
-		{
-			name: 'author',
-			content: 'Karmona',
-		},
-		{
-			name: 'theme-color',
-			content: '#0E927A',
-		},
-	]
+	const title = data?.meta.title ?? data?.meta.error
+  const description =
+    'Club Automotriz, cambiando el concepto común de taller automotriz, todo lo que tu auto necesita.'
+  const image = 'https://karmona.mx/images/team-karmona/karmona-team-BAPWJSBV.webp'
+
+  return [
+    { title },
+    { name: 'description', content: description },
+    { name: 'keywords', content: 'fast,modern,repair,garage,paint,auto,business,workflow,invoicing,mechanic,software', },
+    { name: 'author', content: 'Karmona Automotriz' },
+    { name: 'theme-color', content: '#0E927A' },
+
+    // Open Graph
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    { property: 'og:image', content: image },
+    { property: 'og:url', content: 'https://karmona.mx' },
+    { property: 'og:type', content: 'website' },
+
+    // Twitter
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:description', content: description },
+    { name: 'twitter:image', content: image },
+  ]
 }
 
 // this is a last resort error boundary. There's not much useful information we
