@@ -7,7 +7,7 @@ on:
     branches:
       - main
 env:
-  APP_NAME: Karmona
+  APP_NAME: karmona
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -59,8 +59,8 @@ jobs:
           # Export loaded secrets as environment variables
           export-env: true
         env:
-          FLY_API_TOKEN: op://Karmona/FLY/FLY_API_TOKEN
-          SENTRY_AUTH_TOKEN: op://Karmona/SENTRY/SENTRY_AUTH_TOKEN
+          FLY_API_TOKEN: op://karmona/FLY/FLY_API_TOKEN
+          SENTRY_AUTH_TOKEN: op://karmona/SENTRY/SENTRY_AUTH_TOKEN
 
       - name: Install 1Password CLI
         uses: 1password/install-cli-action@v1
