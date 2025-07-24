@@ -59,8 +59,8 @@ jobs:
           # Export loaded secrets as environment variables
           export-env: true
         env:
-          FLY_API_TOKEN: op://karmona/FLY/FLY_API_TOKEN
-          SENTRY_AUTH_TOKEN: op://karmona/SENTRY/SENTRY_AUTH_TOKEN
+          FLY_API_TOKEN: op://Karmona/FLY/FLY_API_TOKEN
+          SENTRY_AUTH_TOKEN: op://Karmona/SENTRY/SENTRY_AUTH_TOKEN
 
       - name: Install 1Password CLI
         uses: 1password/install-cli-action@v1
@@ -71,6 +71,7 @@ jobs:
           flyctl deploy --remote-only \
           --build-arg COMMIT_SHA=${{ github.sha }} \
           --build-arg OP_SERVICE_ACCOUNT_TOKEN=${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }} \
-          --build-secret SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}
+          --build-secret SENTRY_AUTH_TOKEN="$SENTRY_AUTH_TOKEN"
         env:
           FLY_API_TOKEN: ${{ env.FLY_API_TOKEN }}
+          SENTRY_AUTH_TOKEN: ${{ env.SENTRY_AUTH_TOKEN }}

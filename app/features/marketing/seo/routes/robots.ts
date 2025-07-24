@@ -12,7 +12,7 @@ export async function loader({ request, context }: Route.LoaderArgs) {
 		{
 			userAgent: '*',
 			[isProductionDeployment ? 'allow' : 'disallow']: ['/'],
-			sitemap: [`${domain}/sitemap-index.xml`],
+			sitemap: [`${domain}/sitemap.xml`],
 		},
 	])
 	return new Response(robotsTxt, {

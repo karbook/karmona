@@ -21,7 +21,7 @@ kill_timeout = '5s'
   strategy = 'bluegreen'
 
 [env]
-  OP_ENV = 'development'
+  OP_ENV = 'Karmona'
 
 [[services]]
   protocol = 'tcp'
