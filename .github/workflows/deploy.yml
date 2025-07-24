@@ -59,7 +59,7 @@ jobs:
           # Export loaded secrets as environment variables
           export-env: true
         env:
-          SENTRY_AUTH_TOKEN: op://Karmona/SENTRY/SENTRY_AUTH_TOKEN
+          SENTRY_AUTH_TOKEN: op://karmona/SENTRY/SENTRY_AUTH_TOKEN
 
       - name: Install 1Password CLI
         uses: 1password/install-cli-action@v1
@@ -74,3 +74,4 @@ jobs:
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
           SENTRY_AUTH_TOKEN: ${{ env.SENTRY_AUTH_TOKEN }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
