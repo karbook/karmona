@@ -9,9 +9,9 @@
   "scripts": {
     "1password": "op run --no-masking --env-file .env.op --",
     "dev": "NODE_ENV=development bun --bun vite",
-    "dev:op": "APP_ENV=production NODE_ENV=development OP_ENV=karmona bun --bun 1password vite",
-    "build": "bun 1password react-router build",
-    "start": "NODE_ENV=production bun 1password bun ./build/server/index.js",
+    "dev:op": "NODE_ENV=development bun --bun 1password vite",
+    "build": "NODE_ENV=production APP_ENV=production bun 1password react-router build",
+    "start": "NODE_ENV=production APP_ENV=production bun 1password bun ./build/server/index.js",
     "start:dev": "NODE_ENV=production OP_ENV=karmona bun 1password bun ./build/server/index.js",
     "typegen": "react-router typegen",
     "extract:strings": "i18next --config i18next-parser.config.js",
