@@ -33,21 +33,27 @@ import { href as iconsHref } from './components/ui/icon'
 import { EpicProgress } from './components/progress-bar'
 
 // ASSETS
-import appleTouchIconAssetUrl from '/favicons/apple-touch-icon.png'
-import faviconAssetUrl from '/favicons/favicon.png'
+import appleTouchIconAssetUrl from '/favicons/karmona-square-dark64x64.png'
+import faviconAssetUrl from '/kbfavicon.ico'
 
 
 export const links: Route.LinksFunction = () => {
 	return [
 		// Preload svg sprite as a resource to avoid render blocking
 		{ rel: 'preload', href: iconsHref, as: 'image' },
+		{ rel: 'icon', href: faviconAssetUrl },
+		{
+            rel: 'icon',
+            type: 'image/png', 
+            href: '/images/logo/karmona-long-white512x512.png',
+            sizes: '512x512',
+        },
 		{
 			rel: 'icon',
 			type: 'image/svg',
 			href: 'images/logo/karmona-square-simple.svg',
 			sizes: '48x48',
 		},
-		{ rel: 'icon', type: 'image/png', href: '/favicons/KarmonaIcon.png' },
 		{ rel: 'apple-touch-icon', href: appleTouchIconAssetUrl },
 		{
 			rel: 'manifest',

@@ -53,6 +53,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 			"name": "Karmona",
 			"description": "Premium automotive services in Puebla",
 			"url": url,
+			"logo": "https://karmona.mx/kbfavicon.ico",
 			"telephone": "+52-222-539-0369", // Add your phone
 			"address": {
 			"@type": "PostalAddress",
